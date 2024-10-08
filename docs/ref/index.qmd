@@ -1,0 +1,44 @@
+---
+title: Reference Guide
+description: Further details on the lineages extraction and classification code
+number-sections: false
+page-layout: article
+format: 
+  html: 
+    number-sections: false
+    title-block-banner: false
+    toc: false
+execute: 
+  freeze: true
+---
+
+::::{.container}
+
+:::{.column width="50%"}
+
+{{< bi arrow-repeat size=4em >}}
+
+### [Lineage Extract](lineages.qmd)
+
+-   Extract general lineage data from CDC
+-   Filter to WA data
+-   Clean, transform, and output
+
+:::
+
+:::{.column width="50%"}
+
+{{< bi diagram-3-fill size=4em >}}
+
+
+### [Lineage Classifications](lineages_classification.qmd)
+
+-   Read in lineage data
+-   Assign lineage classifications
+-   Assign hex colors for plots
+
+
+:::
+
+
+::::

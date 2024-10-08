@@ -1,0 +1,110 @@
+---
+title: "Statewide COVID-19 Variant Plot"
+description: Display COVID-19 variants by specimen collection date
+date: September 1, 2023
+date-modified: today
+author: 
+  - name: Frank Aragona
+    email: frank.aragona@doh.wa.gov
+    affiliations:
+      - Washington Department of Health
+      - Data Integration/Quality Assurance
+format: 
+  html:
+    fig-width: 10
+    fig-height: 7
+    scss: styles.scss
+    code-fold: show
+    code-overflow: wrap
+    class-output: "watch"
+    toc: true
+    number-sections: true
+execute: 
+  freeze: true
+---
+
+```{r setup}
+#| echo: false
+#| results: hide
+#| warnings: false
+#| message: false
+#| eval: true
+# setwd('..')
+# setwd('..')
+# setwd('..')
+# getwd()
+# file.path(dirname(rprojroot::find_rstudio_root_file()),"scripts/plots.R") |> print()
+knitr::read_chunk(file.path(
+  dirname(rprojroot::find_rstudio_root_file()),
+  "scripts/plots.R")
+  )
+```
+
+<!--
+```{r}
+#| eval: true
+#| echo: true
+file.path(dirname(rprojroot::find_rstudio_root_file()),"scripts/plots.R") |> print()
+```
+-->
+
+
+```{r libraries}
+#| echo: false
+#| results: hide
+#| warnings: false
+#| message: false
+```
+
+```{r pull-data}
+#| echo: false
+#| results: false
+
+```
+
+
+```{r var-plot}
+#| echo: false
+
+```
+
+# How to make the plot
+
+Here's the code to make the plot. If you want the actual script it will be in the repository under the scripts folder called `plots.R`
+
+## Libraries
+```{r libraries}
+#| eval: false
+```
+
+## Pull the data
+
+First we can pull the example dataset which is in the repo. This dataset comes directly from the WA DOH COVID-19 dashboard.
+
+-   pull the data
+-   prepare it so we can plot it
+-   use `dplyr::group_by()` to get date range groups for the bars in the plot
+-   we can also adjust some of the labels here so they have `%` attached to them
+
+
+
+```{r pull-data}
+#| eval: false
+
+```
+
+## Make the plot
+
+Now we can make the plot. I used:
+
+-   `fill=variant` to get the colors stratified by variant
+-   `geom_bar()` to make the bars and `position="stack"` to stack different groups of variants per bar
+-   the `labs()` function to adjust how the title looks and add my own html to it. Then I adjusted that title background under the `theme(plot.title())` functions
+-   for the legend I used `theme(legend.background())` to adjust the colors and background formatting
+
+```{r var-plot}
+#| eval: false
+
+```
+
+

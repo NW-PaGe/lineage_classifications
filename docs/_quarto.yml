@@ -1,0 +1,94 @@
+project:
+  type: website
+
+# comments: 
+#   hypothesis: true
+
+website:
+  title: "Home"
+  # author: DIQA 
+  # date: today
+  search: true
+  repo-url: https://github.com/NW-PaGe/lineage_classifications
+  repo-subdir: docs/
+  repo-actions: [source,edit,issue]
+  
+  navbar: 
+    background: primary
+    left: 
+      - text: User Guide
+        file: guide/index.qmd
+      - text: Code Reference
+        file: ref/index.qmd
+      - text: Articles
+        file: articles/variants.qmd
+
+    search: true
+    pinned: false
+    
+    right:
+      - icon: github
+        href: https://github.com/NW-PaGe/lineage_classifications
+        aria-label: GitHub
+
+  
+  sidebar: 
+    - id: guide
+      collapse-level: 2
+      contents: 
+        - text: "Home"
+          file: index.qmd
+        - text: "User Guide"
+          file: guide/index.qmd
+        - text: "Installation"
+          file: guide/install.qmd
+    - id: lineages
+      collapse-level: 2
+      contents: 
+        - section: "Code Reference"
+          contents: 
+            - ref/index.qmd
+            - ref/lineages.qmd
+            - ref/lineages_classification.qmd
+    - id: articles
+      collapse-level: 2
+      contents: 
+        - section: "Articles"
+          contents: 
+            - articles/variants.qmd
+            - articles/voc_county.qmd
+  page-footer:
+    left: "🍦"
+    # background: "#440154ff"
+    
+    
+
+# bibliography: references.bib
+
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - assets/styles.scss
+    scss: assets/styles.scss
+    toc: true
+    comments: 
+      hypothesis: true
+    # number-depth: 3
+    # toc-depth: 3
+    link-external-newwindow: false
+    highlight-style: printing
+    number-sections: true
+    code-fold: show
+    code-overflow: wrap
+    page-layout: full
+    backgroundcolor: "#f8f9fa"
+    title-block-banner: false
+execute: 
+  error: true
+  freeze: false
+  # eval: false
+
+
+

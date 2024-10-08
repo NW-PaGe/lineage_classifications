@@ -1,0 +1,133 @@
+---
+title: Installation
+description: Clone and install the software needed to run the scripts
+number-sections: false
+execute: 
+  eval: false
+---
+
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Contributing](#contributing)
+-   [License](#license)
+
+::: callout-tip
+Below there are two ways to install this software, either on your local machine (see [installation](#installation)) or via a Github Codespace which does not require any software to be installed on your personal machine (see [Github Codespace](#run-code-with-github-codespace))
+:::
+
+# Prerequisites
+
+-   R version 4.0.0 or higher
+-   Windows, macOS, or Linux operating system
+
+# Installation {#installation}
+
+1.  Clone the repository:
+
+```{bash filename="terminal"}
+git clone https://github.com/NW-PaGe/private-lineages.git
+```
+
+2.  Navigate to the repo folder
+
+```{bash filename="terminal"}
+cd private-lineages
+```
+
+3.  Open up the `lineages_test.Rproj` R project:
+
+Can double click on the file or open in a terminal window by typing
+
+```{bash filename="terminal"}
+lineages_test.Rproj
+```
+
+4.  Install `renv`
+
+In the Rstudio window's console, execute
+
+```{r filename="R console"}
+install.packages('renv')
+```
+
+5.  Install all the packages in the root directory:
+
+```{r filename="R console"}
+renv::restore()
+```
+
+## Run Code with Github Codespace {#run-code-with-github-codespace}
+
+If you want to run the code but don't want to install anything on your local machine, use a Github Codespace.
+
+1.  At the root of the repo, click on the **Code** drop down button
+    -   On the right there is a tab called Codespaces.
+    -   If there is an existing Codespace, use that one
+    -   If there are no Codespaces, you can create a new one. The default codespace configuration has R and Rstudio set up for it (so probably use that one)
+
+![](../images/new_cs.gif)
+
+![](../images/new_cs2.gif)
+
+<br> 
+
+<br>
+
+2.  You can run Rstudio within a Codespace by:
+    -   Go into the VS Code section called "Ports" in the Codespace
+    -   Find the Rstudio port
+    -   Click the *Open in Browser* button
+    
+<br>
+
+<br>
+
+![](../images/new_cs3.gif)
+
+<br> <br>
+
+3.  Troubleshooting
+    -   If you make a new Codespace you may need to install the R packages onto the machine again
+    -   The easiest way is to open the Rstudio port (see point 2 above)
+    -   In the Rstudio console execute `renv::restore()` and follow its instructions. It should download all the packages in the `renv` folder in this repo
+
+Now you can run this code in a browser window without needing to install any software on your computer 😎
+
+# Usage {#usage}
+
+The repo will output a `.csv` file called `lineages.csv` that will be updated whenever new lineages are updated from the CDC. You can refresh/fetch this git repo for new changes and the `.csv` file will be updated
+
+To run the process:
+
+1.  Run lineages script:
+
+```{r filename="R console"}
+source("scripts/lineages_public_repo.R")
+```
+
+2.  Run the lineages classification script:
+
+```{r filename="R console"}
+source("scripts/lineages_classification_for_test_repo.R")
+```
+
+## Variables
+
+The variables produced by the scripts are used in the Sequencing and Variants Report. Here's a list:
+
+| Variables               | Description                                                                                                                                    |
+|---------------|---------------------------------------------------------|
+| cdc_class               | Variable indicating VOC (variant of concern) or VBM (variant being monitored)                                                                  |
+| who_name                | Variable indicating the WHO name                                                                                                               |
+| doh_variant_name        | Grouping variable in WA DOH Sequencing and Variant report                                                                                      |
+| hex_code                | Hex color for doh_variant_name group                                                                                                           |
+| lineage_reporting_group | Variable indicating reporting group of lineage coded as: 1: Currently monitoring 2: Formerly monitoring 3: Formerly circulating, not monitored |
+| report_table_name       | Variable name in numerical/pango form for table outputs                                                                                        |
+
+# Contributing {#contributing}
+
+For details on how to contribute to this project, please read the [NW-PaGe contributing guide](https://github.com/NW-PaGe/.github/blob/main/CONTRIBUTING.md) 
+
+# License {#license}
+
+This repo uses an [MIT license](https://github.com/NW-PaGe/private-lineages?tab=MIT-1-ov-file)

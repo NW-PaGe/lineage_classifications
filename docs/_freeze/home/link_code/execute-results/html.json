@@ -1,0 +1,14 @@
+{
+  "hash": "0b04d3232582760b9ef97c97abbecd7a",
+  "result": {
+    "markdown": "---\ntitle: \"Link external R code to the documentation\"\ndescription: How to link your repo code automatically to the github page\neditor: \n  markdown: \n    wrap: 72\nauthor: Frank Aragona\ndate: today\nexecute: \n  freeze: true\n---\n\n\nThe code in this website is automatically linked to the code in the\nrepository. This lets us update the code and not need to copy and paste\nany new changes to the documentation/github page\n\nTo do this, open your *external* R script in your repo. In this case\nwe're using `lineages_public_repo.R`. Now wrap the chunks of code you\nwant to link with comments like this, `## ---- libraries` and\n`## ---- stop`:\n\n\n::: {.cell}\n\n```{.r .cell-code}\n## ---- libraries\nlibrary(pacman)\np_load(\n  reticulate,\n  fs,\n  lubridate,\n  dplyr,\n  stringr,\n  magrittr,\n  readr,\n  httr\n)\n## ---- stop\n```\n:::\n\n\nThe `## ---- libraries` signals the beginning of a chunk. the\n`## ---- stop` signals the end of a chunk.\n\n<br>\n\nNow you can call this chunk in your *github page/quarto document* like\nthis:\n\nScan the external R script for code chunks:\n\n```` markdown\n```{{r setup}}\n#| echo: false\nknitr::read_chunk(file.path(getwd(),\"lineages_public_repo.R\"))\n```\n````\n<br>\n\nCall the code chunk you want in the `{r}` header within the chunk. like this `{r libraries}`:\n\n```` markdown\n```{{r libraries}}\n\n```\n````\n<br>\n\nAnd now the document will output any code in that code chunk and can\nalso execute that code chunk if you want. Here's what the output will\nlook like in this case:\n\n![](images/code-chunk.PNG)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

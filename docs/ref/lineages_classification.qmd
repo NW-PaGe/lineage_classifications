@@ -1,0 +1,279 @@
+---
+title: "Lineages Classification Script"
+description: Look under the hood of the lineages_classification.R script
+date: September 1, 2023
+date-modified: today
+author: 
+  - name: 
+    email: 
+    affiliations:
+      - Washington Department of Health
+      - Molecular Epi
+format: 
+  html:
+    code-fold: show
+    code-overflow: wrap
+    class-output: "watch"
+execute: 
+  eval: false
+---
+
+::: note
+
+{{< bi file-earmark-text size=4em >}} **Summary**
+
+-   Label variants of concern (VOC)
+-   Assign lineages to variant classification names
+-   Assign hex code colors to variant names
+
+:::
+
+# Quickstart
+
+The lineages_classification.R script will import the `lineages.csv` file we created previously and assign lineages according to their variant classifications. It will also color code the variants based on CDC variant proportion colors. See the links below for more details:
+
+CDC:
+
+-   [cdc variant classifications](https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-classifications.html)
+
+-   [cdc variant proportions](https://covid.cdc.gov/covid-data-tracker/#variant-proportions)
+
+WHO:
+
+-   [WHO variant list](https://www.who.int/activities/tracking-SARS-CoV-2-variants)
+
+
+# Creating Variant Classifications
+
+The script will create new variables such as variant classifications and color codes for each variant name. Here's a list of the new variables:
+
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Variable                   | Description                                                                                                                                         |
++============================+=====================================================================================================================================================+
+| `cdc_class`                | Variable indicating VOC (variant of concern) or VBM (variant being monitored)                                                                       |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| `who_name`                 | Variable indicating the WHO name                                                                                                                    |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| `doh_variant_name`         | Grouping variable in WA DOH [Sequencing and Variant report](https://doh.wa.gov/sites/default/files/2022-02/420-316-SequencingAndVariantsReport.pdf) |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hex_code`                 | Hex color for `doh_variant_name` group                                                                                                              |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| `lineage_reporting_group`  | Variable indicating reporting group of lineage coded as:                                                                                            |
+|                            |                                                                                                                                                     |
+|                            | 1.  Currently monitoring                                                                                                                            |
+|                            | 2.  Formerly Monitoring                                                                                                                             |
+|                            | 3.  Formerly circulating, not monitored                                                                                                             |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| `report_table_name`        | Variable name in numerical/pango form for table outputs                                                                                             |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+<br>
+
+## Code Examples
+
+::: panel-tabset
+
+## cdc_class
+This variable indicates what lineage is a variant of concern (VOC). It parses the lineage string to determine which are VOCs and which are not.
+
+1.  Determine variants being monitored (VBM). This is done via regular expression (regex) - `grepl()`
+2.  Determine variants of concern (VOC) also by regex
+3.  Use a `case_when()` function to assign lineages as VBM, VOC or neither
+
+```{r}
+lineage_data_1 <- active_lineages %>%
+  # 'cdc_class' variable code
+  
+  # if lineage extracted is in that list, assign to "VBM", else "non VBM"
+  mutate(
+    vbm_class = ifelse(
+      grepl(
+        c(
+            "B.1.617.2|^AY.|^B\\.1\\.1\\.7$|^Q.|
+            B.1.351|B.1.351.|^P.1|^P.1.|^B.1.427|
+            ^B.1.429|B.1.525$|B.1.526$|B.1.617.1$|
+            B.1.617.3$|B.1.621$|B.1.621.1$|P.2"), 
+        lineage_extracted),
+      "VBM",
+      "non VBM"
+    ),
+   # assign variant of concern class
+   # if variant in that list, label "VOC", else "non VOC"
+   voc_class = ifelse(
+     grepl(c("B.1.1.529|XBB"), lineage_extracted) |
+       grepl(c("B.1.1.529|XBB"), description), 
+     "VOC", "non VOC"),
+   # If adding in recombinant omicron
+   cdc_class = case_when( vbm_class == "VBM" ~ "VBM",
+                          voc_class == "VOC" ~ "VOC", 
+                          TRUE  ~ "non VOC/VBM")
+   )
+```
+
+## who_name
+
+Here's an example of deriving the WHO name (Alpha, Delta, Omicron, etc). Note, this is just a small example, the list is much larger in the actual script
+
+```{r}
+# 'who_name' variable code
+mutate(who_name = case_when(
+  
+  # Variants being monitored (VBM)
+  
+  # Alpha
+  lineage_extracted == "B.1.1.7" | 
+    grepl("^Q.", lineage_extracted) ~ "Alpha",
+  
+  # exact match to "B.1.1.7" or starts with "Q."
+  # Beta
+  lineage_extracted == "B.1.351" |
+    grepl("B.1.351", lineage_extracted) ~ "Beta",   
+  
+  # exact match to "B.1.351" or starts with "B.1.351."
+  # Gamma
+  lineage_extracted == "P.1" | 
+    grepl("^P.1",lineage_extracted) ~ "Gamma",
+  
+  # exact match to "P.1" or starts with "P.1."
+  # Epsilon
+  grepl("^B.1.427|^B.1.429", lineage_extracted) ~ "Epsilon",
+```
+
+## hex_code
+
+Assign the hex color codes to the variant classifications. The colors are assigned to match the [CDC variant proportions plot](https://covid.cdc.gov/covid-data-tracker/#variant-proportions)
+
+```{r}
+lineage_data_2 <- lineage_data_1 %>%
+  mutate(hex_code = case_when(
+    doh_variant_name == "Alpha" ~ "#8dd3c7",
+    doh_variant_name == "Beta" ~ "#ffffb3",
+    doh_variant_name == "Delta" ~ "#b39ddb",
+    doh_variant_name == "Epsilon" ~ "#bebada",
+    doh_variant_name == "Eta" ~ "#fb8072",
+    doh_variant_name == "Gamma" ~ "#fdb462",
+    doh_variant_name == "Iota" ~ "#b3de69",
+    doh_variant_name == "Kappa" ~ "#fccde5",
+    doh_variant_name == "Mu" ~ "#bc80bd",
+    doh_variant_name == "Zeta" ~ "#ffed6f",
+    doh_variant_name == "Other Omicron" ~ "#e26028",
+    doh_variant_name == "BA.1.1" ~ "#ff824c",
+    doh_variant_name == "BA.2" ~ "#9ccc65",
+    doh_variant_name == "BA.2.12.1" ~ "#7cb342",
+    doh_variant_name == "BA.2.75" ~ "#d4e157",
+    doh_variant_name == "BA.2.75.2" ~ "#c0ca33",
+    doh_variant_name == "BA.4" ~ "#ffd54f",
+    doh_variant_name == "BA.4.6" ~ "#ffb300",
+    doh_variant_name == "BA.5" ~ "#80cbc4",
+    doh_variant_name == "BF.7" ~ "#81d4fa",
+    doh_variant_name == "BF.11" ~ "#29b6f6",
+    doh_variant_name == "BN.1" ~ "#9e9d24",
+    doh_variant_name == "BA.5.2.6" ~ "#009688",
+    doh_variant_name == "BQ.1" ~ "#006064",
+    doh_variant_name == "BQ.1.1" ~ "#00838f",
+    doh_variant_name == "XBB" ~ "#9fa8da",
+    doh_variant_name == "XBB.1.5" ~ "#5363bb",
+    TRUE ~ "#797979"
+    )
+  )
+```
+
+## lineage_reporting_group
+
+Find the lineage reporting group by assigning variants in the current monitoring list or the former monitoring list.
+
+```{r}
+# These two lists should be mutually exclusive
+currently_monitoring_list <- c( "Other Omicron",
+                                "BA.1.1",
+                                "BA.2",
+                                "BA.2.12.1",
+                                "BA.2.75",
+                                "BA.2.75.2",
+                                "BA.4",
+                                "BA.4.6",
+                                "BA.5",
+                                "BF.7",
+                                "BF.11",
+                                "BN.1",
+                                "BA.5.2.6",
+                                "BQ.1",
+                                "BQ.1.1",
+                                "XBB",
+                                "XBB.1.5",
+                                "Other")
+
+formerly_monitoring_list <- c("Alpha",
+                              "Beta",
+                              "Delta",
+                              "Epsilon",
+                              "Eta",
+                              "Gamma",
+                              "Iota",
+                              "Kappa",
+                              "Mu",
+                              "Zeta")
+
+```
+
+```{r}
+lineage_data_3 <- lineage_data_2 %>%
+  mutate(lineage_reporting_group = case_when(
+    doh_variant_name %in% currently_monitoring_list ~ 1, 
+    doh_variant_name %in% formerly_monitoring_list ~ 2, 
+    TRUE ~ 3))
+```
+
+## report_table_name
+
+```{r}
+lineage_data_final <- lineage_data_3 %>%
+  mutate(doh_variant_name_tables = case_when(
+    doh_variant_name == "Delta" ~ "B.1.617.2",
+    doh_variant_name == "Alpha" ~ "B.1.1.7",
+    doh_variant_name == "Beta" ~ "B.1.351",
+    doh_variant_name == "Epsilon" ~ "B.1.427 / B.1.429",
+    doh_variant_name == "Eta" ~ "B.1.525",
+    doh_variant_name == "Iota" ~ "B.1.526",
+    doh_variant_name == "Kappa" ~ "B.1.617.1",
+    doh_variant_name == "Gamma" ~ "P.1",
+    doh_variant_name == "Mu" ~ "B.1.621",
+    doh_variant_name == "Zeta" ~ "P.2",
+    doh_variant_name == "Other Omicron" ~ "B.1.1.529",
+    TRUE ~ doh_variant_name))
+```
+
+## find new sublineages
+
+```{r}
+#read in last days file
+previous_lineage_data <- read_csv("lineage_classifications.csv")
+
+lineage_data_final$lineage_extracted <- as.character(lineage_data_final$lineage_extracted)
+previous_lineage_data$lineage_extracted   <- as.character(previous_lineage_data$lineage_extracted)
+
+length(previous_lineage_data)
+length(lineage_data_final)
+
+nrow(previous_lineage_data)
+nrow(lineage_data_final)
+
+#new_lineage_data <-anti_join(previous_lineage_data, lineage_data_final)
+
+#list of ones not in previous list
+new_lineage_data <- lineage_data_final %>%
+  filter(!lineage_extracted %in% previous_lineage_data$lineage_extracted)
+
+new_lineage_data
+```
+
+## write to csv
+
+And finally write the results to a csv that can be used to make plots and reports
+
+```{r}
+write.csv(lineage_data_final,
+          file="lineage_classifications.csv",
+          row.names=FALSE)
+```
+:::

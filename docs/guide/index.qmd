@@ -1,0 +1,43 @@
+---
+title: "COVID-19 Lineages"
+description: Washington State DOH COVID-19 lineage extraction process
+format: 
+  html: 
+    number-sections: false
+    title-block-banner: false
+    mainfont: Manrope
+    toc: false
+execute: 
+  eval: false
+---
+
+This repo contains scripts that will pull lineages of interest from the CDC and transform them.
+
+The repo will output a `.csv` file called `lineages.csv` that will be updated whenever new lineages are updated from the CDC. You can refresh/fetch this git repo for new changes and the `.csv` file will be updated.
+
+To run the process:
+
+1.  Run lineages script:
+
+```{r filename="R console"}
+source("scripts/lineages_public_repo.R")
+```
+
+2.  Run the lineages classification script:
+
+```{r filename="R console"}
+source("scripts/lineages_classification_for_test_repo.R")
+```
+
+## Variables
+
+The variables produced by the scripts are used in the Sequencing and Variants Report. Here's a list:
+
+| Variables               | Description                                                                                                                                    |
+|---------------|---------------------------------------------------------|
+| cdc_class               | Variable indicating VOC (variant of concern) or VBM (variant being monitored)                                                                  |
+| who_name                | Variable indicating the WHO name                                                                                                               |
+| doh_variant_name        | Grouping variable in WA DOH Sequencing and Variant report                                                                                      |
+| hex_code                | Hex color for doh_variant_name group                                                                                                           |
+| lineage_reporting_group | Variable indicating reporting group of lineage coded as: 1: Currently monitoring 2: Formerly monitoring 3: Formerly circulating, not monitored |
+| report_table_name       | Variable name in numerical/pango form for table outputs                                                                                        |

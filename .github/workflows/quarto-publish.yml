@@ -1,0 +1,58 @@
+on:
+  push:
+    branches: 
+      - main
+    paths:
+      - docs/**
+      - lineages_public_repo.R
+  workflow_dispatch:
+
+name: Render and Publish
+
+jobs:
+  build-deploy:
+    runs-on: windows-latest
+    
+    env:
+      RENV_PATHS_ROOT: ~/.cache/R/renv
+      
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.5.22'
+        
+      # - name: Prep CURL install
+      #   run: sudo apt-get update
+
+      # - name: Install CURL Headers
+      #   run: sudo apt-get install libcurl4-openssl-dev
+
+      # - name: Setup Renv
+      #   uses: r-lib/actions/setup-renv@v2
+  
+      - name: Cache packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+      
+      - name: Restore packages
+        shell: Rscript {0}
+        run: |
+          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
+          renv::restore()
+       
+
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+          path: docs/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions

@@ -1,0 +1,144 @@
+---
+title: "Lineages Extract"
+description: Look under the hood of the lineages.R script
+date: September 1, 2023
+date-modified: today
+author: 
+  - name: Frank Aragona
+    email: frank.aragona@doh.wa.gov
+    affiliations:
+      - Washington Department of Health
+      - Data Integration/Quality Assurance
+format: 
+  html:
+    code-fold: show
+    code-overflow: wrap
+    class-output: "watch"
+    toc: true
+    number-sections: true
+execute: 
+  eval: true
+  freeze: true
+
+---
+
+
+:::{.note}
+
+{{< bi file-earmark-check-fill size=4em >}} **Summary**
+
+-   Pull lineage data from the CDC
+-   Transform and clean the data
+-   Output to a csv file
+
+:::
+
+
+
+```{r setup}
+#| echo: false
+#| results: hide
+setwd('..')
+setwd('..')
+getwd()
+knitr::read_chunk(file.path(getwd(),"scripts/lineages_public_repo.R"))
+```
+
+# Load libraries
+
+This project uses `pacman::p_load()` to read in libraries. `p_load()` will install any packages that aren't installed in the user's environment.
+
+```{r libraries}
+#| echo: true
+
+```
+
+# Pull CDC Lineages via API
+
+CDC provides a list of COVID-19 lineages that we will pull into our R environment
+
+1.  Provide the url link to CDC's repo
+2.  Use `httr::GET()` to connect and pull the text
+3.  `httr::content` will pull all text in the html
+
+```{r scrape}
+#| class-output: "watch"
+
+```
+
+**Note that the text is not formatted and looks like garbage. We'll clean that up in subsequent steps**
+
+<br>
+
+# Process the data
+
+Now we will process the data so we can clean and wrangle it. Notice how the output above is delimited by `\n`. We'll use that delimiter to split the string into a list of individual strings and unpack that list into individual rows. Now we can create a matrix with two columns, Lineage and Description
+
+```{r process}
+
+```
+
+<br>
+
+This is what the first 5 rows of the matrix will look like:
+
+```{r}
+#| class-output: "watch"
+head(lineages_mat)
+```
+
+
+# Transform the dataframe
+
+Now we can define columns, filter, mutate and deduplicate the dataset
+
+1.    The columns for Lineage and Description still have bad names (v1 and v2). We'll rename them
+2.    `slice()` will remove the first row that contains variable names
+3.    We want to filter out any missing lineages - sometimes there are lineages without a description that won't be of use to us
+4.    Find lineages with withdrawn or active status and label them in a new column
+5.    Extract the part of the lineage that is useful
+6.    Sometimes lineages have a `*` symbol attached, remove this
+7.    Deduplicate any rows with a `distinct()` statement
+
+```{r transform}
+#| class-warning: "watch"
+
+```
+
+<br>
+
+Let's take a look at the result:
+
+```{r}
+#| class-output: "watch"
+head(lineages_df)
+```
+
+
+# Deduplicate
+
+Now we can deduplicate the whole dataframe. We'll find where lineages are duplicated and they have status = "Active"
+
+```{r dupes}
+
+```
+
+
+# Review outputs
+
+Here's what the final dataframe should look like
+
+```{r head}
+#| class-output: "watch"
+
+```
+
+# Write the file
+
+Write the file to this repository
+
+```{r output}
+#| echo: true
+#| eval: false
+
+```

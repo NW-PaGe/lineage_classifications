@@ -40,10 +40,24 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
+# docs/
 
 # translation temp files
 po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# ignore regex for secrets
+secrets_key
+
+# ignore all csvs except the ones we produce
+*.csv
+!*lineages.csv
+!*lineages_classifications.csv
+
+*.xlsx
+!*Downloadable_variant.xlsx
+
+# ignore WSL/Windows Zone Identifier files
+**/*Zone.Identifier

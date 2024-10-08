@@ -1,0 +1,24 @@
+---
+title: "The Lineages Script"
+description: Look under the hood of the `lineages.R` script
+date: September 1, 2023
+date-modified: today
+author: 
+  - name: Frank Aragona
+    email: frank.aragona@doh.wa.gov
+    affiliations:
+      - Washington Department of Health
+      - Data Integration/Quality Assurance
+format: 
+  html:
+    scss: theme.scss
+    code-fold: show
+    code-overflow: wrap
+    class-output: "watch"
+    toc: true
+    number-sections: true
+    # title-block-banner: true
+    theme:
+      dark: superhero
+      light: flaty 
+---
