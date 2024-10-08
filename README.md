@@ -2,7 +2,8 @@
 This repo contains scripts that will pull lineages of interest from the CDC and transform them. It also contains example datasets.
 
 For more information on how the scripts work, plots, and guides on how to pull data from the repo, please open the github page here:
-https://fluffy-doodle-eynv3my.pages.github.io/
+
+https://nw-page.github.io/lineage_classifications/ 
 
 # Variables Produced
 The variables produced by the scripts are used in the Sequencing and Variants Report. Here's a list:
