@@ -1,5 +1,5 @@
 name: Lineages Pipeline
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Run lineages pull 🚀
 on: 
   workflow_dispatch:
   schedule:
