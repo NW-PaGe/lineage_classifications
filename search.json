@@ -1,0 +1,150 @@
+[
+  {
+    "objectID": "ref/lineages.html",
+    "href": "ref/lineages.html",
+    "title": "Lineages Extract",
+    "section": "",
+    "text": "Summary\n\nPull lineage data from the CDC\nTransform and clean the data\nOutput to a csv file\n\n\n\n1 Load libraries\nThis project uses pacman::p_load() to read in libraries. p_load() will install any packages that aren’t installed in the user’s environment.\n\n\nCode\nlibrary(pacman)\np_load(\n  reticulate,\n  fs,\n  lubridate,\n  dplyr,\n  stringr,\n  magrittr,\n  readr,\n  httr\n)\n\n\n\n\n2 Pull CDC Lineages via API\nCDC provides a list of COVID-19 lineages that we will pull into our R environment\n\nProvide the url link to CDC’s repo\nUse httr::GET() to connect and pull the text\nhttr::content will pull all text in the html\n\n\n\nCode\n# input the url\nurl &lt;- 'https://raw.githubusercontent.com/cov-lineages/pango-designation/master/lineage_notes.txt'\n\n# get the response of the url \ndata &lt;- httr::GET(url)\ndata\n\n\nResponse [https://raw.githubusercontent.com/cov-lineages/pango-designation/master/lineage_notes.txt]\n  Date: 2024-04-18 20:49\n  Status: 200\n  Content-Type: text/plain; charset=utf-8\n  Size: 243 kB\nLineage Description \nA   One of the two original haplotypes of the pandemic (A and B). Many sequence...\nA.1 USA lineage\nA.2 Mostly Spanish lineage now includes South and Central American sequences,...\nA.2.2   Australian lineage\nA.2.3   Scottish lineage\nA.2.4   Panama lineage\nA.2.5   Central American/ USA lineage\nA.2.5.1 Costa Rica lineage, from #33\nA.2.5.2 Predominantly Italy lineage\n...\n\n\nCode\n# extract the content of the response (all the txt you see in the url)\nlineage_content &lt;- httr::content(data, as = \"text\")\nsubstr(lineage_content,1,500)\n\n\n[1] \"Lineage\\tDescription \\nA\\tOne of the two original haplotypes of the pandemic (A and B). Many sequences originating from China and many global exports; including to South East Asia Japan South Korea Australia the USA and Europe represented in this lineage\\nA.1\\tUSA lineage\\nA.2\\tMostly Spanish lineage now includes South and Central American sequences, other European countries and Kazakhstan.\\nA.2.2\\tAustralian lineage\\nA.2.3\\tScottish lineage\\nA.2.4\\tPanama lineage\\nA.2.5\\tCentral American/ USA lineage\\nA.2.5.1\\t\"\n\n\nNote that the text is not formatted and looks like garbage. We’ll clean that up in subsequent steps\n\n\n\n3 Process the data\nNow we will process the data so we can clean and wrangle it. Notice how the output above is delimited by \\n. We’ll use that delimiter to split the string into a list of individual strings and unpack that list into individual rows. Now we can create a matrix with two columns, Lineage and Description\n\n\nCode\n# split by \"\\n\" to get a list by row, unlist\nlineages_string_by_row &lt;- lineage_content %&gt;%\n  stringr::str_split(\"\\n\") %&gt;%\n  unlist()\n\n# create a matrix from lineages_string_by_row with a second var \n# created from splitting by \"\\t\"\nlineages_mat &lt;- lineages_string_by_row %&gt;%\n  str_split(\"\\t\", simplify = TRUE)\n\n\n\nThis is what the first 5 rows of the matrix will look like:\n\n\nCode\nhead(lineages_mat)\n\n\n     [,1]     \n[1,] \"Lineage\"\n[2,] \"A\"      \n[3,] \"A.1\"    \n[4,] \"A.2\"    \n[5,] \"A.2.2\"  \n[6,] \"A.2.3\"  \n     [,2]                                                                                                                                                                                                                                  \n[1,] \"Description \"                                                                                                                                                                                                                        \n[2,] \"One of the two original haplotypes of the pandemic (A and B). Many sequences originating from China and many global exports; including to South East Asia Japan South Korea Australia the USA and Europe represented in this lineage\"\n[3,] \"USA lineage\"                                                                                                                                                                                                                         \n[4,] \"Mostly Spanish lineage now includes South and Central American sequences, other European countries and Kazakhstan.\"                                                                                                                  \n[5,] \"Australian lineage\"                                                                                                                                                                                                                  \n[6,] \"Scottish lineage\"                                                                                                                                                                                                                    \n\n\n\n\n4 Transform the dataframe\nNow we can define columns, filter, mutate and deduplicate the dataset\n\nThe columns for Lineage and Description still have bad names (v1 and v2). We’ll rename them\nslice() will remove the first row that contains variable names\nWe want to filter out any missing lineages - sometimes there are lineages without a description that won’t be of use to us\nFind lineages with withdrawn or active status and label them in a new column\nExtract the part of the lineage that is useful\nSometimes lineages have a * symbol attached, remove this\nDeduplicate any rows with a distinct() statement\n\n\n\nCode\nlineages_df &lt;- lineages_mat %&gt;%\n  as_tibble(.name_repair = \"unique\") %&gt;%\n  \n  # Rename columns\n  rename(lineage_extracted = `...1`, description = `...2`) %&gt;%\n  \n  # Remove the first row that contains variable names\n  slice(-1) %&gt;%\n  \n  # Filter out missing lineages/descriptions\n  filter(!(lineage_extracted == \"\" & description == \"\")) %&gt;%\n  \n  # create a 'status' var that is populated with either withdrawn or active\n  mutate(status = case_when(\n    # when 'withdrawn' is detected in the string then populate status with 'Withdrawn'\n    str_detect(tolower(description), \"withdrawn\") ~ \"Withdrawn\",\n    # otherwise populate status with 'Active'\n    TRUE ~ \"Active\"\n  )) %&gt;%\n  \n  # extract string from beginning up until the first space or end of string \n  # and assign as lineage extracted. This steps is at times necessary due to errors\n  # in the file pulled. Within each row the lineage and descript should be separated\n  # by '\\t' (see line 53). However at times a white space is \n  # mistakenly entered instead \n  mutate(lineage_extracted = str_extract(\n    lineage_extracted,\n    \".+?(?=$|[[:SPACE:]])\"\n    )\n  ) %&gt;%\n  \n  # remove '*' from the lineage_extracted variables. Often withdrawn lineages \n  # are denoted with a '*' at the beginning\n  mutate(lineage_extracted = str_remove_all(lineage_extracted, \"\\\\*\")) %&gt;%\n  \n  # deduplicate any rows where lineage_extracted and status are the same \n  # (description is not a priority)\n  distinct(lineage_extracted, status, .keep_all = TRUE)\n\n\nNew names:\n• `` -&gt; `...1`\n• `` -&gt; `...2`\n\n\n\nLet’s take a look at the result:\n\n\nCode\nhead(lineages_df)\n\n\n# A tibble: 6 × 3\n  lineage_extracted description                                           status\n  &lt;chr&gt;             &lt;chr&gt;                                                 &lt;chr&gt; \n1 A                 One of the two original haplotypes of the pandemic (… Active\n2 A.1               USA lineage                                           Active\n3 A.2               Mostly Spanish lineage now includes South and Centra… Active\n4 A.2.2             Australian lineage                                    Active\n5 A.2.3             Scottish lineage                                      Active\n6 A.2.4             Panama lineage                                        Active\n\n\n\n\n5 Deduplicate\nNow we can deduplicate the whole dataframe. We’ll find where lineages are duplicated and they have status = “Active”\n\n\nCode\nif (any(duplicated(lineages_df$lineage_extracted))) {\n  \n  # identify all records where lineage_extracted is duplicated \n  dup_records &lt;- lineages_df[lineages_df$lineage_extracted %in% lineages_df$lineage_extracted[duplicated(lineages_df$lineage_extracted)],]\n  \n  # identify records where status == \"Active\"\n  dup_records_active &lt;- dup_records %&gt;%\n    filter(status == \"Active\")\n  \n  # remove records where lineage_extract is duplicated but status = \"Active\" \n  # for final output\n  lineages_df_final &lt;- anti_join(lineages_df, dup_records_active)\n  \n  # else if there no records with lineage_extracted is duplicated but status differs\n} else {\n  # lineages_df_6 is the final output\n  lineages_df_final &lt;- lineages_df\n}\n\n\nJoining with `by = join_by(lineage_extracted, description, status)`\n\n\n\n\n6 Review outputs\nHere’s what the final dataframe should look like\n\n\nCode\nglimpse(lineages_df_final)\n\n\nRows: 4,204\nColumns: 3\n$ lineage_extracted &lt;chr&gt; \"A\", \"A.1\", \"A.2\", \"A.2.2\", \"A.2.3\", \"A.2.4\", \"A.2.5…\n$ description       &lt;chr&gt; \"One of the two original haplotypes of the pandemic …\n$ status            &lt;chr&gt; \"Active\", \"Active\", \"Active\", \"Active\", \"Active\", \"A…\n\n\n\n\n7 Write the file\nWrite the file to this repository\n\n\nCode\nreadr::write_csv(lineages_df_final, \"data/lineages.csv\", na = \"\")\n# save(lineages, file = paste0(\"data-raw/data_\", make.names(Sys.time()), \".Rda\"))",
+    "crumbs": [
+      "Code Reference",
+      "Lineages Extract"
+    ]
+  },
+  {
+    "objectID": "ref/index.html",
+    "href": "ref/index.html",
+    "title": "Reference Guide",
+    "section": "",
+    "text": "Lineage Extract\n\nExtract general lineage data from CDC\nFilter to WA data\nClean, transform, and output\n\n\n\n\n\n\nLineage Classifications\n\nRead in lineage data\nAssign lineage classifications\nAssign hex colors for plots",
+    "crumbs": [
+      "Code Reference",
+      "Reference Guide"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\n\nNORTHWEST PATHOGEN GENOMICS CENTER OF EXCELLENCE\n\nCOVID-19 Lineages Extract\n",
+    "section": "",
+    "text": "NORTHWEST PATHOGEN GENOMICS CENTER OF EXCELLENCE\n\nCOVID-19 Lineages Extract\n\nThis site documents code from Washington State Department of Health that ingests, cleans, transforms, and outputs Washington State COVID-19 lineage data.\nPlease click on User Guide for a more detailed description.\nGet started\n\n\n\n\n\n\n  \n\n\n\nUser Guides\n\n\n\n\n\n\n\nCode Reference\n\n\n\n\n\n\n\n\nArticles",
+    "crumbs": [
+      "User Guide",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "guide/install.html",
+    "href": "guide/install.html",
+    "title": "Installation",
+    "section": "",
+    "text": "Installation\nUsage\nContributing\nLicense",
+    "crumbs": [
+      "User Guide",
+      "Installation"
+    ]
+  },
+  {
+    "objectID": "guide/install.html#run-code-with-github-codespace",
+    "href": "guide/install.html#run-code-with-github-codespace",
+    "title": "Installation",
+    "section": "Run Code with Github Codespace",
+    "text": "Run Code with Github Codespace\nIf you want to run the code but don’t want to install anything on your local machine, use a Github Codespace.\n\nAt the root of the repo, click on the Code drop down button\n\nOn the right there is a tab called Codespaces.\nIf there is an existing Codespace, use that one\nIf there are no Codespaces, you can create a new one. The default codespace configuration has R and Rstudio set up for it (so probably use that one)\n\n\n\n\n\n\n\nYou can run Rstudio within a Codespace by:\n\nGo into the VS Code section called “Ports” in the Codespace\nFind the Rstudio port\nClick the Open in Browser button\n\n\n\n\n\n \n\nTroubleshooting\n\nIf you make a new Codespace you may need to install the R packages onto the machine again\nThe easiest way is to open the Rstudio port (see point 2 above)\nIn the Rstudio console execute renv::restore() and follow its instructions. It should download all the packages in the renv folder in this repo\n\n\nNow you can run this code in a browser window without needing to install any software on your computer 😎",
+    "crumbs": [
+      "User Guide",
+      "Installation"
+    ]
+  },
+  {
+    "objectID": "guide/install.html#variables",
+    "href": "guide/install.html#variables",
+    "title": "Installation",
+    "section": "Variables",
+    "text": "Variables\nThe variables produced by the scripts are used in the Sequencing and Variants Report. Here’s a list:\n\n\n\n\n\n\n\nVariables\nDescription\n\n\n\n\ncdc_class\nVariable indicating VOC (variant of concern) or VBM (variant being monitored)\n\n\nwho_name\nVariable indicating the WHO name\n\n\ndoh_variant_name\nGrouping variable in WA DOH Sequencing and Variant report\n\n\nhex_code\nHex color for doh_variant_name group\n\n\nlineage_reporting_group\nVariable indicating reporting group of lineage coded as: 1: Currently monitoring 2: Formerly monitoring 3: Formerly circulating, not monitored\n\n\nreport_table_name\nVariable name in numerical/pango form for table outputs",
+    "crumbs": [
+      "User Guide",
+      "Installation"
+    ]
+  },
+  {
+    "objectID": "articles/variants.html#libraries",
+    "href": "articles/variants.html#libraries",
+    "title": "Statewide COVID-19 Variant Plot",
+    "section": "1.1 Libraries",
+    "text": "1.1 Libraries\n\n\nCode\nlibrary(pacman)\np_load(\n  reticulate,\n  fs,\n  lubridate,\n  dplyr,\n  stringr,\n  magrittr,\n  readr,\n  httr,\n  readxl,\n  ggplot2,\n  ggtext,\n  ggthemes,\n  forcats,\n  here\n)\n# set path\nroot_path &lt;- here() %&gt;% str_remove(\"/docs\")",
+    "crumbs": [
+      "Articles",
+      "Statewide COVID-19 Variant Plot"
+    ]
+  },
+  {
+    "objectID": "articles/variants.html#pull-the-data",
+    "href": "articles/variants.html#pull-the-data",
+    "title": "Statewide COVID-19 Variant Plot",
+    "section": "1.2 Pull the data",
+    "text": "1.2 Pull the data\nFirst we can pull the example dataset which is in the repo. This dataset comes directly from the WA DOH COVID-19 dashboard.\n\npull the data\nprepare it so we can plot it\nuse dplyr::group_by() to get date range groups for the bars in the plot\nwe can also adjust some of the labels here so they have % attached to them\n\n\n\nCode\n(\n  variants &lt;- read_xlsx(file.path(root_path,\"data/Downloadable_variant.xlsx\")) %&gt;%\n    rename(c(\"start_date\" = `Start Date`,\n             \"end_date\" = `End Date`,\n             \"variant\" = `Variant`,\n             \"seven_day_count\" = `7-Day Sequence Count`,\n             \"seven_day_percent\" = `7-Day Percent`,\n             \"datetime\" = `Date/Time Updated`)) %&gt;%\n    # make the date ranges for the plot\n    # group each date range\n    group_by(start_date,end_date) %&gt;%\n    # assign each date range an id wtih dplyr::cur_group_id()\n    mutate(group_id = cur_group_id()) %&gt;%\n    # create labels for the groups\n    mutate(group_label = paste(start_date, \" - \\n\", end_date)) %&gt;%\n    # add % to the percent labels\n    mutate(percent_label = paste0(seven_day_percent,\"%\")) %&gt;%\n    ungroup()\n)",
+    "crumbs": [
+      "Articles",
+      "Statewide COVID-19 Variant Plot"
+    ]
+  },
+  {
+    "objectID": "articles/variants.html#make-the-plot",
+    "href": "articles/variants.html#make-the-plot",
+    "title": "Statewide COVID-19 Variant Plot",
+    "section": "1.3 Make the plot",
+    "text": "1.3 Make the plot\nNow we can make the plot. I used:\n\nfill=variant to get the colors stratified by variant\ngeom_bar() to make the bars and position=\"stack\" to stack different groups of variants per bar\nthe labs() function to adjust how the title looks and add my own html to it. Then I adjusted that title background under the theme(plot.title()) functions\nfor the legend I used theme(legend.background()) to adjust the colors and background formatting\n\n\n\nCode\n(\n  variants %&gt;%\n    ggplot(aes(y=seven_day_percent,\n               x=group_label,\n               fill=variant,\n               label=percent_label)) +\n    geom_bar(position=\"stack\", stat=\"identity\") +\n    geom_text(\n      aes(\n        label=ifelse(\n          seven_day_percent&gt;4.0,\n          percent_label,\n          \"\"\n          )\n        ),\n      size = 3,\n      position = position_stack(vjust = 0.5),\n      color=\"white\") +\n    scale_fill_viridis_d(na.value = \"red\") +\n    # Add percent sign \n    scale_y_continuous(labels = function(x) paste0(x, \"%\")) +\n    labs(\n         # Without the caption, the dates get cut off in the email..\n         caption = \"\",\n         x = \"Specimen Collection Date\",\n         y = \"\",\n         title = \"&lt;b&gt;&lt;span style = 'font-size:14pt;'&gt;Statewide COVID-19 Variants: Last 12 Weeks&lt;/span&gt;&lt;/b&gt;&lt;br&gt;This chart shows the percent of genetic mutations (or variants) of the COVID-19 virus by lineage for the past 6 weeks. Knowing how the virus is changing and which variants are found helps inform our public health response, which includes developing and recommending effective vaccines and treatments\") +\n    theme_bw() +\n    theme(\n      # take out the default background\n      strip.background  = element_blank(),\n      # Adjust where the legend is an put a sick background behind it\n      legend.position = 'right',\n      legend.background = element_rect(fill = \"lightblue\",\n                                       linetype = \"solid\",\n                                       color = \"darkblue\",\n                                       linewidth = 1),\n      legend.direction = \"vertical\", legend.box = \"horizontal\",\n      plot.title.position = \"plot\",\n      plot.title = element_textbox_simple(\n        maxwidth = unit(6,\"in\"),\n        hjust = .0005,\n        size = 10,\n        padding = margin(5.5, 5.5, 5.5, 5.5),\n        margin = margin(0, 0, 5.5, 0),\n        fill = \"cornsilk\"\n      )) +\n    # Again adjust where the legend should be and how it should be labeled\n    guides(fill = guide_legend(title = \"Variants\", \n                               title.position = \"top\",\n                               title.hjust = .5,\n                               byrow = TRUE,\n                               override.aes = list(size=5.5)),\n           size = guide_legend( )) \n)",
+    "crumbs": [
+      "Articles",
+      "Statewide COVID-19 Variant Plot"
+    ]
+  },
+  {
+    "objectID": "guide/index.html",
+    "href": "guide/index.html",
+    "title": "COVID-19 Lineages",
+    "section": "",
+    "text": "This repo contains scripts that will pull lineages of interest from the CDC and transform them.\nThe repo will output a .csv file called lineages.csv that will be updated whenever new lineages are updated from the CDC. You can refresh/fetch this git repo for new changes and the .csv file will be updated.\nTo run the process:\nCode\n\nR console\n\nsource(\"scripts/lineages_public_repo.R\")\nCode\n\nR console\n\nsource(\"scripts/lineages_classification_for_test_repo.R\")",
+    "crumbs": [
+      "User Guide"
+    ]
+  },
+  {
+    "objectID": "guide/index.html#variables",
+    "href": "guide/index.html#variables",
+    "title": "COVID-19 Lineages",
+    "section": "Variables",
+    "text": "Variables\nThe variables produced by the scripts are used in the Sequencing and Variants Report. Here’s a list:\n\n\n\n\n\n\n\nVariables\nDescription\n\n\n\n\ncdc_class\nVariable indicating VOC (variant of concern) or VBM (variant being monitored)\n\n\nwho_name\nVariable indicating the WHO name\n\n\ndoh_variant_name\nGrouping variable in WA DOH Sequencing and Variant report\n\n\nhex_code\nHex color for doh_variant_name group\n\n\nlineage_reporting_group\nVariable indicating reporting group of lineage coded as: 1: Currently monitoring 2: Formerly monitoring 3: Formerly circulating, not monitored\n\n\nreport_table_name\nVariable name in numerical/pango form for table outputs",
+    "crumbs": [
+      "User Guide"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n\nCode\n1 + 1\n\n\n[1] 2"
+  },
+  {
+    "objectID": "ref/lineages_classification.html",
+    "href": "ref/lineages_classification.html",
+    "title": "Lineages Classification Script",
+    "section": "",
+    "text": "Summary\n\nLabel variants of concern (VOC)\nAssign lineages to variant classification names\nAssign hex code colors to variant names",
+    "crumbs": [
+      "Code Reference",
+      "Lineages Classification Script"
+    ]
+  },
+  {
+    "objectID": "ref/lineages_classification.html#code-examples",
+    "href": "ref/lineages_classification.html#code-examples",
+    "title": "Lineages Classification Script",
+    "section": "2.1 Code Examples",
+    "text": "2.1 Code Examples\n\ncdc_classwho_namehex_codelineage_reporting_groupreport_table_namefind new sublineageswrite to csv\n\n\nThis variable indicates what lineage is a variant of concern (VOC). It parses the lineage string to determine which are VOCs and which are not.\n\nDetermine variants being monitored (VBM). This is done via regular expression (regex) - grepl()\nDetermine variants of concern (VOC) also by regex\nUse a case_when() function to assign lineages as VBM, VOC or neither\n\n\n\nCode\nlineage_data_1 &lt;- active_lineages %&gt;%\n  # 'cdc_class' variable code\n  \n  # if lineage extracted is in that list, assign to \"VBM\", else \"non VBM\"\n  mutate(\n    vbm_class = ifelse(\n      grepl(\n        c(\n            \"B.1.617.2|^AY.|^B\\\\.1\\\\.1\\\\.7$|^Q.|\n            B.1.351|B.1.351.|^P.1|^P.1.|^B.1.427|\n            ^B.1.429|B.1.525$|B.1.526$|B.1.617.1$|\n            B.1.617.3$|B.1.621$|B.1.621.1$|P.2\"), \n        lineage_extracted),\n      \"VBM\",\n      \"non VBM\"\n    ),\n   # assign variant of concern class\n   # if variant in that list, label \"VOC\", else \"non VOC\"\n   voc_class = ifelse(\n     grepl(c(\"B.1.1.529|XBB\"), lineage_extracted) |\n       grepl(c(\"B.1.1.529|XBB\"), description), \n     \"VOC\", \"non VOC\"),\n   # If adding in recombinant omicron\n   cdc_class = case_when( vbm_class == \"VBM\" ~ \"VBM\",\n                          voc_class == \"VOC\" ~ \"VOC\", \n                          TRUE  ~ \"non VOC/VBM\")\n   )\n\n\n\n\nHere’s an example of deriving the WHO name (Alpha, Delta, Omicron, etc). Note, this is just a small example, the list is much larger in the actual script\n\n\nCode\n# 'who_name' variable code\nmutate(who_name = case_when(\n  \n  # Variants being monitored (VBM)\n  \n  # Alpha\n  lineage_extracted == \"B.1.1.7\" | \n    grepl(\"^Q.\", lineage_extracted) ~ \"Alpha\",\n  \n  # exact match to \"B.1.1.7\" or starts with \"Q.\"\n  # Beta\n  lineage_extracted == \"B.1.351\" |\n    grepl(\"B.1.351\", lineage_extracted) ~ \"Beta\",   \n  \n  # exact match to \"B.1.351\" or starts with \"B.1.351.\"\n  # Gamma\n  lineage_extracted == \"P.1\" | \n    grepl(\"^P.1\",lineage_extracted) ~ \"Gamma\",\n  \n  # exact match to \"P.1\" or starts with \"P.1.\"\n  # Epsilon\n  grepl(\"^B.1.427|^B.1.429\", lineage_extracted) ~ \"Epsilon\",\n\n\n\n\nAssign the hex color codes to the variant classifications. The colors are assigned to match the CDC variant proportions plot\n\n\nCode\nlineage_data_2 &lt;- lineage_data_1 %&gt;%\n  mutate(hex_code = case_when(\n    doh_variant_name == \"Alpha\" ~ \"#8dd3c7\",\n    doh_variant_name == \"Beta\" ~ \"#ffffb3\",\n    doh_variant_name == \"Delta\" ~ \"#b39ddb\",\n    doh_variant_name == \"Epsilon\" ~ \"#bebada\",\n    doh_variant_name == \"Eta\" ~ \"#fb8072\",\n    doh_variant_name == \"Gamma\" ~ \"#fdb462\",\n    doh_variant_name == \"Iota\" ~ \"#b3de69\",\n    doh_variant_name == \"Kappa\" ~ \"#fccde5\",\n    doh_variant_name == \"Mu\" ~ \"#bc80bd\",\n    doh_variant_name == \"Zeta\" ~ \"#ffed6f\",\n    doh_variant_name == \"Other Omicron\" ~ \"#e26028\",\n    doh_variant_name == \"BA.1.1\" ~ \"#ff824c\",\n    doh_variant_name == \"BA.2\" ~ \"#9ccc65\",\n    doh_variant_name == \"BA.2.12.1\" ~ \"#7cb342\",\n    doh_variant_name == \"BA.2.75\" ~ \"#d4e157\",\n    doh_variant_name == \"BA.2.75.2\" ~ \"#c0ca33\",\n    doh_variant_name == \"BA.4\" ~ \"#ffd54f\",\n    doh_variant_name == \"BA.4.6\" ~ \"#ffb300\",\n    doh_variant_name == \"BA.5\" ~ \"#80cbc4\",\n    doh_variant_name == \"BF.7\" ~ \"#81d4fa\",\n    doh_variant_name == \"BF.11\" ~ \"#29b6f6\",\n    doh_variant_name == \"BN.1\" ~ \"#9e9d24\",\n    doh_variant_name == \"BA.5.2.6\" ~ \"#009688\",\n    doh_variant_name == \"BQ.1\" ~ \"#006064\",\n    doh_variant_name == \"BQ.1.1\" ~ \"#00838f\",\n    doh_variant_name == \"XBB\" ~ \"#9fa8da\",\n    doh_variant_name == \"XBB.1.5\" ~ \"#5363bb\",\n    TRUE ~ \"#797979\"\n    )\n  )\n\n\n\n\nFind the lineage reporting group by assigning variants in the current monitoring list or the former monitoring list.\n\n\nCode\n# These two lists should be mutually exclusive\ncurrently_monitoring_list &lt;- c( \"Other Omicron\",\n                                \"BA.1.1\",\n                                \"BA.2\",\n                                \"BA.2.12.1\",\n                                \"BA.2.75\",\n                                \"BA.2.75.2\",\n                                \"BA.4\",\n                                \"BA.4.6\",\n                                \"BA.5\",\n                                \"BF.7\",\n                                \"BF.11\",\n                                \"BN.1\",\n                                \"BA.5.2.6\",\n                                \"BQ.1\",\n                                \"BQ.1.1\",\n                                \"XBB\",\n                                \"XBB.1.5\",\n                                \"Other\")\n\nformerly_monitoring_list &lt;- c(\"Alpha\",\n                              \"Beta\",\n                              \"Delta\",\n                              \"Epsilon\",\n                              \"Eta\",\n                              \"Gamma\",\n                              \"Iota\",\n                              \"Kappa\",\n                              \"Mu\",\n                              \"Zeta\")\n\n\n\n\nCode\nlineage_data_3 &lt;- lineage_data_2 %&gt;%\n  mutate(lineage_reporting_group = case_when(\n    doh_variant_name %in% currently_monitoring_list ~ 1, \n    doh_variant_name %in% formerly_monitoring_list ~ 2, \n    TRUE ~ 3))\n\n\n\n\n\n\nCode\nlineage_data_final &lt;- lineage_data_3 %&gt;%\n  mutate(doh_variant_name_tables = case_when(\n    doh_variant_name == \"Delta\" ~ \"B.1.617.2\",\n    doh_variant_name == \"Alpha\" ~ \"B.1.1.7\",\n    doh_variant_name == \"Beta\" ~ \"B.1.351\",\n    doh_variant_name == \"Epsilon\" ~ \"B.1.427 / B.1.429\",\n    doh_variant_name == \"Eta\" ~ \"B.1.525\",\n    doh_variant_name == \"Iota\" ~ \"B.1.526\",\n    doh_variant_name == \"Kappa\" ~ \"B.1.617.1\",\n    doh_variant_name == \"Gamma\" ~ \"P.1\",\n    doh_variant_name == \"Mu\" ~ \"B.1.621\",\n    doh_variant_name == \"Zeta\" ~ \"P.2\",\n    doh_variant_name == \"Other Omicron\" ~ \"B.1.1.529\",\n    TRUE ~ doh_variant_name))\n\n\n\n\n\n\nCode\n#read in last days file\nprevious_lineage_data &lt;- read_csv(\"lineage_classifications.csv\")\n\nlineage_data_final$lineage_extracted &lt;- as.character(lineage_data_final$lineage_extracted)\nprevious_lineage_data$lineage_extracted   &lt;- as.character(previous_lineage_data$lineage_extracted)\n\nlength(previous_lineage_data)\nlength(lineage_data_final)\n\nnrow(previous_lineage_data)\nnrow(lineage_data_final)\n\n#new_lineage_data &lt;-anti_join(previous_lineage_data, lineage_data_final)\n\n#list of ones not in previous list\nnew_lineage_data &lt;- lineage_data_final %&gt;%\n  filter(!lineage_extracted %in% previous_lineage_data$lineage_extracted)\n\nnew_lineage_data\n\n\n\n\nAnd finally write the results to a csv that can be used to make plots and reports\n\n\nCode\nwrite.csv(lineage_data_final,\n          file=\"lineage_classifications.csv\",\n          row.names=FALSE)",
+    "crumbs": [
+      "Code Reference",
+      "Lineages Classification Script"
+    ]
+  }
+]
