@@ -2,7 +2,7 @@
 #CDC: https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-classifications.html and https://covid.cdc.gov/covid-data-tracker/#variant-proportions
 #WHO: https://www.who.int/activities/tracking-SARS-CoV-2-variants
 
-################################
+#################################
 #   Load packages
 ################################
 # 
@@ -131,6 +131,8 @@ lineage_doh_variant_name <- active_lineages %>%
     #KP.2 Alias of B.1.1.529.2.86.1.1.11.1.2
     grepl("^KP.2", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.2", description) ~ "KP.2",
     
+    #MC.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1
+    lineage_extracted == "MC.1" ~ "MC.1",
     #KP.3.1.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1
     grepl("^KP.3.1.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1", description) ~ "KP.3.1.1",
     #KP.3 Alias of B.1.1.529.2.86.1.1.11.1.3
@@ -167,8 +169,12 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("^KW.1.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.28\\.1\\.1\\.1\\.", description) ~ "KW.1.1",
     #JN.1.32 Alias of B.1.1.529.2.86.1.1.32
     grepl("^JN.1.32", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.32", description) ~ "JN.1.32",
+    
+    #LB.1.3.1 Alias of B.1.1.529.2.86.1.1.9.2.1.3.1
+    grepl("LB.1.3.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.9\\.2\\.1\\.3\\.1", description) ~ "LB.1.3.1",
     #LB.1 Alias of B.1.1.529.2.86.1.1.9.2.1
     grepl("LB.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.9\\.2\\.1", description) ~ "LB.1",
+    
     #KV.2 Alias of B.1.1.529.2.86.1.1.4.5.2
     grepl("^KV.2", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.4\\.5\\.2", description) ~ "KV.2",
     #JN.1.7 Alias of B.1.1.529.2.86.1.1.7
@@ -216,6 +222,8 @@ lineage_doh_variant_name <- active_lineages %>%
     lineage_extracted == "XBB.1.16.1" | grepl("XBB\\.1\\.16\\.1\\.", description) ~ "XBB.1.16.1",
     #XBB.1.16.11
     grepl("^XBB.1.16.11", lineage_extracted) | grepl("XBB\\.1\\.16\\.11", description) ~ "XBB.1.16.11",
+    #XDK sorts itself into XBB.1.16.11 due to description and sorting factors.
+    lineage_extracted == "XDK" ~ "Other",
     #HF.1 
     grepl("^HF.1\\.", lineage_extracted) | grepl("XBB\\.1\\.16\\.13\\.1", description) ~ "HF.1",
     #XBB.1.16.15
@@ -310,7 +318,7 @@ lineage_doh_variant_name <- active_lineages %>%
     #Other variants starting with 'XB.' or recombinant 'X' group in "Other"
     #grepl("XB.", lineage_extracted) ~ "Other",
     grepl("^X[A|C-Z]", lineage_extracted)| grepl("Recombinant", description)~ "Other",
-
+    
     ########################   
     
     #Old Variants Being Monitored (VBM)
@@ -540,53 +548,118 @@ if(Sys.getenv("network_path") != ""){
 }
 
 
-###
 ###########################
-#### Wastewater team additions
+# Wastewater Specifications
 ########################### 
 
-#Remove hex_code column from main data_set (will be added later)
-ww_lineage_data_final <- subset( lineage_data_final, select = -hex_code )
+###########################
+# PART 1: Alter previous data frame values from "Other" to "Ancestral" and include "Recombinat" as a value
+###########################
 
+### Remove hex_code column from main data_set (will be added later)
+ww_lineage_data <- subset(lineage_data_final, select = -hex_code )
 
-#Wastewater variant name (derived from doh_variant_name)
-ww_lineage_data <- ww_lineage_data_final %>%
-  mutate(wastewater_variant_name = case_when(doh_variant_name == "XEC" ~ "XEC",
-                                             doh_variant_name == "XDV.1" ~ "XDV.1",
-                                             doh_variant_name == "XDP" ~ "XDP",
-                                             doh_variant_name == "XBB" ~ "XBB",
-                                             grepl("^Recombinant", description) ~ "Recombinant",
-                                             doh_variant_name == "Other" ~ "Ancestral",
-                                             TRUE ~ doh_variant_name))
-#Add in unreportable line
-# Create vectors for dataframe
+### Change doh_variant_name to wastewater_variant_name as well as reassign variants to include "Recombinant" and "Ancestral" as values within the column
+## Regrouping variants sorted as "Other" in previous data to their parent lineage IF available
+ww_lineage_data_1 <- ww_lineage_data %>%
+  mutate(wastewater_variant_name = case_when(
+    doh_variant_name == "XEC" ~ "XEC",
+    doh_variant_name == "XDV.1" ~ "XDV.1",
+    doh_variant_name == "XDP" ~ "XDP",
+    doh_variant_name == "XBB" ~ "XBB",
+    grepl("^Recombinant", description) ~ "Recombinant",
+    
+    # GD.# variants- Alias' XBB.1.9.3.# --> lineage extracted is XBB.1.9.3 and assigned as XBB in doh_variant_name
+    grepl("^GD.", lineage_extracted) | grepl("XBB\\.1\\.9\\.3\\.", description) ~ "XBB", 
+    # FP.# variants- Alias' XBB.1.11.1.# --> lineage extracted is XBB.1.11.1 and assigned as XBB in doh_variant_name
+    grepl("^FP.", lineage_extracted) | grepl("XBB\\.1\\.11\\.1\\.", description) ~ "XBB", 
+    # GA.# variants- Alias' XBB.1.17.1.# --> lineage extracted is XBB.1.17.1 and assigned as XBB in doh_variant_name
+    grepl("^GA.", lineage_extracted) | grepl("XBB\\.1\\.17\\.1\\.", description) ~ "XBB", 
+    # FE.1 variant- Alias' of XBB.1.18.1.1 --> lineage extracted is XBB.1.18.1 and assigned as XBB in doh_variant_name
+    lineage_extracted =="FE.1" ~ "XBB", 
+    # FE.1.2 variant- Alias' of XBB.1.18.1.1.2 --> lineage extracted is XBB.1.18.1 and assigned as XBB in doh_variant_name
+    lineage_extracted =="FE.1.2" ~ "XBB", 
+    # HE.1 variant- Alias' of XBB.1.18.1.1.1.1.1 --> lineage extracted is XBB.1.18.1 and assigned as XBB in doh_variant_name
+    lineage_extracted =="HE.1" ~ "XBB", 
+    # HE.2 variant- Alias' of XBB.1.18.1.1.1.1.2 --> lineage extracted is XBB.1.18.1 and assigned as XBB in doh_variant_name
+    lineage_extracted =="HE.2" ~ "XBB", 
+    # GW.# variants- Alias' XBB.1.19.1.# --> lineage extracted is XBB.1.19.1 and assigned as XBB in doh_variant_name
+    grepl("^GW.", lineage_extracted) | grepl("XBB\\.1\\.19\\.1\\.", description) ~ "XBB", 
+    # KE.1 variant- Alias' of XBB.1.19.1.5.1.1.1 --> lineage extracted is XBB.1.19.1 and assigned as XBB in doh_variant_name
+    lineage_extracted =="KE.1" ~ "XBB", 
+    # KE.2 variant- Alias' of XBB.1.19.1.5.1.1.2 --> lineage extracted is XBB.1.19.1 and assigned as XBB in doh_variant_name
+    lineage_extracted =="KE.2" ~ "XBB", 
+    # KE.3 variant- Alias' of XBB.1.19.1.5.1.1.3 --> lineage extracted is XBB.1.19.1 and assigned as XBB in doh_variant_name
+    lineage_extracted =="KE.3" ~ "XBB", 
+    # FY.# variants- Alias' XBB.1.22.1.# --> lineage extracted is XBB.1.22.1 and assigned as XBB in doh_variant_name
+    grepl("^FY.", lineage_extracted) | grepl("XBB\\.1\\.22\\.1\\.", description) ~ "XBB", 
+    # HU.# variants- Alias' XBB.1.22.2.# --> lineage extracted is XBB.1.22.2 and assigned as XBB in doh_variant_name
+    grepl("^HU.", lineage_extracted) | grepl("XBB\\.1\\.22\\.2\\.", description) ~ "XBB", 
+    # FW.# variants- Alias' XBB.1.28.1.# --> lineage extracted is XBB.1.28.1 and assigned as XBB in doh_variant_name
+    grepl("^FW.", lineage_extracted) | grepl("XBB\\.1\\.28\\.1\\.", description) ~ "XBB", 
+    # HB.1 variant- Alias' XBB.1.34.2.1 --> lineage extracted is XBB.1.34.2 and assigned as XBB in doh_variant_name
+    grepl("^HB.1", lineage_extracted) | grepl("XBB\\.1\\.34\\.2\\.1", description) ~ "XBB", 
+    # JC.# variants- Alias' XBB.1.41.1.# --> lineage extracted is XBB.1.41.1 and assigned as XBB in doh_variant_name
+    grepl("^JC.", lineage_extracted) | grepl("XBB\\.1\\.41\\.1\\.", description) ~ "XBB", 
+    # JW.# variants- Alias' XBB.1.41.3.# --> lineage extracted is XBB.1.41.3 and assigned as XBB in doh_variant_name
+    grepl("^JW.", lineage_extracted) | grepl("XBB\\.1\\.41\\.3\\.", description) ~ "XBB", 
+    # GH.1 variant- Alias of XBB.2.6.1.1 --> lineage extracted is XBB.2.6.1 and assigned as XBB in doh_variant_name
+    lineage_extracted =="GH.1" ~ "XBB", 
+    # KR.2 variant- Alias' of LT.1 & JN.1.1.3.1 --> lineage extracted is LT.1 and assigned as JN.1 in doh_variant_name
+    lineage_extracted =="KR.2" ~ "JN.1",
+    
+    #Other variants starting with 'X' group into "Recombinant"
+    grepl("^X[A|C-Z]", lineage_extracted) ~ "Recombinant",
+    grepl("^XBL.", lineage_extracted) ~ "Recombinant",
+    grepl("^XBK.1", lineage_extracted) ~ "Recombinant",
+    grepl("^XBJ.", lineage_extracted) ~ "Recombinant",
+    grepl("^XBF.", lineage_extracted) ~ "Recombinant",
+    grepl("^XBC.", lineage_extracted) | grepl("XBC\\.", description) ~ "Recombinant",
+    grepl("^GL.", lineage_extracted) ~ "Recombinant",
+    
+    doh_variant_name == "Other" ~ "Ancestral",
+    TRUE ~ doh_variant_name))
+
+###########################
+# PART 2: Create dataframe with "Unreportable" under "lineage_extracted" column to be merged with main dataframe 
+###########################
+
+### Vector specifications
 lineage_extracted <- c("Unreportable")
 description <- c("")
 status <- c("")
 doh_variant_name <- c("Unreportable")
 who_name <- c("N/A")
-hex_code <- c("#eeeeee")
 doh_variant_name_tables <- c("")
 wastewater_variant_name <- c("Unreportable")
-# Unreportable dataframe creation
-unreportable <- data.frame(lineage_extracted, description, status, doh_variant_name, who_name, hex_code, doh_variant_name_tables, wastewater_variant_name)
-#Merge unreportable dataframe to main dataframe
-ww_lineage_data_1 <- full_join(unreportable, ww_lineage_data)
 
-#Wastewater hex codes
-wastewater_path <- Sys.getenv("wastewater_path")
+### Unreportable dataframe creation 
+unreportable <- data.frame(lineage_extracted, description, status, doh_variant_name, who_name, doh_variant_name_tables, wastewater_variant_name)
 
-hx <- read_excel(file.path(wastewater_path,"Report_and_Dashboard/DataRequests/Sequencing/Lineage_Color_Codes.xlsx"))
+### Merge the unreportable dataframe to the main dataframe
+ww_lineage_data_2 <- full_join(unreportable, ww_lineage_data_1)
 
-ww_hx= hx[,c(2,5)] 
-colnames(ww_hx)[colnames(ww_hx) == 'doh_variant_name'] <- 'wastewater_variant_name'
-
-
-#Join hex code & lineage sheet with lineage_data_1 
-ww_lineage_data_2 = left_join(ww_lineage_data_1, ww_hx, by = "wastewater_variant_name", copy = FALSE) %>%
-  distinct(.keep_all = TRUE) 
 ###########################
-# Create csv for Wastewater team
+# PART 3: Alter hex_code dataframe to meet Wastewater specifications and reorder columns 
+###########################
+
+### Use final_hex_code list derived from above code and duplicate it to be applied toward wastewater data
+ww_final_hex_code_list<-data.frame(final_hex_code_list)
+
+### Change column name from "doh_variant_name" to "wastewater_variant_name" in order to merge dataframes
+colnames(ww_final_hex_code_list)[colnames(ww_final_hex_code_list) == 'doh_variant_name'] <- 'wastewater_variant_name'
+
+### Join hex code & wastewater dataframe
+ww_lineage_data_3 = left_join(ww_lineage_data_2, ww_final_hex_code_list, by = "wastewater_variant_name", copy = FALSE) %>%
+  distinct(.keep_all = TRUE) 
+
+### Reorder columns and removing "doh_variant_name_tables" column due to it being exclusively used by SKCPH in previous section  
+ww_lineage_data_final <- ww_lineage_data_3[, c("lineage_extracted", "description", "status", "wastewater_variant_name", "doh_variant_name", "hex_code", "who_name", "lineage_reporting_group")] # leave the row index blank to keep all rows
+
+
+###########################
+# PART 4: Create csv for Wastewater team
+############################ 
 save(lineage_data_final, file=file.path(network_path,"Data_Objects/Lineages/lineage_classifications.rData"))
 load(file.path(network_path,"Data_Objects/Lineages/lineage_classifications.rData"))
 
