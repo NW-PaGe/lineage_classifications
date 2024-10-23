@@ -1165,11 +1165,14 @@ LP.4,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.4, S:T572I, ORF8:A65V",Active
 KP.1.1.4,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.4, S:R214H, C11866T, C23929T,from sars-cov-2-variants/lineage-proposals#1593",Active
 KP.1.1.5,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5, S:F59S",Active
 MU.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.1, S:T572I, ORF1a:P4339T, ORF1b:T1902I",Active
+KP.1.1.6,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.6, S:S31F, after ORF1b:L2213F, from #2649",Active
+NE.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.6.1, S:K478T, S:F32S",Active
 KP.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.1.2, S:T572I, from sars-cov-2-variants/lineage-proposals#1097",Active
 KP.2,"Alias of B.1.1.529.2.86.1.1.11.1.2, S:R346T on JN.1.11.1 polytomy, from sars-cov-2-variants/lineage-proposals#1089",Active
 KP.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.1, S:Q1201K, from sars-cov-2-variants/lineage-proposals#1440",Active
 KP.2.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.2, S:F59L, S:K1266R, from sars-cov-2-variants/lineage-proposals#1446",Active
 KP.2.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.2.1, S:T22N, ORF1b:K2660R",Active
+KP.2.2.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.2.2, S:T572I",Active
 KP.2.3,"Alias of B.1.1.529.2.86.1.1.11.1.2.3, S:H146Q, ORF3a:K67N, S:31del, from sars-cov-2-variants/lineage-proposals#1459",Active
 KP.2.3.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.1, S:A475V, from sars-cov-2-variants/lineage-proposals#1548",Active
 KP.2.3.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.2, S:G184V",Active
@@ -1179,6 +1182,7 @@ KP.2.3.5,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.5, S:K535T, A1087G",Active
 KP.2.3.6,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.6, S:T572I on a C28714T branch",Active
 KP.2.3.7,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.7, ORF1a:T2121A",Active
 MW.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.7.1, S:Q239R, ORF1a:I785V, ORF6:L16I",Active
+KP.2.3.8,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.8, S:T572, without C28714T",Active
 KP.2.4,"Alias of B.1.1.529.2.86.1.1.11.1.2.4, S:T250N, from sars-cov-2-variants/lineage-proposals#1524",Active
 KP.2.5,"Alias of B.1.1.529.2.86.1.1.11.1.2.5, S:N185D, from sars-cov-2-variants/lineage-proposals#1527",Active
 KP.2.6,"Alias of B.1.1.529.2.86.1.1.11.1.2.6, S:W64R, S:F32del",Active
@@ -1206,6 +1210,7 @@ KP.2.25.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.25.1, S:I934V, S:N30K, China",Acti
 KP.2.25.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.25.2, S:K558N",Active
 KP.2.25.3,"Alias of B.1.1.529.2.86.1.1.11.1.2.25.2, S:P793S",Active
 KP.2.26,"Alias of B.1.1.529.2.86.1.1.11.1.2.26, S:T22N, S:S31P, S:K478T (on T25039C branch)",Active
+KP.2.27,"Alias of B.1.1.529.2.86.1.1.11.1.2.27, S:T572I, C3811T, C9857T, A23080G",Active
 KP.3,"Alias of B.1.1.529.2.86.1.1.11.1.3, S:Q493E, from sars-cov-2-variants/lineage-proposals#1410",Active
 KP.3.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1, G15372T, A19722G",Active
 KP.3.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1, ORF1a:S4286C, C12616T, S:S31del, Spain, from sars-cov-2-variants/lineage-proposals#1563",Active
@@ -1232,7 +1237,7 @@ MC.14,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.14, S:T259R",Active
 MC.15,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.15, S:K182R",Active
 MC.16,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.16, G2890A",Active
 MC.17,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.17, S:A575S, C5512T",Active
-MC.18,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.18, S:T259R",Active
+MC.18,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.18, S:N185D, ORF1a:G465S, Spain/Canada",Active
 KP.3.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.2, S:S151I，from sars-cov-2-variants/lineage-proposals#1589",Active
 KP.3.1.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.3, S:S31F,from sars-cov-2-variants/lineage-proposals#1576",Active
 KP.3.1.4,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.4, ORF1b:P1675S,from #2627",Active
@@ -1246,6 +1251,7 @@ MK.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.6.3, S:R346T, S:H445R",Active
 KP.3.1.7,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.7, S:L84I, from #2709",Active
 KP.3.1.8,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.8, S:F59S, A9235G, Georgia",Active
 MY.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.8.1, S:P174S, ORF3a:T64I, Georgia",Active
+KP.3.1.9,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.9, S:N148S, S:P174S",Active
 KP.3.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.2, A2611C, C22858T",Active
 KP.3.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.1, S:A263V, Australia/Singapore, from sars-cov-2-variants/lineage-proposals#1556",Active
 KP.3.2.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.2, S:W258R",Active
@@ -4301,6 +4307,8 @@ XEH,"Recombinant lineage of KP.1.1.3, KP.3 (breakpoint: 22599-23039), from #2790
 XEJ,"Recombinant lineage of JN.1, LF.1.1.1 (breakpoint: 6574-16550), from #2786",Active
 XEK,"Recombinant lineage of KP.2.3, XEC (breakpoint: 9286-15402), from #2774",Active
 XEL,"Recombinant lineage of KS.1.1.2, JN.1 (breakpoint: 22929-24820), from #2751",Active
+XEM,"Recombinant lineage of KS.1, KP.3.3.1 (breakpoint: 22600-23038), from sars-cov-2-variants/lineage-proposals#2105",Active
+XEN,"Recombinant lineage of KP.1.1.6, JN.1.11.1 (breakpoint: 22620-24818), from #2791",Active
 A.2.1,Withdrawn: Lineage with sequences predominantly from Panama,Withdrawn
 A.8,Withdrawn: Indian lineage merged with A.9,Withdrawn
 A.10,Withdrawn: Spanish lineage reassigned to A.5,Withdrawn
