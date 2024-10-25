@@ -1172,6 +1172,9 @@ KP.2,"Alias of B.1.1.529.2.86.1.1.11.1.2, S:R346T on JN.1.11.1 polytomy, from sa
 KP.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.1, S:Q1201K, from sars-cov-2-variants/lineage-proposals#1440",Active
 KP.2.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.2, S:F59L, S:K1266R, from sars-cov-2-variants/lineage-proposals#1446",Active
 KP.2.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.2.1, S:T22N, ORF1b:K2660R",Active
+NH.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.2.1.1, S:K478T (rev), S:K97E, on ORF1a:T1794I branch",Active
+NH.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.2.1.2, S:K478Q, on ORF1a:T1794I branch",Active
+NH.3,"Alias of B.1.1.529.2.86.1.1.11.1.2.2.1.3, S:A475V, ORF1a:A776S",Active
 KP.2.2.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.2.2, S:T572I",Active
 KP.2.3,"Alias of B.1.1.529.2.86.1.1.11.1.2.3, S:H146Q, ORF3a:K67N, S:31del, from sars-cov-2-variants/lineage-proposals#1459",Active
 KP.2.3.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.1, S:A475V, from sars-cov-2-variants/lineage-proposals#1548",Active
@@ -1183,6 +1186,8 @@ KP.2.3.6,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.6, S:T572I on a C28714T branch",A
 KP.2.3.7,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.7, ORF1a:T2121A",Active
 MW.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.7.1, S:Q239R, ORF1a:I785V, ORF6:L16I",Active
 KP.2.3.8,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.8, S:T572, without C28714T",Active
+KP.2.3.9,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.9, S:Q173R",Active
+NG.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.9.1, S:T22N, ORF1a:I1215M, Brazil",Active
 KP.2.4,"Alias of B.1.1.529.2.86.1.1.11.1.2.4, S:T250N, from sars-cov-2-variants/lineage-proposals#1524",Active
 KP.2.5,"Alias of B.1.1.529.2.86.1.1.11.1.2.5, S:N185D, from sars-cov-2-variants/lineage-proposals#1527",Active
 KP.2.6,"Alias of B.1.1.529.2.86.1.1.11.1.2.6, S:W64R, S:F32del",Active
@@ -1341,6 +1346,7 @@ JN.1.16.3,"Alias of B.1.1.529.2.86.1.1.16.3, S:T572I",Active
 JN.1.16.4,"Alias of B.1.1.529.2.86.1.1.16.4, S:Q493E, ORF1a:G400S, ORF7a:F59K, East Asia",Active
 MT.1,"Alias of B.1.1.529.2.86.1.1.16.4.1, S:S31P, N:P279S",Active
 JN.1.16.5,"Alias of B.1.1.529.2.86.1.1.16.5, S:T22N, S:Q493E",Active
+NF.1,"Alias of B.1.1.529.2.86.1.1.16.5.1, S:S31P",Active
 JN.1.17,"Alias of B.1.1.529.2.86.1.1.17, S:A222V, USA",Active
 JN.1.18,"Alias of B.1.1.529.2.86.1.1.18, S:R346T, directly on JN.1 polytomy, from sars-cov-2-variants/lineage-proposals#1089",Active
 JN.1.18.1,"Alias of B.1.1.529.2.86.1.1.18.1, S:T250N, from sars-cov-2-variants/lineage-proposals#1414",Active
