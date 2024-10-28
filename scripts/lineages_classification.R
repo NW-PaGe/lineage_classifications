@@ -625,13 +625,13 @@ ww_lineage_data_1 <- ww_lineage_data %>%
 ###########################
 
 ### Vector specifications
-lineage_extracted <- c("Unreportable")
-description <- c("")
+lineage_extracted <- c("unreportable")
+description <- c("For variants Freyja detected below threshold in WW")
 status <- c("")
-doh_variant_name <- c("Unreportable")
+doh_variant_name <- c("unreportable")
 who_name <- c("N/A")
 doh_variant_name_tables <- c("")
-wastewater_variant_name <- c("Unreportable")
+wastewater_variant_name <- c("unreportable")
 
 ### Unreportable dataframe creation 
 unreportable <- data.frame(lineage_extracted, description, status, doh_variant_name, who_name, doh_variant_name_tables, wastewater_variant_name)
@@ -660,9 +660,9 @@ ww_lineage_data_final <- ww_lineage_data_3[, c("lineage_extracted", "description
 ###########################
 # PART 4: Create csv for Wastewater team
 ############################ 
-save(lineage_data_final, file=file.path(network_path,"Data_Objects/Lineages/lineage_classifications.rData"))
-load(file.path(network_path,"Data_Objects/Lineages/lineage_classifications.rData"))
+save(ww_lineage_data_final, file=file.path(network_path,"Data_Objects/Lineages/ww_lineage_classifications.rData"))
+load(file.path(network_path,"Data_Objects/Lineages/ww_lineage_classifications.rData"))
 
-write.csv(lineage_data_final, file=file.path(wastewater_path,"Wastewater Surveillance/R Scripts/lineage_classifications.csv"), row.names=FALSE)
+write.csv(ww_lineage_data_final, file=file.path(wastewater_path,"Wastewater Surveillance/R Scripts/ww_lineage_classifications.csv"), row.names=FALSE)
 
 ########################### 
