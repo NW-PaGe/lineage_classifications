@@ -1,5 +1,5 @@
 # Description
-This repo contains scripts that will pull lineages of interest from the CDC and transform them. It also contains example datasets.
+This repo contains scripts that will pull SARS-COV-2 lineages of interest from CDC's repo and transform them. It also contains example datasets.
 
 For more information on how the scripts work, plots, and guides on how to pull data from the repo, please open the github page here:
 
@@ -12,7 +12,7 @@ The variables produced by the scripts are used in the Sequencing and Variants Re
 | cdc_class               | Variable indicating VOC (variant of concern) or VBM (variant being monitored)                                                                    |
 | who_name                | Variable indicating the WHO name                                                                                                                 |
 | doh_variant_name        | Grouping variable in WA DOH Sequencing and Variant report                                                                                        |
-| hex_code                | Hex color for doh_variant_name group                                                                                                             |
+| hex_code                | Hex color assigned by CDC in Nowcast for doh_variant_name group                                                                                  |
 | lineage_reporting_group | Variable indicating reporting group of lineage coded as:   1: Currently monitoring 2: Formerly monitoring 3: Formerly circulating, not monitored |
 | report_table_name       | Variable name in numerical/pango form for table outputs                                                                                          |
 
