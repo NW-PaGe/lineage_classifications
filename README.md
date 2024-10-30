@@ -1,11 +1,11 @@
 # Description
-This repo contains scripts that will pull SARS-COV-2 lineages of interest from CDC's repo and transform them.
+This repo contains scripts that will pull SARS-COV-2 lineages of interest from CDC's repo, transform the data for Washington State DOH reporting purposes, and then output the resulting lineage classifications dataset. **The dataset will be produced biweekly and can be found in the data folder. See instructions below on how to pull the dataset in R or Python.**
 
 For more information on how the scripts work, plots, and guides on how to pull data from the repo, please open the github page here:
 
 https://nw-page.github.io/lineage_classifications/ 
 
-## How to read in the classifications dataset:
+## How to read in the lineage classifications dataset:
 
 In R:
 
@@ -33,15 +33,6 @@ The variables produced by the scripts are used in the Sequencing and Variants Re
 | lineage_reporting_group | Variable indicating reporting group of lineage coded as:   1: Currently monitoring 2: Formerly monitoring 3: Formerly circulating, not monitored |
 | report_table_name       | Variable name in numerical/pango form for table outputs                                                                                          |
 
-# Table of Contents
-
--  [Installation](#installation)
--  [Usage](#usage)
--  [Contributing](#contributing)
-
-# Prerequisites
--  R version 4.0.0 or higher
--  Windows, macOS, or Linux operating system
 
 # Installation
 This repo can be installed to your local machine or you can run code using a Github Codespace. **If you want to run the code but don't want to install anything on your local machine, [use a Github Codespace](#run-code-with-github-codespace)**
@@ -77,26 +68,4 @@ This repo can be installed to your local machine or you can run code using a Git
   renv::restore()
   ```
 
-# Usage
-
-The repo will output a `.csv` file called `lineages.csv` that will be updated whenever new lineages are updated from the CDC. You can refresh/fetch this git repo for new changes and the `.csv` file will be updated
-
-To run the process:
-
-1. Run lineages script:
-
-  ```R
-  source("scripts/lineages_public_repo.R")
-  ```
-2. Run the lineages classification script:
-  ```R
-  source("scripts/lineages_classification.R")
-  ```
-
-# Contributing
-
-
-
-
-
-
+There are two main scripts; the `lineages_public_repo.R` that pulls in SARS-CoV2 lineages from the CDC and the `lineages_classification.R` script that will transform those lineages for Washington State DOH reporting purposes. The `lineages_public_repo.R` script runs on a scheduled Github Action every morning and outputs data into the data folder here - `data/lineages.csv`. The `lineages_classifications.R` script outputs a csv into the data folder here - `data/lineages_classifications.csv`
