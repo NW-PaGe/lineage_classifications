@@ -51,13 +51,17 @@ rsconnect/
 # ignore regex for secrets
 secrets_key
 
-# ignore all csvs except the ones we produce
+# Ignore all CSV files in the data directory
 *.csv
-!*lineages.csv
-!*lineages_classifications.csv
+
+# Do not ignore specific CSV files in the data directory
+!data/lineages.csv
+!data/lineages_classifications.csv
+# !lineages_classifications.csv
+
 
 *.xlsx
-!*Downloadable_variant.xlsx
+!data/Downloadable_variant.xlsx
 
 # ignore WSL/Windows Zone Identifier files
 **/*Zone.Identifier
