@@ -1,9 +1,26 @@
 # Description
-This repo contains scripts that will pull SARS-COV-2 lineages of interest from CDC's repo and transform them. It also contains example datasets.
+This repo contains scripts that will pull SARS-COV-2 lineages of interest from CDC's repo and transform them.
 
 For more information on how the scripts work, plots, and guides on how to pull data from the repo, please open the github page here:
 
 https://nw-page.github.io/lineage_classifications/ 
+
+## How to read in the classifications dataset:
+
+In R:
+
+```r
+lineage_classifications <- read.csv("https://raw.githubusercontent.com/NW-PaGe/lineage_classifications/refs/heads/main/data/lineage_classifications.csv")
+```
+
+In Python:
+
+```python
+import polars as pl
+
+lineage_classifications <- pl.read_csv("https://raw.githubusercontent.com/NW-PaGe/lineage_classifications/refs/heads/main/data/lineage_classifications.csv")
+```
+
 
 # Variables Produced
 The variables produced by the scripts are used in the Sequencing and Variants Report. Here's a list:
