@@ -536,8 +536,10 @@ new_lineage_data
 # output to github repo
 write_csv(lineage_data_final,file="data/lineage_classifications.csv")
 
+lineage_path <- Sys.getenv("lineage_path")
+
 # output to internal doh network drive
-if(Sys.getenv("network_path") != ""){
+if(Sys.getenv("lineage_path") != ""){
   print("writing lineage_classifications.csv to network path")
   write_csv(lineage_data_final,
             file = file.path(
