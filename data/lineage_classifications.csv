@@ -1347,7 +1347,7 @@ KP.6,"Alias of B.1.1.529.2.86.1.1.11.1.6, S:R346I, from sars-cov-2-variants/line
 JN.1.11.2,"Alias of B.1.1.529.2.86.1.1.11.2, S:R346T, S:F59L, India, from sars-cov-2-variants/lineage-proposals#1089",Active,JN.1,Omicron,#660099,1,JN.1
 NJ.1,"Alias of B.1.1.529.2.86.1.1.11.2.1, S:F456L, S:K478T (rev), ORF3a:K16N, India, from sars-cov-2-variants/lineage-proposals#2068",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.12,"Alias of B.1.1.529.2.86.1.1.12, S:F456V, ORF7a:A8T, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1,Omicron,#660099,1,JN.1
-JN.1.13,"Alias of B.1.1.529.2.86.1.1.13, S:A1087S, after C26894T, C25680T, USA, from #2464",Active,JN.1.13,Omicron,#E83C78,1,JN.1.13
+JN.1.13,"Alias of B.1.1.529.2.86.1.1.13, S:A1087S, after C26894T, C25680T, USA, from #2464",Active,JN.1.13,Omicron,#E83C78,2,JN.1.13
 JN.1.13.1,"Alias of B.1.1.529.2.86.1.1.13.1, S:R346T, S:F59S, USA, from sars-cov-2-variants/lineage-proposals/issues/1386",Active,JN.1.13.1,Omicron,#F2591C,2,JN.1.13.1
 KS.1,"Alias of B.1.1.529.2.86.1.1.13.1.1, S:F456L (T22928C), from sars-cov-2-variants/lineage-proposals#1253",Active,KS.1,Omicron,#B771BC,1,KS.1
 KS.1.1,"Alias of B.1.1.529.2.86.1.1.13.1.1.1, S:T22N, Singapore/Taiwan/Canada, from sars-cov-2-variants/lineage-proposals#1565",Active,KS.1,Omicron,#B771BC,1,KS.1
@@ -1382,15 +1382,15 @@ LF.4,"Alias of B.1.1.529.2.86.1.1.16.1.4, N:R385K, ORF1a:T4368I",Active,JN.1.16.
 LF.4.1,"Alias of B.1.1.529.2.86.1.1.16.1.4.1, S:31del, ORF1a:G519S, ORF8:Q29*, from sars-cov-2-variants/lineage-proposals#1590",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.5,"Alias of B.1.1.529.2.86.1.1.16.1.5, S:T33A, S:N185D, C28660T, from sars-cov-2-variants/lineage-proposals#1627",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.6,"Alias of B.1.1.529.2.86.1.1.16.1.6, T3172G, T17859C, Portugal/Spain, from #2589",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7,"Alias of B.1.1.529.2.86.1.1.16.1.7, S:T22N, S:S31P, S:K182R, S:R190S, S:K444R, ORF9b:I5T, Senegal, from #2733",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1, C6310T",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.1.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.1, S:Q677L, from sars-cov-2-variants/lineage-proposals#2063",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.1.2,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.2, S:A475V, Qatar, #2805",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.1.3,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.3, ORF1a:A1268V, Russia",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.2,"Alias of B.1.1.529.2.86.1.1.16.1.7.2, T20799C",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.2.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.2.1, S:A475V, from sars-cov-2-variants/lineage-proposals#2067",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.3,"Alias of B.1.1.529.2.86.1.1.16.1.7.3, C17436T",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.4,"Alias of B.1.1.529.2.86.1.1.16.1.7.4, S:T961M, G25494A, from sars-cov-2-variants/lineage-proposals#1996",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
+LF.7,"Alias of B.1.1.529.2.86.1.1.16.1.7, S:T22N, S:S31P, S:K182R, S:R190S, S:K444R, ORF9b:I5T, Senegal, from #2733",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1, C6310T",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.1.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.1, S:Q677L, from sars-cov-2-variants/lineage-proposals#2063",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.1.2,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.2, S:A475V, Qatar, #2805",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.1.3,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.3, ORF1a:A1268V, Russia",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.2,"Alias of B.1.1.529.2.86.1.1.16.1.7.2, T20799C",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.2.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.2.1, S:A475V, from sars-cov-2-variants/lineage-proposals#2067",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.3,"Alias of B.1.1.529.2.86.1.1.16.1.7.3, C17436T",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.4,"Alias of B.1.1.529.2.86.1.1.16.1.7.4, S:T961M, G25494A, from sars-cov-2-variants/lineage-proposals#1996",Active,LF.7,Omicron,#3E8AA1,1,LF.7
 LF.8,"Alias of B.1.1.529.2.86.1.1.16.1.8, S:M153I, C3244T, A18432T, C27110T, from sars-cov-2-variants/lineage-proposals#1863",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.8.1,"Alias of B.1.1.529.2.86.1.1.16.1.8.1, S:S31F, from sars-cov-2-variants/lineage-proposals#1863",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.8.1.1,"Alias of B.1.1.529.2.86.1.1.16.1.8.1, S:T22N, from sars-cov-2-variants/lineage-proposals#1863",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
