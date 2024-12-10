@@ -38,14 +38,31 @@ jobs:
 
            
        # Add new files in data folder, commit along with other modified files, push
+       # - name: Commit files
+       #   run: |
+       #     git config --local user.name actions-user
+       #     git config --local user.email "actions@github.com"
+       #     git fetch
+       #     git add .
+       #     git commit -am "GH ACTION Headlines $(date)"
+       #     git push origin main
+       #   env:
+       #     repo_token: ${{secrets.GITHUB_TOKEN}}
+       #     username: github-actions
+
        - name: Commit files
          run: |
            git config --local user.name actions-user
            git config --local user.email "actions@github.com"
            git fetch
            git add .
-           git commit -am "GH ACTION Headlines $(date)"
-           git push origin main
+           # Check if there are any changes before committing
+           if git diff --cached --quiet; then
+             echo "No changes to commit."
+           else
+             git commit -am "GH ACTION Headlines $(date)"
+             git push origin main
+           fi
          env:
            repo_token: ${{secrets.GITHUB_TOKEN}}
            username: github-actions
