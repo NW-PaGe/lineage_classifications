@@ -1,55 +1,48 @@
 name: Lineages Pipeline
 run-name: Run lineages pull 🚀
-on: 
+on:
   workflow_dispatch:
   schedule:
     # schedule the script to run M-F at 7:30am
-    # see this for details https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
     - cron: "30 7 * * 1-5"
+
 jobs:
   Run-Lineages-Pipeline:
     runs-on: ubuntu-latest
         
     steps:
+       # Step 1: Create GitHub App Token
+       - name: Create GitHub App Token
+         id: app-token
+         uses: actions/create-github-app-token@v1
+         with:
+           app-id: ${{ secrets.YOUR_GITHUB_APP_ID }}
+           private-key: ${{ secrets.YOUR_GITHUB_APP_PRIVATE_KEY }}
+
+       # Step 2: Checkout repository code using GitHub App Token
        - name: Check out repository code
-         uses: actions/checkout@v3
+         uses: actions/checkout@v4
+         with:
+           token: ${{ steps.app-token.outputs.token }}
        - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
        
+       # Step 3: Setup dependencies
        - name: Setup dependencies
-         uses: actions/checkout@v3
+         uses: actions/checkout@v4
+         
+       # Step 4: Setup R
        - name: Setup R
          uses: r-lib/actions/setup-r@v2
+       
+       # Step 5: Setup Renv
        - name: Setup Renv
          uses: r-lib/actions/setup-renv@v2
-         # uses: r-lib/actions/setup-r-dependencies@v2
-         # with:
-         #   cache-version: 2
-        
-         
-       # Run R script
+
+       # Step 6: Run the lineages R script
        - name: Run the lineages script
          run: Rscript scripts/lineages_public_repo.R
-#          with:
-#            cache-version: 1
-#            extra-packages: |
-#              lorenzwalthert/touchstone
-#              ggplot2
-#              dplyr
-
-           
-       # Add new files in data folder, commit along with other modified files, push
-       # - name: Commit files
-       #   run: |
-       #     git config --local user.name actions-user
-       #     git config --local user.email "actions@github.com"
-       #     git fetch
-       #     git add .
-       #     git commit -am "GH ACTION Headlines $(date)"
-       #     git push origin main
-       #   env:
-       #     repo_token: ${{secrets.GITHUB_TOKEN}}
-       #     username: github-actions
-
+         
+       # Step 7: Commit changes and push to main branch using GitHub App Token
        - name: Commit files
          run: |
            git config --local user.name actions-user
@@ -64,5 +57,6 @@ jobs:
              git push origin main
            fi
          env:
-           repo_token: ${{secrets.GITHUB_TOKEN}}
+           repo_token: ${{ steps.app-token.outputs.token }}  # Use GitHub App Token
            username: github-actions
+
