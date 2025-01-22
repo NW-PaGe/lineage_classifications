@@ -27,8 +27,8 @@ jobs:
        - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
        
        # Step 3: Setup dependencies
-       - name: Setup dependencies
-         uses: actions/checkout@v4
+       # - name: Setup dependencies
+       #   uses: actions/checkout@v4
          
        # Step 4: Setup R
        - name: Setup R
@@ -41,22 +41,24 @@ jobs:
        # Step 6: Run the lineages R script
        - name: Run the lineages script
          run: Rscript scripts/lineages_public_repo.R
+
+       - uses: EndBug/add-and-commit@v9
          
        # Step 7: Commit changes and push to main branch using GitHub App Token
-       - name: Commit files
-         run: |
-           git config --local user.name actions-user
-           git config --local user.email "actions@github.com"
-           git fetch
-           git add .
-           # Check if there are any changes before committing
-           if git diff --cached --quiet; then
-             echo "No changes to commit."
-           else
-             git commit -am "GH ACTION Headlines $(date)"
-             git push origin main
-           fi
-         env:
-           repo_token: ${{ steps.app-token.outputs.token }}  # Use GitHub App Token
-           username: github-actions
+       # - name: Commit files
+       #   run: |
+       #     git config --local user.name actions-user
+       #     git config --local user.email "actions@github.com"
+       #     git fetch
+       #     git add .
+       #     # Check if there are any changes before committing
+       #     if git diff --cached --quiet; then
+       #       echo "No changes to commit."
+       #     else
+       #       git commit -am "GH ACTION Headlines $(date)"
+       #       git push origin main
+       #     fi
+       #   env:
+       #     repo_token: ${{ steps.app-token.outputs.token }}  # Use GitHub App Token
+       #     username: github-actions
 
