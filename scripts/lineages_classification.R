@@ -115,6 +115,8 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("B.1.1.529.2.75", description) ~ "BA.2.75" ,
     
     #BA.2.86 Family
+    #LP.8.1 Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1
+    grepl("^LP.8.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.1\\.1\\.3\\.8\\.1", description) ~ "LP.8.1",
     #LP.1 Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.1
     grepl("^LP.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.1\\.1\\.3\\.1", description) ~ "LP.1",
     #KP.1.1.3 Alias of B.1.1.529.2.86.1.1.11.1.1.1.3\
@@ -122,6 +124,8 @@ lineage_doh_variant_name <- active_lineages %>%
     #KP.1.1 Alias of B.1.1.529.2.86.1.1.11.1.1.1
     grepl("^KP.1.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.1\\.1", description) ~ "KP.1.1",
     
+    #XEK (Disaggregated on CDC Nowcast 12/21/2024 but description is recombinant lineage of KP.2.3, XEC)
+    grepl("^XEK", lineage_extracted) ~ "XEK",
     #KP.2.3 Alias of B.1.1.529.2.86.1.1.11.1.2.3
     grepl("^KP.2.3", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.2\\.3", description) ~ "KP.2.3",
     #KP.2.15 Alias of B.1.1.529.2.86.1.1.11.1.2.15
@@ -131,6 +135,10 @@ lineage_doh_variant_name <- active_lineages %>%
     #KP.2 Alias of B.1.1.529.2.86.1.1.11.1.2
     grepl("^KP.2", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.2", description) ~ "KP.2",
     
+    #MC.19 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.19
+    grepl("^MC.19", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.19", description) ~ "MC.19",
+    #MC.10.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.10.1
+    grepl("^MC.10.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.10\\.1", description) ~ "MC.10.1",
     #MC.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1
     lineage_extracted == "MC.1" ~ "MC.1",
     #KP.3.1.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1
@@ -163,6 +171,8 @@ lineage_doh_variant_name <- active_lineages %>%
     #JN.1.16 Alias of B.1.1.529.2.86.1.1.16
     grepl("^JN.1.16", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16", description) ~ "JN.1.16", 
     
+    #JN.1.18.6 Alias of B.1.1.529.2.86.1.1.18.6
+    grepl("^JN.1.18.6", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.18\\.6", description) ~ "JN.1.18.6",
     #JN.1.18 Alias of B.1.1.529.2.86.1.1.18
     grepl("^JN.1.18", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.18", description) ~ "JN.1.18",
     #KW.1.1 Alias of B.1.1.529.2.86.1.1.28.1.1.1

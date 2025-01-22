@@ -1143,6 +1143,7 @@ NL.7,"Alias of B.1.1.529.2.86.1.1.9.2.1.3.1.7, S:S256L, N:N47Y",Active,LB.1.3.1,
 LB.1.3.2,"Alias of B.1.1.529.2.86.1.1.9.2.1.3.2, C25413T",Active,LB.1,Omicron,#795653,1,LB.1
 MH.1,"Alias of B.1.1.529.2.86.1.1.9.2.1.3.2.1, S:T572I",Active,LB.1,Omicron,#795653,1,LB.1
 LB.1.3.3,"Alias of B.1.1.529.2.86.1.1.9.2.1.3.3, S:K182R, from #2723",Active,LB.1,Omicron,#795653,1,LB.1
+LB.1.3.4,"Alias of B.1.1.529.2.86.1.1.9.2.1.3.4, S:A376S, ORF1a:G432S, South Africa, from #2825",Active,LB.1,Omicron,#795653,1,LB.1
 LB.1.4,"Alias of B.1.1.529.2.86.1.1.9.2.1.4, ORF1a:A1473V",Active,LB.1,Omicron,#795653,1,LB.1
 LB.1.4.1,"Alias of B.1.1.529.2.86.1.1.9.2.1.4.1, S:R190S",Active,LB.1,Omicron,#795653,1,LB.1
 LB.1.4.2,"Alias of B.1.1.529.2.86.1.1.9.2.1.4.2, S:A879S, ORF1a:E472D, USA",Active,LB.1,Omicron,#795653,1,LB.1
@@ -1158,8 +1159,8 @@ LB.1.9,"Alias of B.1.1.529.2.86.1.1.9.2.1.9, S:K478T (reversion), G20931T, T2919
 LB.1.10,"Alias of B.1.1.529.2.86.1.1.9.2.1.10, S:V83F, S:H445P",Active,LB.1,Omicron,#795653,1,LB.1
 JN.1.10,"Alias of B.1.1.529.2.86.1.1.10, S:T95I, USA/Canada, from sars-cov-2-variants/lineage-proposals#1135",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.11,"Alias of B.1.1.529.2.86.1.1.11, S:V1104L, G17334T, India, from #2446",Active,JN.1,Omicron,#660099,1,JN.1
-JN.1.11.1,"Alias of B.1.1.529.2.86.1.1.11.1, S:F456L (T22928C), after ORF1a:T2283I, India, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1.11.1,Omicron,#5C9CF1,1,JN.1.11.1
-KP.1,"Alias of B.1.1.529.2.86.1.1.11.1.1, S:K1086R, from sars-cov-2-variants/lineage-proposals#1364",Active,JN.1.11.1,Omicron,#5C9CF1,1,JN.1.11.1
+JN.1.11.1,"Alias of B.1.1.529.2.86.1.1.11.1, S:F456L (T22928C), after ORF1a:T2283I, India, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1.11.1,Omicron,#5C9CF1,2,JN.1.11.1
+KP.1,"Alias of B.1.1.529.2.86.1.1.11.1.1, S:K1086R, from sars-cov-2-variants/lineage-proposals#1364",Active,JN.1.11.1,Omicron,#5C9CF1,2,JN.1.11.1
 KP.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1, S:R346T, from sars-cov-2-variants/lineage-proposals#1089",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 KP.1.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.1, S:K182N, after ORF1b:L2213F, from #2510",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 MG.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.1.1, S:T572I, S:679N, ORF1a:V3091I, from sars-cov-2-variants/lineage-proposals#1623",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
@@ -1179,17 +1180,26 @@ LP.5,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.5, S:K478T (rev), from sars-cov-2-v
 LP.6,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.6, S:M153I, C14403T, from sars-cov-2-variants/lineage-proposals#1753",Active,KP.1.1.3,Omicron,#1EB3B6,1,KP.1.1.3
 LP.7,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.7, S:R190S, from sars-cov-2-variants/lineage-proposals#1729",Active,KP.1.1.3,Omicron,#1EB3B6,1,KP.1.1.3
 LP.8,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8, S:H445R, S:Q493E, S:F186L, ORF3a:P178L, Singapore/Philippines, from #2811",Active,KP.1.1.3,Omicron,#1EB3B6,1,KP.1.1.3
-LP.8.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1, S:R190S",Active,KP.1.1.3,Omicron,#1EB3B6,1,KP.1.1.3
+LP.8.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1, S:R190S",Active,LP.8.1,Omicron,#FF860C,1,LP.8.1
+LP.8.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.1, S:K679R",Active,LP.8.1,Omicron,#FF860C,1,LP.8.1
+LP.8.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.2, S:N487D",Active,LP.8.1,Omicron,#FF860C,1,LP.8.1
 LP.8.2,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.2, S:M153I, S:L176F, on ORF1b:P1452L branch",Active,KP.1.1.3,Omicron,#1EB3B6,1,KP.1.1.3
+LP.8.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.2.1, S:A475V, ORF1a:T1246I",Active,KP.1.1.3,Omicron,#1EB3B6,1,KP.1.1.3
 LP.9,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.9, S:H445P, S:L176F, ORF1a:L1191F",Active,KP.1.1.3,Omicron,#1EB3B6,1,KP.1.1.3
 LP.10,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.10, S:G75S, ORF3a:S74F",Active,LP.1,Omicron,#A74F9B,1,LP.1
 LP.10.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.10.1, S:R190S, S:A475V",Active,LP.1,Omicron,#A74F9B,1,LP.1
+LP.10.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.10.1.1, S:A435S, S:S190R(rev), Malaysia",Active,LP.1,Omicron,#A74F9B,1,LP.1
+LP.11,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.11, ORF1a:L3900S, C5512T, on ORF3a:P178L, G1954A branch with LP.8",Active,LP.1,Omicron,#A74F9B,1,LP.1
 KP.1.1.4,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.4, S:R214H, C11866T, C23929T, from sars-cov-2-variants/lineage-proposals#1593",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 KP.1.1.5,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5, S:F59S",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 MU.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.1, S:T572I, ORF1a:P4339T, ORF1b:T1902I，from #2676",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
+MU.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.1.1, S:T22N, Canada",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 MU.2,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.2, ORF1a:A2785V, ORF1a:A4357V",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 MU.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.2.1, S:S680Y, from sars-cov-2-variants/lineage-proposals#1777",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
+MU.2.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.2.1.1, S:A435S, S:H445P",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 MU.3,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.3, S:T22N, S:G72R, S:T572I, Australia/New Zealand/East Asia",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
+MU.4,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.4, A8107G, China",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
+MU.5,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.5.5, S:H445P",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 KP.1.1.6,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.6, S:S31F, after ORF1b:L2213F,S:N185del,S:F186I from #2649",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 NE.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.6.1, S:K478T, S:F32S",Active,KP.1.1,Omicron,#CBFF86,1,KP.1.1
 KP.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.1.2, S:T572I, from sars-cov-2-variants/lineage-proposals#1097",Active,KP.1.2,Omicron,#D7B5A6,2,KP.1.2
@@ -1224,10 +1234,14 @@ KP.2.3.13,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.13, C26894T",Active,KP.2.3,Omicr
 NN.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.13.1, S:H445P",Active,KP.2.3,Omicron,#628DE8,1,KP.2.3
 NN.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.13.1.1, S:P85Q",Active,KP.2.3,Omicron,#628DE8,1,KP.2.3
 NN.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.13.2, ORF1a:T340I, ORF1a:A2379V, ORF7a:A66V",Active,KP.2.3,Omicron,#628DE8,1,KP.2.3
+KP.2.3.14,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.14, S:K679R, ORF1a:T2016K, N:H145Y",Active,KP.2.3,Omicron,#628DE8,1,KP.2.3
+KP.2.3.15,"Alias of B.1.1.529.2.86.1.1.11.1.2.3.15, ORF1a:T1682I",Active,KP.2.3,Omicron,#628DE8,1,KP.2.3
 KP.2.4,"Alias of B.1.1.529.2.86.1.1.11.1.2.4, S:T250N, from sars-cov-2-variants/lineage-proposals#1524",Active,KP.2,Omicron,#5875A1,1,KP.2
 KP.2.5,"Alias of B.1.1.529.2.86.1.1.11.1.2.5, S:N185D, from sars-cov-2-variants/lineage-proposals#1527",Active,KP.2,Omicron,#5875A1,1,KP.2
 KP.2.6,"Alias of B.1.1.529.2.86.1.1.11.1.2.6, S:W64R, S:F32del",Active,KP.2,Omicron,#5875A1,1,KP.2
 KP.2.6.1,"Alias of B.1.1.529.2.86.1.1.11.1.2.6.1, S:L441F, from sars-cov-2-variants/lineage-proposals#1757",Active,KP.2,Omicron,#5875A1,1,KP.2
+KP.2.6.2,"Alias of B.1.1.529.2.86.1.1.11.1.2.6.2, S:V367A",Active,KP.2,Omicron,#5875A1,1,KP.2
+KP.2.6.3,"Alias of B.1.1.529.2.86.1.1.11.1.2.6.3, S:T385I",Active,KP.2,Omicron,#5875A1,1,KP.2
 KP.2.7,"Alias of B.1.1.529.2.86.1.1.11.1.2.7, S:S31F, after T22795G",Active,KP.2,Omicron,#5875A1,1,KP.2
 KP.2.8,"Alias of B.1.1.529.2.86.1.1.11.1.2.8, S:S60P, from sars-cov-2-variants/lineage-proposals#1546",Active,KP.2,Omicron,#5875A1,1,KP.2
 KP.2.9,"Alias of B.1.1.529.2.86.1.1.11.1.2.9, S:T572I, from sars-cov-2-variants/lineage-proposals#1089",Active,KP.2,Omicron,#5875A1,1,KP.2
@@ -1258,6 +1272,9 @@ KP.3.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1, G15372T, A19722G",Active,KP.3,Omic
 KP.3.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1, ORF1a:S4286C, C12616T, S:S31del, Spain, from sars-cov-2-variants/lineage-proposals#1563",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1, S:T572I, from sars-cov-2-variants/lineage-proposals#1638",Active,MC.1,Omicron,#B6B614,1,MC.1
 MC.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.1, S:A942S, C13297T, C14220T, from sars-cov-2-variants/lineage-proposals#1932",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.2, S:A1174V, sibling of MC.1.1",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.1.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.3, ORF1a:E977D",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.1.3.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.3.1, S:F4L",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.2, S:A845S, from sars-cov-2-variants/lineage-proposals#1707",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.2.1, S:R237K, from sars-cov-2-variants/lineage-proposals#1707",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.3, S:G72R, Spain, from sars-cov-2-variants/lineage-proposals#1733",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
@@ -1269,7 +1286,7 @@ MC.8,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.8, C9803T, from sars-cov-2-variants
 MC.8.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.8.1, S:T572I, from sars-cov-2-variants/lineage-proposals#1779",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.9,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.9, ORF3a:K75N, ORF1b:A1219S, from sars-cov-2-variants/lineage-proposals#1788",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.10,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.10, C16332T",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
-MC.10.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.10.1, S:A435S, ORF9b:R47H, from sars-cov-2-variants/lineage-proposals#1946",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.10.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.10.1, S:A435S, ORF9b:R47H, from sars-cov-2-variants/lineage-proposals#1946",Active,MC.10.1,Omicron,#0956D1,1,MC.10.1
 MC.10.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.10.2, S:I101T, S:A376D, ORF1a:K3353R, from sars-cov-2-variants/lineage-proposals#2015",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.11,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.11, C17430T",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.11.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.11.1, S:S256L, Europe, from sars-cov-2-variants/lineage-proposals#1857",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
@@ -1277,16 +1294,26 @@ MC.12,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.12, S:G72E, from sars-cov-2-varian
 MC.13,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.13, C10681T",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.13.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.13.1, S:S254F, USA",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.13.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.13.2, S:A435S, Brazil",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.13.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.13.3, S:Q613E",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.14,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.14, S:T259R, from sars-cov-2-variants/lineage-proposals#1815",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.15,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.15, S:K182R",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.16,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.16, G2890A",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.17,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.17, S:A575S, C5512T, from sars-cov-2-variants/lineage-proposals#1989",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.18,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.18, S:N185D, ORF1a:G465S, Spain/Canada, from sars-cov-2-variants/lineage-proposals#2075",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
-MC.19,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.19, S:R346T, from sars-cov-2-variants/lineage-proposals#1809",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.19,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.19, S:R346T, from sars-cov-2-variants/lineage-proposals#1809",Active,MC.19,Omicron,#206CBC,1,MC.19
+MC.19.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.19.1, S:H445R",Active,MC.19,Omicron,#206CBC,1,MC.19
 MC.20,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.20, S:K182E, ORF1a:K1655N, Australia, from sars-cov-2-variants/lineage-proposals#2085",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.21,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.21, C829T",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.21.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.21.1, S:A435S",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 MC.22,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.22, C11020T",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.23,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.23, ORF1b:K2557R",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.24,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.24, ORF3a:R68I",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.25,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.25, S:D1260Y",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.26,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.26, C11152T",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.26.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.26.1, S:T572I",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.27,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.27, S:D111N",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.28,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.28, T16224C",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+MC.28.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.28.1, S:C1235F, S:A435S",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 KP.3.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.2, S:S151I，from sars-cov-2-variants/lineage-proposals#1589",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.1.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.3, S:S31F,from sars-cov-2-variants/lineage-proposals#1576",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.1.4,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.4, ORF1b:P1675S,from #2627",Active,KP.3,Omicron,#B06589,1,KP.3
@@ -1300,8 +1327,11 @@ MK.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.6.3, S:R346T, S:H445R, from sars-cov-
 KP.3.1.7,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.7, S:L84I, from #2709",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.1.8,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.8, S:F59S, A9235G, Georgia, from sars-cov-2-variants/lineage-proposals#1615",Active,KP.3,Omicron,#B06589,1,KP.3
 MY.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.8.1, S:P174S, ORF3a:T64I, Georgia",Active,KP.3,Omicron,#B06589,1,KP.3
-KP.3.1.9,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.9, S:N148S, S:P174S, from sars-cov-2-variants/lineage-proposals#2171",Active,KP.3,Omicron,#B06589,1,KP.3
+KP.3.1.9,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.9, S:N148S, S:P174S, S:T22N, S:N30-,S:S31-,S:F32I from sars-cov-2-variants/lineage-proposals#2171",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.1.10,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.10, S:N185D, ORF1a:V3917I, from sars-cov-2-variants/lineage-proposals#1853",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+KP.3.1.11,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.11, ∆29728-29776  ORF1a:A2784V, T2593C, ORF1a:E452G, Spain",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+NR.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.11.1, S:K679R, ORF1b:T250I",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
+KP.3.1.12,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.12, C1102T, C14818T, ORF1a:E452G",Active,KP.3.1.1,Omicron,#2F92A1,1,KP.3.1.1
 KP.3.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.2, A2611C, C22858T",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.1, S:A263V, Australia/Singapore, from sars-cov-2-variants/lineage-proposals#1556",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.2.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.2, S:W258R",Active,KP.3,Omicron,#B06589,1,KP.3
@@ -1315,6 +1345,7 @@ KP.3.2.6,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.6, S:S31P, G11761A, G25617A, Asia
 KP.3.2.7,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.7, S:S31-, ORF1a:I1005L, from sars-cov-2-variants/lineage-proposals#2180",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.2.8,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.8, S:S31-, C14790T, C21590T, C18981T, from sars-cov-2-variants/lineage-proposals#2081",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.2.9,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.9, ORF1b:K2557R",Active,KP.3,Omicron,#B06589,1,KP.3
+NV.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.2.9.1, S:S31-, with C7267T",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.3, N:R204P, from sars-cov-2-variants/lineage-proposals#1531",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.3.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.3.1, S:T547K, ORF3a:F87S, from sars-cov-2-variants/lineage-proposals#1651",Active,KP.3,Omicron,#B06589,1,KP.3
 NQ.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.3.1.1, S:S680P, S:A435S, ORF1b:Q1441H, South Korea/Japan",Active,KP.3,Omicron,#B06589,1,KP.3
@@ -1326,6 +1357,7 @@ ML.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.3.3.1, S:681H, from sars-cov-2-variants
 ML.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.3.3.2, S:Q677H, USA",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.3.4,"Alias of B.1.1.529.2.86.1.1.11.1.3.3.4, ORF1a:I1367L, from #2707",Active,KP.3,Omicron,#B06589,1,KP.3
 MR.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.3.4.1, S:S31del, ORF1a:V1236I, from #2704",Active,KP.3,Omicron,#B06589,1,KP.3
+KP.3.3.5,"Alias of B.1.1.529.2.86.1.1.11.1.3.3.5, S:A435S, Chile, from #2844",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.4,"Alias of B.1.1.529.2.86.1.1.11.1.3.4, ORF3a:L73F, C25521T, Asia",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.4.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.4.1, S:S31F, N:A134V, ORF1a:E1192K, from sars-cov-2-variants/lineage-proposals#1576",Active,KP.3,Omicron,#B06589,1,KP.3
 KP.3.5,"Alias of B.1.1.529.2.86.1.1.11.1.3.5, S:G213E, most with C1420T, America, from sars-cov-2-variants/lineage-proposals#1630",Active,KP.3,Omicron,#B06589,1,KP.3
@@ -1342,12 +1374,12 @@ KP.4.2.2,"Alias of B.1.1.529.2.86.1.1.11.1.4.2.2, S:F59I",Active,KP.4.1,Omicron,
 KP.4.2.3,"Alias of B.1.1.529.2.86.1.1.11.1.4.2.3, S:G35R, ORF1a:G519S, ORF1a:I2227V",Active,KP.4.1,Omicron,#FF473A,2,KP.4.1
 KP.4.2.4,"Alias of B.1.1.529.2.86.1.1.11.1.4.2.4, S:S31-, S:S256L, from #2759",Active,KP.4.1,Omicron,#FF473A,2,KP.4.1
 KP.4.2.5,"Alias of B.1.1.529.2.86.1.1.11.1.4.2.5, S:S60P, S:I212T, from sars-cov-2-variants/lineage-proposals#1667",Active,KP.4.1,Omicron,#FF473A,2,KP.4.1
-KP.5,"Alias of B.1.1.529.2.86.1.1.11.1.5, S:T572I, from sars-cov-2-variants/lineage-proposals#1097",Active,JN.1.11.1,Omicron,#5C9CF1,1,JN.1.11.1
-KP.6,"Alias of B.1.1.529.2.86.1.1.11.1.6, S:R346I, from sars-cov-2-variants/lineage-proposals#1682",Active,JN.1.11.1,Omicron,#5C9CF1,1,JN.1.11.1
+KP.5,"Alias of B.1.1.529.2.86.1.1.11.1.5, S:T572I, from sars-cov-2-variants/lineage-proposals#1097",Active,JN.1.11.1,Omicron,#5C9CF1,2,JN.1.11.1
+KP.6,"Alias of B.1.1.529.2.86.1.1.11.1.6, S:R346I, from sars-cov-2-variants/lineage-proposals#1682",Active,JN.1.11.1,Omicron,#5C9CF1,2,JN.1.11.1
 JN.1.11.2,"Alias of B.1.1.529.2.86.1.1.11.2, S:R346T, S:F59L, India, from sars-cov-2-variants/lineage-proposals#1089",Active,JN.1,Omicron,#660099,1,JN.1
 NJ.1,"Alias of B.1.1.529.2.86.1.1.11.2.1, S:F456L, S:K478T (rev), ORF3a:K16N, India, from sars-cov-2-variants/lineage-proposals#2068",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.12,"Alias of B.1.1.529.2.86.1.1.12, S:F456V, ORF7a:A8T, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1,Omicron,#660099,1,JN.1
-JN.1.13,"Alias of B.1.1.529.2.86.1.1.13, S:A1087S, after C26894T, C25680T, USA, from #2464",Active,JN.1.13,Omicron,#E83C78,1,JN.1.13
+JN.1.13,"Alias of B.1.1.529.2.86.1.1.13, S:A1087S, after C26894T, C25680T, USA, from #2464",Active,JN.1.13,Omicron,#E83C78,2,JN.1.13
 JN.1.13.1,"Alias of B.1.1.529.2.86.1.1.13.1, S:R346T, S:F59S, USA, from sars-cov-2-variants/lineage-proposals/issues/1386",Active,JN.1.13.1,Omicron,#F2591C,2,JN.1.13.1
 KS.1,"Alias of B.1.1.529.2.86.1.1.13.1.1, S:F456L (T22928C), from sars-cov-2-variants/lineage-proposals#1253",Active,KS.1,Omicron,#B771BC,1,KS.1
 KS.1.1,"Alias of B.1.1.529.2.86.1.1.13.1.1.1, S:T22N, Singapore/Taiwan/Canada, from sars-cov-2-variants/lineage-proposals#1565",Active,KS.1,Omicron,#B771BC,1,KS.1
@@ -1360,6 +1392,7 @@ KS.1.1.2,"Alias of B.1.1.529.2.86.1.1.13.1.1.1.2, ORF1a:L2146F, C19716T",Active,
 KS.1.2,"Alias of B.1.1.529.2.86.1.1.13.1.1.2, S:T678I, Russia",Active,KS.1,Omicron,#B771BC,1,KS.1
 KS.1.3,"Alias of B.1.1.529.2.86.1.1.13.1.1.3, S:V642A, Dominican Republic, from sars-cov-2-variants/lineage-proposals#1535",Active,KS.1,Omicron,#B771BC,1,KS.1
 KS.1.4,"Alias of B.1.1.529.2.86.1.1.13.1.1.4, C22414T, S:R237K, from sars-cov-2-variants/lineage-proposals#1752",Active,KS.1,Omicron,#B771BC,1,KS.1
+KS.2,"Alias of B.1.1.529.2.86.1.1.13.1.2, C18348T",Active,JN.1.13.1,Omicron,#F2591C,2,JN.1.13.1
 JN.1.14,"Alias of B.1.1.529.2.86.1.1.14, S:R346S, after C26894T, C25680T, USA",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.15,"Alias of B.1.1.529.2.86.1.1.15, S:A688V",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.15.1,"Alias of B.1.1.529.2.86.1.1.15.1, S:F456L, ORF3a:R122S, Ecuador, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1,Omicron,#660099,1,JN.1
@@ -1382,21 +1415,29 @@ LF.4,"Alias of B.1.1.529.2.86.1.1.16.1.4, N:R385K, ORF1a:T4368I",Active,JN.1.16.
 LF.4.1,"Alias of B.1.1.529.2.86.1.1.16.1.4.1, S:31del, ORF1a:G519S, ORF8:Q29*, from sars-cov-2-variants/lineage-proposals#1590",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.5,"Alias of B.1.1.529.2.86.1.1.16.1.5, S:T33A, S:N185D, C28660T, from sars-cov-2-variants/lineage-proposals#1627",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.6,"Alias of B.1.1.529.2.86.1.1.16.1.6, T3172G, T17859C, Portugal/Spain, from #2589",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7,"Alias of B.1.1.529.2.86.1.1.16.1.7, S:T22N, S:S31P, S:K182R, S:R190S, S:K444R, ORF9b:I5T, Senegal, from #2733",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1, C6310T",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.1.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.1, S:Q677L, from sars-cov-2-variants/lineage-proposals#2063",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.1.2,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.2, S:A475V, Qatar, #2805",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.1.3,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.3, ORF1a:A1268V, Russia",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.2,"Alias of B.1.1.529.2.86.1.1.16.1.7.2, T20799C",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.2.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.2.1, S:A475V, from sars-cov-2-variants/lineage-proposals#2067",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.3,"Alias of B.1.1.529.2.86.1.1.16.1.7.3, C17436T",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
-LF.7.4,"Alias of B.1.1.529.2.86.1.1.16.1.7.4, S:T961M, G25494A, from sars-cov-2-variants/lineage-proposals#1996",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
+LF.7,"Alias of B.1.1.529.2.86.1.1.16.1.7, S:T22N, S:S31P, S:K182R, S:R190S, S:K444R, ORF9b:I5T, Senegal, from #2733",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1, C6310T",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.1.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.1, S:Q677L, from sars-cov-2-variants/lineage-proposals#2063",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.1.2,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.2, S:A475V, from #2805",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+NT.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.2.1, N:T379I, Qatar",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.1.3,"Alias of B.1.1.529.2.86.1.1.16.1.7.1.3, ORF1a:A1268V, Russia",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.2,"Alias of B.1.1.529.2.86.1.1.16.1.7.2, T20799C",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.2.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.2.1, S:A475V, from sars-cov-2-variants/lineage-proposals#2067",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.3,"Alias of B.1.1.529.2.86.1.1.16.1.7.3, C17436T",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.3.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.3.1, S:A475V",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.4,"Alias of B.1.1.529.2.86.1.1.16.1.7.4, S:T961M, from sars-cov-2-variants/lineage-proposals#1996",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.5,"Alias of B.1.1.529.2.86.1.1.16.1.7.5, A15828G",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.6,"Alias of B.1.1.529.2.86.1.1.16.1.7.6, C29119T",Active,LF.7,Omicron,#3E8AA1,1,LF.7
+LF.7.6.1,"Alias of B.1.1.529.2.86.1.1.16.1.7.6.1, S:T385I, ORF1a:R3164H, ORF3a:A33S, ORF10:L16P",Active,LF.7,Omicron,#3E8AA1,1,LF.7
 LF.8,"Alias of B.1.1.529.2.86.1.1.16.1.8, S:M153I, C3244T, A18432T, C27110T, from sars-cov-2-variants/lineage-proposals#1863",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.8.1,"Alias of B.1.1.529.2.86.1.1.16.1.8.1, S:S31F, from sars-cov-2-variants/lineage-proposals#1863",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.8.1.1,"Alias of B.1.1.529.2.86.1.1.16.1.8.1, S:T22N, from sars-cov-2-variants/lineage-proposals#1863",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 ND.1,"Alias of B.1.1.529.2.86.1.1.16.1.8.1.1.1, ORF1a:L4391F",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 ND.1.1,"Alias of B.1.1.529.2.86.1.1.16.1.8.1.1.1.1, S:K478T, from sars-cov-2-variants/lineage-proposals#1982",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
+ND.1.1.1,"Alias of B.1.1.529.2.86.1.1.16.1.8.1.1.1.1.1, S:L176F, ORF1a:G572E",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
+ND.1.1.2,"Alias of B.1.1.529.2.86.1.1.16.1.8.1.1.1.1.2, ORF1b:M1596I",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 ND.2,"Alias of B.1.1.529.2.86.1.1.16.1.8.1.1.2, S:K478E, from sars-cov-2-variants/lineage-proposals#1929",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
+ND.2.1,"Alias of B.1.1.529.2.86.1.1.16.1.8.1.1.2.1, S:K1191R",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 ND.3,"Alias of B.1.1.529.2.86.1.1.16.1.8.1.1.3, S:K478I, N:S23T, US/NZ, from sars-cov-2-variants/lineage-proposals#2158",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.9,"Alias of B.1.1.529.2.86.1.1.16.1.9, S:S60P, from sars-cov-2-variants/lineage-proposals#1718",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
 LF.9.1,"Alias of B.1.1.529.2.86.1.1.16.1.9.1, S:N185D, from sars-cov-2-variants/lineage-proposals#1718",Active,JN.1.16.1,Omicron,#366298,1,JN.1.16.1
@@ -1405,10 +1446,17 @@ JN.1.16.2,"Alias of B.1.1.529.2.86.1.1.16.2, C4777T, from sars-cov-2-variants/li
 LA.1,"Alias of B.1.1.529.2.86.1.1.16.2.1, S:R346T, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
 LA.2,"Alias of B.1.1.529.2.86.1.1.16.2.2, S:R346I, from sars-cov-2-variants/lineage-proposals#1089",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
 JN.1.16.3,"Alias of B.1.1.529.2.86.1.1.16.3, S:T572I",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
+NS.1,"Alias of B.1.1.529.2.86.1.1.16.3.1, ORF1a:W2769C, G16065A, Asia",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
+NS.1.1,"Alias of B.1.1.529.2.86.1.1.16.3.1.1, S:H445P",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
+NS.1.2,"Alias of B.1.1.529.2.86.1.1.16.3.1.2, S:K679R",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
+NS.2,"Alias of B.1.1.529.2.86.1.1.16.3.2, A21258G, China",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
+NS.3,"Alias of B.1.1.529.2.86.1.1.16.3.3, N:T379I, ORF1b:T1522I, China",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
 JN.1.16.4,"Alias of B.1.1.529.2.86.1.1.16.4, S:Q493E, ORF1a:G400S, ORF7a:F59K, East Asia, from sars-cov-2-variants/lineage-proposals#1702",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
 MT.1,"Alias of B.1.1.529.2.86.1.1.16.4.1, S:S31P, N:P279S, from sars-cov-2-variants/lineage-proposals#1702",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
+MT.1.1,"Alias of B.1.1.529.2.86.1.1.16.4.1.1, S:T22N, Asia",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
 JN.1.16.5,"Alias of B.1.1.529.2.86.1.1.16.5, S:T22N, S:Q493E, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
 NF.1,"Alias of B.1.1.529.2.86.1.1.16.5.1, S:S31P",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
+NF.1.1,"Alias of B.1.1.529.2.86.1.1.16.5.1.1, S:A899S",Active,JN.1.16,Omicron,#BC3A88,1,JN.1.16
 JN.1.17,"Alias of B.1.1.529.2.86.1.1.17, S:A222V, USA",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.18,"Alias of B.1.1.529.2.86.1.1.18, S:R346T, directly on JN.1 polytomy, from sars-cov-2-variants/lineage-proposals#1089",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
 JN.1.18.1,"Alias of B.1.1.529.2.86.1.1.18.1, S:T250N, from sars-cov-2-variants/lineage-proposals#1414",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
@@ -1432,9 +1480,9 @@ LH.1,"Alias of B.1.1.529.2.86.1.1.18.4.1, S:K182I from #2567",Active,JN.1.18,Omi
 LH.2,"Alias of B.1.1.529.2.86.1.1.18.4.2, S:I197V, S:P251H from #2567",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
 JN.1.18.5,"Alias of B.1.1.529.2.86.1.1.18.5, S:F456L (T22930A), from sars-cov-2-variants/lineage-proposals#1089",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
 LS.1,"Alias of B.1.1.529.2.86.1.1.18.5.1, S:Y28H, S:L189A, S:184-188del, ORF1a:E940D",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
-JN.1.18.6,"Alias of B.1.1.529.2.86.1.1.18.6, S:F456L (T22928C), S:F59S from #2623",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
-LY.1,"Alias of B.1.1.529.2.86.1.1.18.6.1, S:F65Y, S:Q183P from #2623",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
-LY.2,"Alias of B.1.1.529.2.86.1.1.18.6.2, S:Q183H, C2143T",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
+JN.1.18.6,"Alias of B.1.1.529.2.86.1.1.18.6, S:F456L (T22928C), S:F59S from #2623",Active,JN.1.18.6,Omicron,#E16B1D,1,JN.1.18.6
+LY.1,"Alias of B.1.1.529.2.86.1.1.18.6.1, S:F65Y, S:Q183P from #2623",Active,JN.1.18.6,Omicron,#E16B1D,1,JN.1.18.6
+LY.2,"Alias of B.1.1.529.2.86.1.1.18.6.2, S:Q183H, C2143T",Active,JN.1.18.6,Omicron,#E16B1D,1,JN.1.18.6
 JN.1.18.7,"Alias of B.1.1.529.2.86.1.1.18.7, S:T22N, S:F59S, S:D1260Y from #2623",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
 MN.1,"Alias of B.1.1.529.2.86.1.1.18.7.1, S:D80Y, S:P174S, S:S689N, England/Wales, from sars-cov-2-variants/lineage-proposals#1685",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
 JN.1.18.8,"Alias of B.1.1.529.2.86.1.1.18.8, S:S31del, ORF1a:A690V, ORF1b:S2339F, France",Active,JN.1.18,Omicron,#4DF230,1,JN.1.18
@@ -1512,6 +1560,7 @@ MB.1,"Alias of B.1.1.529.2.86.1.1.49.1.1, S:F456V (T22928G), S:S31F",Active,JN.1
 MB.1.1,"Alias of B.1.1.529.2.86.1.1.49.1.1.1, S:T22N, S:K182N, from sars-cov-2-variants/lineage-proposals#1659",Active,JN.1,Omicron,#660099,1,JN.1
 MB.1.1.1,"Alias of B.1.1.529.2.86.1.1.49.1.1.1.1, ORF1a:T224I, India",Active,JN.1,Omicron,#660099,1,JN.1
 MV.1,"Alias of B.1.1.529.2.86.1.1.49.1.1.1.1.1, S:K478T, India",Active,JN.1,Omicron,#660099,1,JN.1
+MV.1.1,"Alias of B.1.1.529.2.86.1.1.49.1.1.1.1.1.1, ORF1b:K2557R",Active,JN.1,Omicron,#660099,1,JN.1
 MV.2,"Alias of B.1.1.529.2.86.1.1.49.1.1.1.1.2, S:A67V, from sars-cov-2-variants/lineage-proposals#2039",Active,JN.1,Omicron,#660099,1,JN.1
 MB.1.1.2,"Alias of B.1.1.529.2.86.1.1.49.1.1.1.2, T27288A",Active,JN.1,Omicron,#660099,1,JN.1
 NA.1,"Alias of B.1.1.529.2.86.1.1.49.1.1.1.2.1, C19200T, A20079G",Active,JN.1,Omicron,#660099,1,JN.1
@@ -1536,6 +1585,7 @@ JN.1.54.1,"Alias of B.1.1.529.2.86.1.1.54.1, S:F456L, S:V407I, Spain, from #2584
 JN.1.55,"Alias of B.1.1.529.2.86.1.1.55, ORF1a:K399R",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.55.1,"Alias of B.1.1.529.2.86.1.1.55.1, S:F456L, ORF1a:T1017I, Thailand, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.55.2,"Alias of B.1.1.529.2.86.1.1.55.2, S:F456L, ORF1b:P2321H, Brazil, from sars-cov-2-variants/lineage-proposals#1253",Active,JN.1,Omicron,#660099,1,JN.1
+NU.1,"Alias of B.1.1.529.2.86.1.1.55.2, S:R346T, S:Q677H, ORF3a:L52F, Brazil",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.56,"Alias of B.1.1.529.2.86.1.1.56, Orf3a:Q213K",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.56.1,"Alias of B.1.1.529.2.86.1.1.56.1, S:G181R, S:R346T, S:F456V, ORF1a:T1638I, Sinapore/South Korea from #2582",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.57,"Alias of B.1.1.529.2.86.1.1.57, ORF1b:A1219S, A11947G",Active,JN.1,Omicron,#660099,1,JN.1
@@ -1575,6 +1625,8 @@ JN.1.66,"Alias of B.1.1.529.2.86.1.1.66, S:H445P, S:F456L (T22930A), S:T1117I, O
 JN.1.67,"Alias of B.1.1.529.2.86.1.1.67, M:L46F, from #2531",Active,JN.1,Omicron,#660099,1,JN.1
 JN.1.67.1,"Alias of B.1.1.529.2.86.1.1.67.1, S:F456L, China, from #2531",Active,JN.1,Omicron,#660099,1,JN.1
 MZ.1,"Alias of B.1.1.529.2.86.1.1.67.1.1, S:S31F",Active,JN.1,Omicron,#660099,1,JN.1
+JN.1.68,"Alias of B.1.1.529.2.86.1.1.68, C19011T",Active,JN.1,Omicron,#660099,1,JN.1
+JN.1.68.1,"Alias of B.1.1.529.2.86.1.1.68.1, S:K679R, C9836T",Active,JN.1,Omicron,#660099,1,JN.1
 JN.2,"Alias of B.1.1.529.2.86.1.2, ORF1a:Y621C, Europe/North America, from #2284",Active,BA.2,Omicron,#9CCC65,2,BA.2
 JN.2.1,"Alias of B.1.1.529.2.86.1.2.1, S:S31F, Sweden/Australia",Active,BA.2,Omicron,#9CCC65,2,BA.2
 JN.2.2,"Alias of B.1.1.529.2.86.1.2.2, S:T572I, N:G25C, ORF1a:L3644F, Netherlands, from #2433",Active,BA.2,Omicron,#9CCC65,2,BA.2
@@ -4357,6 +4409,7 @@ XDV.1.4,S:I1114T,Active,XDV.1,N/A,#D367B6,2,XDV.1
 XDV.1.5,"S:G184S, S:K478I, China, from sars-cov-2-variants/lineage-proposals#1840",Active,XDV.1,N/A,#D367B6,2,XDV.1
 XDV.1.5.1,"ORF1a:H1141Y, ORF1a:A1473V, ORF3a:R134H, China",Active,XDV.1,N/A,#D367B6,2,XDV.1
 NB.1,"Alias of XDV.1.5.1.1, S:T22N, S:F59S, ORF1a:I2709V, ORF1a:P4197S, China, from sars-cov-2-variants/lineage-proposals#1840",Active,Other,N/A,#FABFD2,1,Other
+NB.1.1,"Alias of XDV.1.5.1.1, S:I478T (rev)",Active,Other,N/A,#FABFD2,1,Other
 XDV.1.6,"S:K478T, S:A263T, ORF1a:V1783I, ORF1a:E1209D",Active,XDV.1,N/A,#D367B6,2,XDV.1
 XDV.1.7,"ORF1a:D2980N, C8950T, China",Active,XDV.1,N/A,#D367B6,2,XDV.1
 XDV.1.7.1,"S:T22N, S:V62F, from sars-cov-2-variants/lineage-proposals#1966",Active,XDV.1,N/A,#D367B6,2,XDV.1
@@ -4374,22 +4427,48 @@ XEB,"Recombinant lineage of FL.15, JN.1.4+T18453C, FL.15 (breakpoints at 774-896
 XEC,"Recombinant lineage of KS.1.1 (JN.1.13.1.1.1) and KP.3.3 (breakpoint 21738-22599), Europe (Germany), from #2717",Active,XEC,N/A,#4CA14C,1,XEC
 XEC.1,"S:K182R, ORF1a:L4182F, on ORF1a:A599T branch, France/Ireland/Canada, from sars-cov-2-variants/lineage-proposals#1869",Active,XEC,N/A,#4CA14C,1,XEC
 XEC.2,"ORF1a:I1367L, lacking ORF1a:A599T, from sars-cov-2-variants/lineage-proposals#1908",Active,XEC,N/A,#4CA14C,1,XEC
+XEC.2.1,ORF1a:V3336F,Active,XEC,N/A,#4CA14C,1,XEC
+XEC.2.2,ORF1a:I280T,Active,XEC,N/A,#4CA14C,1,XEC
+XEC.2.3,"N:T379I, T16476C",Active,XEC,N/A,#4CA14C,1,XEC
+XEC.2.3.1,S:G181V,Active,XEC,N/A,#4CA14C,1,XEC
 XEC.3,"S:E1202Q, from sars-cov-2-variants/lineage-proposals#2088",Active,XEC,N/A,#4CA14C,1,XEC
 XEC.4,"S:T572I, from sars-cov-2-variants/lineage-proposals#2087",Active,XEC,N/A,#4CA14C,1,XEC
 XEC.5,"S:G72R, from sars-cov-2-variants/lineage-proposals#2088",Active,XEC,N/A,#4CA14C,1,XEC
 XEC.6,"S:S680F, from sars-cov-2-variants/lineage-proposals#2088",Active,XEC,N/A,#4CA14C,1,XEC
 XEC.7,"S:W152R, S:P1263Q, from sars-cov-2-variants/lineage-proposals#2088",Active,XEC,N/A,#4CA14C,1,XEC
+XEC.8,T24376C,Active,XEC,N/A,#4CA14C,1,XEC
+XEC.9,ORF1a:T2274I,Active,XEC,N/A,#4CA14C,1,XEC
+XEC.10,S:G75R,Active,XEC,N/A,#4CA14C,1,XEC
+XEC.11,"S:K182N, C829T",Active,XEC,N/A,#4CA14C,1,XEC
+XEC.12,"S:G252S, T25039C",Active,XEC,N/A,#4CA14C,1,XEC
+XEC.13,S:S98F,Active,XEC,N/A,#4CA14C,1,XEC
+XEC.14,ORF1a:A138T,Active,XEC,N/A,#4CA14C,1,XEC
+XEC.15,"ORF1b:M2322I, C9803T",Active,XEC,N/A,#4CA14C,1,XEC
+XEC.16,S:T678I,Active,XEC,N/A,#4CA14C,1,XEC
 XED,"Recombinant lineage of JN.1.4 and LF.1.1.1 (breakpoint 19210-21652), from #2691",Active,Other,N/A,#FABFD2,1,Other
 XEE,"Recombinant lineage of KP.2.3.7 and JN.1* (breakpoint 24873-25592), from #2721",Active,Other,N/A,#FABFD2,1,Other
 XEF,"Recombinant lineage of LB.1.4 and KP.3 (breakpoint 22600-23038), from sars-cov-2-variants/lineage-proposals#1855",Active,Other,N/A,#FABFD2,1,Other
 XEG,"Recombinant lineage of JN.3.2.1, GJ.1.2, JN.3.2.1, GJ.1.2 (breakpoints: 2940-3430, 11043-12788, 28210-28957), from sars-cov-2-variants/lineage-proposals#1428",Active,Other,N/A,#FABFD2,1,Other
 XEH,"Recombinant lineage of KP.1.1.3, KP.3 (breakpoint: 22599-23039), from #2790",Active,Other,N/A,#FABFD2,1,Other
 XEJ,"Recombinant lineage of JN.1, LF.1.1.1 (breakpoint: 6574-16550), from #2786",Active,Other,N/A,#FABFD2,1,Other
-XEK,"Recombinant lineage of KP.2.3, XEC (breakpoint: 9286-15402), from #2774",Active,Other,N/A,#FABFD2,1,Other
+XEJ.1,"ORF1a:A2508V, C6070T",Active,Other,N/A,#FABFD2,1,Other
+XEJ.2,S:R190S,Active,Other,N/A,#FABFD2,1,Other
+XEJ.3,C12778T,Active,Other,N/A,#FABFD2,1,Other
+XEK,"Recombinant lineage of KP.2.3, XEC (breakpoint: 9286-15402), from #2774",Active,XEK,N/A,#7EB1E8,1,XEK
+XEK.1,ORF1a:R1170H,Active,XEK,N/A,#7EB1E8,1,XEK
+XEK.1.1,S:S680P,Active,XEK,N/A,#7EB1E8,1,XEK
+XEK.2,ORF3a:A23S,Active,XEK,N/A,#7EB1E8,1,XEK
+XEK.3,"ORF1b:P970L, ORF1b:T1511I",Active,XEK,N/A,#7EB1E8,1,XEK
+XEK.4,S:S680F,Active,XEK,N/A,#7EB1E8,1,XEK
 XEL,"Recombinant lineage of KS.1.1.2, JN.1 (breakpoint: 22929-24820), South Korea, from #2751",Active,Other,N/A,#FABFD2,1,Other
 XEM,"Recombinant lineage of KS.1, KP.3.3.1 (breakpoint: 22600-23038), from sars-cov-2-variants/lineage-proposals#2105",Active,Other,N/A,#FABFD2,1,Other
 XEN,"Recombinant lineage of KP.1.1.6, JN.1.11.1 (breakpoint: 22620-24818), from #2791",Active,Other,N/A,#FABFD2,1,Other
 XEP,"Recombinant lineage of KP.3.1.1, NP.2 (breakpoint: 21656-22864), from sars-cov-2-variants/lineage-proposals#2166",Active,Other,N/A,#FABFD2,1,Other
+XEQ,"Recombinant lineage of KS.1.1.2, KP.3 (breakpoint: 22600-23038), from #2817",Active,Other,N/A,#FABFD2,1,Other
+XER,"Recombinant lineage of KS.2, LF.7 (breakpoint: 18349-21626), from sars-cov-2-variants/lineage-proposals#2259",Active,Other,N/A,#FABFD2,1,Other
+XES,"Recombinant lineage of KP.2.3.15, KP.3.3 (breakpoint: 22001-22598), from #2783",Active,Other,N/A,#FABFD2,1,Other
+XET,"Recombinant lineage of KP.1.1.1., KP.3.1.1 (breakpoint: 20105-21652), from sars-cov-2-variants/lineage-proposals#2302",Active,Other,N/A,#FABFD2,1,Other
+XEU,"Recombinant lineage of XEK, XEC.8 (breakpoint: 3506-7112), from sars-cov-2-variants/lineage-proposals#2298",Active,Other,N/A,#FABFD2,1,Other
 JN.1.33,"Redesignated as JN.1.39.3, Alias of B.1.1.529.2.86.1.1.33, S:A67V, G2782T, C5512T, China from #2498",Active,JN.1,Omicron,#660099,1,JN.1
 KR.2,Redesignated as LT.1 (JN.1.1.3.1) due to lack of C9142T,Active,Other,N/A,#FABFD2,1,Other
 KP.2.14.1,Redesignated as KP.2.14: there's no good evidence for KP.2.14 lacking S:T22N in any sequences. Hence make KP.2.14.1 -> KP.2.14 and require S:T22N,Active,KP.2,N/A,#5875A1,1,KP.2
