@@ -1272,6 +1272,7 @@ KP.3.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1, G15372T, A19722G",Active
 KP.3.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1, ORF1a:S4286C, C12616T, S:S31del, Spain, from sars-cov-2-variants/lineage-proposals#1563",Active
 MC.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1, S:T572I, from sars-cov-2-variants/lineage-proposals#1638",Active
 MC.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.1, S:A942S, C13297T, C14220T, from sars-cov-2-variants/lineage-proposals#1932",Active
+MC.1.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.1.1, ORF1a:P1096L, C13264T, Australia-SA",Active
 MC.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.2, S:A1174V, sibling of MC.1.1, from sars-cov-2-variants/lineage-proposals#2206",Active
 MC.1.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.3, ORF1a:E977D",Active
 MC.1.3.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1.3.1, S:F4L, from sars-cov-2-variants/lineage-proposals#2192",Active
@@ -1314,6 +1315,7 @@ MC.26.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.26.1, S:T572I, from sars-cov-2-v
 MC.27,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.27, S:D111N, from sars-cov-2-variants/lineage-proposals#2108",Active
 MC.28,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.28, T16224C",Active
 MC.28.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.28.1, S:C1235F, S:A435S, from sars-cov-2-variants/lineage-proposals#2201",Active
+MC.29,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.29, ORF1a:N615K",Active
 KP.3.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.2, S:S151I，from sars-cov-2-variants/lineage-proposals#1589",Active
 KP.3.1.3,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.3, S:S31F,from sars-cov-2-variants/lineage-proposals#1576",Active
 KP.3.1.4,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.4, ORF1b:P1675S,from #2627",Active
@@ -4410,7 +4412,12 @@ XDV.1.4,S:I1114T,Active
 XDV.1.5,"S:G184S, S:K478I, China, from sars-cov-2-variants/lineage-proposals#1840",Active
 XDV.1.5.1,"ORF1a:H1141Y, ORF1a:A1473V, ORF3a:R134H, China",Active
 NB.1,"Alias of XDV.1.5.1.1, S:T22N, S:F59S, ORF1a:I2709V, ORF1a:P4197S, China, from sars-cov-2-variants/lineage-proposals#1840",Active
-NB.1.1,"Alias of XDV.1.5.1.1, S:I478T (rev), from sars-cov-2-variants/lineage-proposals#2280",Active
+NB.1.1,"Alias of XDV.1.5.1.1.1, S:I478T (rev), from sars-cov-2-variants/lineage-proposals#2280",Active
+NB.1.2,"Alias of XDV.1.5.1.1.2, S:V1264L, China",Active
+NB.1.3,"Alias of XDV.1.5.1.1.3, G19824A",Active
+NB.1.3.1,"Alias of XDV.1.5.1.1.3.1, S:T572I",Active
+NB.1.4,"Alias of XDV.1.5.1.1.4, C26801T",Active
+NB.1.5,"Alias of XDV.1.5.1.1.5, ORF1a:A117T",Active
 XDV.1.6,"S:K478T, S:A263T, ORF1a:V1783I, ORF1a:E1209D",Active
 XDV.1.7,"ORF1a:D2980N, C8950T, China",Active
 XDV.1.7.1,"S:T22N, S:V62F, from sars-cov-2-variants/lineage-proposals#1966",Active
@@ -4422,6 +4429,14 @@ XDV.1.11,T4057C,Active
 XDW,"Recombinant lineage of JN.2 (T1030C branch), XDA (breakpoint between 23424-23603), Japan, from sars-cov-2-variants/lineage-proposals#1471",Active
 XDY,"Recombinant lineage of LB.1.2.1 and KP.3.2 (breakpoint between 22131-22599), Sweden/Spain, from sars-cov-2-variants/lineage-proposals#1559",Active
 XDY.1,"S:A435S, S:A1174T, N:R36Q, ORF7a:P34L, ORF9b:D33N, France, from sars-cov-2-variants/lineage-proposals#2014",Active
+XDY.1.1,S:T572I,Active
+XDY.2,"S:Q677H, S:R346T",Active
+XDY.3,"S:A435S, ORF1a:T4129I",Active
+XDY.4,S:R346T,Active
+XDY.5,G18756A,Active
+XDY.5.1,"S:T572I, USA",Active
+XDY.6,ORF3a:I35T,Active
+XDY.7,C6781T,Active
 XDZ,"Recombinant lineage of JG.3 and JN.1.1.10 (breakpoint between 11043-12788), Europe/North America, from sars-cov-2-variants/lineage-proposals#1356",Active
 XEA,"Recombinant lineage of JN.1.63.1 and EG.5 (breakpoint between 27057-27915), East Asia",Active
 XEB,"Recombinant lineage of FL.15, JN.1.4+T18453C, FL.15 (breakpoints at 774-896 and 26834-27809), USA, from sars-cov-2-variants/lineage-proposals#1290",Active
@@ -4434,6 +4449,7 @@ XEC.2.3,"N:T379I, T16476C, from sars-cov-2-variants/lineage-proposals#2104",Acti
 XEC.2.3.1,"S:G181V, from sars-cov-2-variants/lineage-proposals#2104",Active
 XEC.3,"S:E1202Q, from sars-cov-2-variants/lineage-proposals#2088",Active
 XEC.4,"S:T572I, from sars-cov-2-variants/lineage-proposals#2087",Active
+XEC.4.1,"T23584C, C27294T, C29353T, Australia",Active
 XEC.5,"S:G72R, from sars-cov-2-variants/lineage-proposals#2088",Active
 XEC.6,"S:S680F, from sars-cov-2-variants/lineage-proposals#2088",Active
 XEC.7,"S:W152R, S:P1263Q, from sars-cov-2-variants/lineage-proposals#2088",Active
@@ -4446,6 +4462,8 @@ XEC.13,"S:S98F, from sars-cov-2-variants/lineage-proposals#2088",Active
 XEC.14,ORF1a:A138T,Active
 XEC.15,"ORF1b:M2322I, C9803T",Active
 XEC.16,"S:T678I, from sars-cov-2-variants/lineage-proposals#2088",Active
+XEC.17,"S:T95I, on ORF1a:A599T branch, Israel, from #2879",Active
+XEC.18,G28378T,Active
 XED,"Recombinant lineage of JN.1.4 and LF.1.1.1 (breakpoint 19210-21652), from #2691",Active
 XEE,"Recombinant lineage of KP.2.3.7 and JN.1* (breakpoint 24873-25592), from #2721",Active
 XEF,"Recombinant lineage of LB.1.4 and KP.3 (breakpoint 22600-23038), from sars-cov-2-variants/lineage-proposals#1855",Active
@@ -4470,6 +4488,12 @@ XER,"Recombinant lineage of KS.2, LF.7 (breakpoint: 18349-21626), from sars-cov-
 XES,"Recombinant lineage of KP.2.3.15, KP.3.3 (breakpoint: 22001-22598), from #2783",Active
 XET,"Recombinant lineage of KP.1.1.1., KP.3.1.1 (breakpoint: 20105-21652), from sars-cov-2-variants/lineage-proposals#2302",Active
 XEU,"Recombinant lineage of XEK, XEC.8 (breakpoint: 3506-7112), from sars-cov-2-variants/lineage-proposals#2298",Active
+XEV,"Recombinant lineage of KP.3.1.1, XEC.18 (breakpoint: 12617-13120)",Active
+XEW,"Recombinant lineage of KP.3.1.1, XEC.8 (breakpoint: 13122-15371)",Active
+XEY,"Recombinant lineage of MC.29, XEC (breakpoint: 17335-18656)",Active
+XEZ,"Recombinant lineage of MC.6, XEC (breakpoint: 15373-17333)",Active
+XFA,"Recombinant lineage of MC.1.1.1, XEC.4.1 (breakpoint: 13297-15371), from #2878",Active
+XFB,"Recombinant lineage of MC.24, XDY.1.1, MC.24 (breakpoints: 19723-22110,23278-25081), from #2877",Active
 A.2.1,Withdrawn: Lineage with sequences predominantly from Panama,Withdrawn
 A.8,Withdrawn: Indian lineage merged with A.9,Withdrawn
 A.10,Withdrawn: Spanish lineage reassigned to A.5,Withdrawn
