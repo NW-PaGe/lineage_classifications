@@ -143,8 +143,16 @@ lineage_doh_variant_name <- active_lineages %>%
     lineage_extracted == "MC.1" ~ "MC.1",
     #KP.3.1.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1
     grepl("^KP.3.1.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1", description) ~ "KP.3.1.1",
+    
+    #XEC.4
+    grepl("^XEC.4", lineage_extracted)~ "XEC.4",
+    #XEC (Disaggregated on CDC Nowcast but description is: Recombinant lineage of KS.1.1, JN.1.13.1.1.1 and KP.3.3)
+    grepl("^XEC", lineage_extracted)~ "XEC",
     #KP.3 Alias of B.1.1.529.2.86.1.1.11.1.3
     grepl("^KP.3", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3", description) ~ "KP.3",
+    
+    #XEQ (Disaggregated on CDC Nowcast but description is: Recombinant lineage of KS.1.1.2, KP.3
+    grepl("^XEQ", lineage_extracted)~ "XEQ",
     
     #KP.4.1 Alias of B.1.1.529.2.86.1.1.11.1.4.1
     grepl("^KP.4", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.4\\.1", description) ~ "KP.4.1",
@@ -193,8 +201,6 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("^JN.1.7", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.7", description) ~ "JN.1.7",
     #JN.1.8.1 Alias of B.1.1.529.2.86.1.1.8.1
     grepl("^JN.1.8.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.8\\.1", description) ~ "JN.1.8.1",
-    #XEC
-    grepl("^XEC", lineage_extracted)~ "XEC",
     #JN.1
     grepl("^JN.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.", description) ~ "JN.1",
     #BA.2.86
@@ -576,6 +582,8 @@ ww_lineage_data <- subset(lineage_data_final, select = -hex_code )
 ww_lineage_data_1 <- ww_lineage_data %>%
   mutate(wastewater_variant_name = case_when(
     doh_variant_name == "XEC" ~ "XEC",
+    doh_variant_name == "XEC.4" ~ "XEC.4",
+    doh_variant_name == "XEQ" ~ "XEQ",
     doh_variant_name == "XDV.1" ~ "XDV.1",
     doh_variant_name == "XDP" ~ "XDP",
     doh_variant_name == "XBB" ~ "XBB",
