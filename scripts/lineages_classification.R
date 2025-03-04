@@ -139,8 +139,10 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("^MC.19", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.19", description) ~ "MC.19",
     #MC.10.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.10.1
     grepl("^MC.10.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.10\\.1", description) ~ "MC.10.1",
+    #MC.28.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.28.1
+    grepl("^MC.28.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.28\\.1", description) ~ "MC.28.1",
     #MC.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1
-    lineage_extracted == "MC.1" ~ "MC.1",
+    lineage_extracted == "MC.1" ~ "MC.1", 
     #KP.3.1.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1
     grepl("^KP.3.1.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1", description) ~ "KP.3.1.1",
     
