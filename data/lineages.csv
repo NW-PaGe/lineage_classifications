@@ -1380,7 +1380,6 @@ MC.32.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.32.1, S:R346T, S:H445R, ORF1a:T1
 MC.33,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.33, ORF1b:R1736K, from #2851",Active
 MC.33.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.33.1, S:R346T, S:H445R, from #2851",Active
 MC.33.2,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.33.2, S:R346T, S:S929T, from #2851",Active
-MC.34,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.34, A29716T",Active
 MC.35,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.35, C10432T",Active
 MC.36,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.36, ORF1a:K141R",Active
 MC.36.1,"Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.36.1, ORF1a:H110Y",Active
@@ -4945,3 +4944,4 @@ JN.1.33,"Redesignated as JN.1.39.3, Alias of B.1.1.529.2.86.1.1.33, S:A67V, G278
 KD.5,"Withdrawn: Alias of XBC.1.3.1.5, S:L244F, Australia, indel artefact caused false S:L244F (#2405)",Withdrawn
 KR.2,Redesignated as LT.1 (JN.1.1.3.1) due to lack of C9142T,Active
 PC.2,"Redesignated as LF.7.9, S:L441R, S:H445P, Wales/Scotland, from sars-cov-2-variants/lineage-proposals#2395",Active
+MC.34,"Withdrawn: Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.34, A29716T (29716 in UTR masked by pangolin)",Withdrawn
