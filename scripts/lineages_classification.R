@@ -161,6 +161,8 @@ lineage_doh_variant_name <- active_lineages %>%
     
     #KS.1 Alias of B.1.1.529.2.86.1.1.13.1.1
     grepl("^KS.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.13\\.1\\.1", description) ~ "KS.1",
+    #LF.7.2.1 Alias of B.1.1.529.2.86.1.1.16.1.7.2.1
+    grepl("^LF.7.2.1", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.2\\.1", description) ~ "LF.7.2.1",
     #LF.7 Alias of B.1.1.529.2.86.1.1.16.1.7
     grepl("^LF.7", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7", description) ~ "LF.7",
     #LF.3.1 Alias of B.1.1.529.2.86.1.1.16.1.3.1
@@ -686,3 +688,4 @@ load(file.path(network_path,"Data_Objects/Lineages/ww_lineage_classifications.rD
 write.csv(ww_lineage_data_final, file=file.path(wastewater_path,"Wastewater Surveillance/R Scripts/ww_lineage_classifications.csv"), row.names=FALSE)
 
 ########################### 
+
