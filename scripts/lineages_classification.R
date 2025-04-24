@@ -549,7 +549,6 @@ new_lineage_data <- lineage_data_final %>%
 new_lineage_data
 
 
-
 ###########################
 # Part 3: write out as csv
 ###########################   
