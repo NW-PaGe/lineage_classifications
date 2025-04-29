@@ -137,8 +137,12 @@ lineage_doh_variant_name <- active_lineages %>%
     
     #MC.19 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.19
     grepl("^MC.19", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.19", description) ~ "MC.19",
+    
+    #PA.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.10.1.1.1, S:H445P, N:A152S, from sars-cov-2-variants/lineage-proposals#2356
+    grepl("^PA.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.10\\.1\\.1\\.1", description) ~ "PA.1",
     #MC.10.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.10.1
     grepl("^MC.10.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.10\\.1", description) ~ "MC.10.1",
+    
     #MC.28.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.28.1
     grepl("^MC.28.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3\\.1\\.1\\.28\\.1", description) ~ "MC.28.1",
     #MC.1 Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.1
@@ -165,8 +169,16 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("^KS.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.13\\.1\\.1", description) ~ "KS.1",
     #LF.7.2.1 Alias of B.1.1.529.2.86.1.1.16.1.7.2.1
     grepl("^LF.7.2.1", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.2\\.1", description) ~ "LF.7.2.1",
+    
+    #LF.7.2.1 Alias of B.1.1.529.2.86.1.1.16.1.7.2.1, S:A475V, from sars-cov-2-variants/lineage-proposals#2067
+    grepl("^LF.7.2.1", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.2//.1", description) ~ "LF.7.2.1",
+    #LF.7.7.2 Alias of B.1.1.529.2.86.1.1.16.1.7.7.2, S:H445P, from sars-cov-2-variants/lineage-proposals#2349
+    grepl("^LF.7.7.2", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.7//.2", description) ~ "LF.7.7.2",
+    #LF.7.7.1 Alias of B.1.1.529.2.86.1.1.16.1.7.7.1, S:T572I, Peru, from sars-cov-2-variants/lineage-proposals#2215
+    grepl("^LF.7.7.1", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.7//.1", description) ~ "LF.7.7.1",
     #LF.7 Alias of B.1.1.529.2.86.1.1.16.1.7
     grepl("^LF.7", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7", description) ~ "LF.7",
+    
     #LF.3.1 Alias of B.1.1.529.2.86.1.1.16.1.3.1
     grepl("^LF.3.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.3\\.1", description) ~ "LF.3.1",
     #JN.1.13.1 Alias of Alias of B.1.1.529.2.86.1.1.13.
