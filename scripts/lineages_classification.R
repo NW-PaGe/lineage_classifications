@@ -115,6 +115,8 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("B.1.1.529.2.75", description) ~ "BA.2.75" ,
     
     #BA.2.86 Family
+    #XFC (Recombinant lineage of LP.8.1.1, LF.7, LP.8.1.1 (breakpoints: 8818-12891,22120-22892), from sars-cov-2-variants/lineage-proposals#2323)
+    grepl("^XFC", lineage_extracted) ~ "XFC",
     #LP.8.1 Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1
     grepl("^LP.8.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.1\\.1\\.3\\.8\\.1", description) ~ "LP.8.1",
     #LP.1 Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.1
