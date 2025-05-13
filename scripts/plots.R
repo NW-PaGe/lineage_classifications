@@ -2,7 +2,6 @@
 ## ---- libraries
 library(pacman)
 p_load(
-  reticulate,
   fs,
   lubridate,
   dplyr,

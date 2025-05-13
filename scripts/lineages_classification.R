@@ -13,13 +13,13 @@ if (!suppressPackageStartupMessages(require(pacman))) {
 }
 
 pacman::p_load(odbc,
-               tidyverse,
                readxl,
                lubridate,
                fs,
                dplyr,
                readr,
-               data.table)
+               data.table,
+              magrittr)
 ################################
 #   Import most recent lineage file created from DIQA
 ################################
