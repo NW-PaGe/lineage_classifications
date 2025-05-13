@@ -18,6 +18,26 @@ jobs:
          with:
            app-id: ${{ secrets.YOUR_GITHUB_APP_ID }}
            private-key: ${{ secrets.YOUR_GITHUB_APP_PRIVATE_KEY }}
+           
+       - name: Install dependencies
+         run: |
+           sudo apt update
+           sudo apt install -y \
+             build-essential \
+             cmake \
+             gdal-bin \
+             libcurl4-openssl-dev \
+             libfontconfig1-dev \
+             libfreetype6-dev \
+             libgdal-dev \
+             libglpk-dev \
+             libssl-dev \
+             libudunits2-dev \
+             libx11-dev \
+             libxml2-dev \
+             pandoc \
+             libharfbuzz-dev \
+             libfribidi-dev
 
        # Step 2: Checkout repository code using GitHub App Token
        - name: Check out repository code
