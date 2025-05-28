@@ -51,7 +51,7 @@ if(Sys.getenv("network_path") != ""){
 names(lineages)
 length(unique(lineages$lineage_extracted))
 
-
+ 
 #####################
 # Check to see if there are duplicate lineages in file 
 # This step done by DIQA
