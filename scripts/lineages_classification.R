@@ -124,7 +124,7 @@ lineage_doh_variant_name <- active_lineages %>%
     #KP.1.1 Alias of B.1.1.529.2.86.1.1.11.1.1.1
     grepl("^KP.1.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.1\\.1", description) ~ "KP.1.1",
     
-    #XEK (Disaggregated on CDC Nowcast 12/21/2024 but description is recombinant lineage of KP.2.3, XEC)
+    #XEK (Disaggregated on CDC Nowcast 12/21/2024 but description is recombinant lineage of KP.2.3, XEC) Recombinant lineage of KP.2.3, XEC (breakpoint: 9286-15402), from #2774
     grepl("^XEK", lineage_extracted) ~ "XEK",
     #KP.2.3 Alias of B.1.1.529.2.86.1.1.11.1.2.3
     grepl("^KP.2.3", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.2\\.3", description) ~ "KP.2.3",
@@ -163,10 +163,19 @@ lineage_doh_variant_name <- active_lineages %>%
     
     #KS.1 Alias of B.1.1.529.2.86.1.1.13.1.1
     grepl("^KS.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.13\\.1\\.1", description) ~ "KS.1",
-    #LF.7.2.1 Alias of B.1.1.529.2.86.1.1.16.1.7.2.1
+    
+    #LF.7.2.1 Alias of B.1.1.529.2.86.1.1.16.1.7.2.1, S:A475V, from sars-cov-2-variants/lineage-proposals#2067
     grepl("^LF.7.2.1", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.2\\.1", description) ~ "LF.7.2.1",
-    #LF.7 Alias of B.1.1.529.2.86.1.1.16.1.7
-    grepl("^LF.7", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7", description) ~ "LF.7",
+    #LF.7.7.2 Alias of B.1.1.529.2.86.1.1.16.1.7.7.2, S:H445P, from sars-cov-2-variants/lineage-proposals#2349
+    grepl("^LF.7.7.2", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.7\\.2", description) ~ "LF.7.7.2",
+    #LF.7.7.1 Alias of B.1.1.529.2.86.1.1.16.1.7.7.1, S:T572I, Peru, from sars-cov-2-variants/lineage-proposals#2215
+    grepl("^LF.7.7.1", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.7\\.1", description) ~ "LF.7.7.1",
+####LF.7.9 is below XFG on the JN.1 family tree but due to the tiering nature of the R script, it had to be moved out of it's family section to be sorted appropriately    
+    #LF.7.9 Alias of B.1.1.529.2.86.1.1.16.1.7.9, S:L441R, S:H445P, S:A475V, from sars-cov-2-variants/lineage-proposals#2473
+    grepl("^LF.7.9", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.9", description) ~ "LF.7.9",
+    #LF.7 Alias of B.1.1.529.2.86.1.1.16.1.7, S:T22N, S:S31P, S:K182R, S:R190S, S:K444R, ORF9b:I5T, Senegal, from #2733
+    grepl("^LF.7", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7", description)~ "LF.7",
+    
     #LF.3.1 Alias of B.1.1.529.2.86.1.1.16.1.3.1
     grepl("^LF.3.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.3\\.1", description) ~ "LF.3.1",
     #JN.1.13.1 Alias of Alias of B.1.1.529.2.86.1.1.13.
@@ -205,6 +214,13 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("^JN.1.7", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.7", description) ~ "JN.1.7",
     #JN.1.8.1 Alias of B.1.1.529.2.86.1.1.8.1
     grepl("^JN.1.8.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.8\\.1", description) ~ "JN.1.8.1",
+    #XFC Recombinant lineage of LP.8.1.1, LF.7, LP.8.1.1 (breakpoints: 8818-12891,22120-22892), from sars-cov-2-variants/lineage-proposals#2323
+    grepl("^XFC", lineage_extracted) ~ "XFC",
+    #XFG Recombinant lineage of LF.7, LP.8.1.2, LF.7 (breakpoints: 22894-22895, 23040-24818), from sars-cov-2-variants/lineage-proposals#2449
+    grepl("^XFG", lineage_extracted) ~ "XFG",
+####LF.7.9 is above in the  LF.7 group from JN.1.16.1 family due to tiering labeling.   
+    #LF.7.9 Alias of B.1.1.529.2.86.1.1.16.1.7.9, S:L441R, S:H445P, S:A475V, from sars-cov-2-variants/lineage-proposals#2473
+    #grepl("^LF.7.9", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.9", description) ~ "LF.7.9",
     #JN.1
     grepl("^JN.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.", description) ~ "JN.1",
     #BA.2.86
@@ -213,6 +229,9 @@ lineage_doh_variant_name <- active_lineages %>%
     #XDV Family
     #XDV.1
     grepl("^XDV.1", lineage_extracted) ~ "XDV.1",
+    #NB.1.8.1 Alias of XDV.1.5.1.1.8.1, S:A435S, from sars-cov-2-variants/lineage-proposals#2431
+    grepl("^NB.1.8.1", lineage_extracted) | grepl("XDV\\.1\\.5\\.1\\.1\\.8\\.1", description) ~ "NB.1.8.1",
+
     
     #BA.4 Family
     #BA.4.6 Alias of B.1.1.529.4.6
