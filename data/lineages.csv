@@ -5121,6 +5121,7 @@ XFG.3.4.3,"T24289A, on T15762C branch",Active
 XFG.3.4.4,"S:V367I, N:A152S, ORF1b:A520T",Active
 XFG.3.5,"ORF1b:M2025V, on C10615T branch",Active
 XFG.3.5.1,S:A688V,Active
+XFG.3.5.2,S:S680F,Active
 XFG.3.6,"ORF1a:L3086F, on C10615T branch",Active
 XFG.3.7,"ORF3a:L52F, on C10615T branch",Active
 XFG.3.8,"ORF3a:E19G, on A28877T, G28878C branch",Active
@@ -5168,6 +5169,7 @@ XFG.18.1,S:L335F,Active
 XFG.19,"S:T286I, ORF1a:T2283I, ORF1b:T239I",Active
 XFG.21,"ORF1b:V2223L, on T16224C branch",Active
 XFG.22,"S:A958S, on C20178T branch",Active
+XFG.22.1,S:A263S,Active
 XFG.23,ORF1a:L1546I,Active
 XFG.23.1,"S:L335F, ORF1a:I114T",Active
 XFG.24,"S:G75V, on ORF1b:P1821S branch",Active
