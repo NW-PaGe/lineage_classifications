@@ -559,7 +559,7 @@ length(lineage_data_final)
 nrow(previous_lineage_data)
 nrow(lineage_data_final)
 
-# Find new variants in updated data
+## Find new variants in updated data
 #new_variants <- setdiff(lineage_data_final, previous_lineage_data)
 #print(new_variants)
 
