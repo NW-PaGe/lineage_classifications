@@ -115,6 +115,8 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("B.1.1.529.2.75", description) ~ "BA.2.75" ,
     
     #BA.2.86 Family
+    #NW.1 Alias of  B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.2.1
+    grepl("^NW.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.1\\.1\\.3\\.8\\.1\\.2\\.1", description) ~ "NW.1",
     #LP.8.1 Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1
     grepl("^LP.8.1", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.1\\.1\\.3\\.8\\.1", description) ~ "LP.8.1",
     #LP.1 Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.1
@@ -149,7 +151,7 @@ lineage_doh_variant_name <- active_lineages %>%
     #XEC.4
     grepl("^XEC.4", lineage_extracted)~ "XEC.4",
     #XEC (Disaggregated on CDC Nowcast but description is: Recombinant lineage of KS.1.1, JN.1.13.1.1.1 and KP.3.3)
-    grepl("^XEC", lineage_extracted)~ "XEC",
+    grepl("^XEC", lineage_extracted) | grepl("Alias of XEC", description) ~ "XEC",
     #KP.3 Alias of B.1.1.529.2.86.1.1.11.1.3
     grepl("^KP.3", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.11\\.1\\.3", description) ~ "KP.3",
     
@@ -170,7 +172,7 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("^LF.7.7.2", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.7\\.2", description) ~ "LF.7.7.2",
     #LF.7.7.1 Alias of B.1.1.529.2.86.1.1.16.1.7.7.1, S:T572I, Peru, from sars-cov-2-variants/lineage-proposals#2215
     grepl("^LF.7.7.1", lineage_extracted)| grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.7\\.1", description) ~ "LF.7.7.1",
-####LF.7.9 is below XFG on the JN.1 family tree but due to the tiering nature of the R script, it had to be moved out of it's family section to be sorted appropriately    
+    ####LF.7.9 is below XFG on the JN.1 family tree but due to the tiering nature of the R script, it had to be moved out of it's family section to be sorted appropriately    
     #LF.7.9 Alias of B.1.1.529.2.86.1.1.16.1.7.9, S:L441R, S:H445P, S:A475V, from sars-cov-2-variants/lineage-proposals#2473
     grepl("^LF.7.9", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.9", description) ~ "LF.7.9",
     #LF.7 Alias of B.1.1.529.2.86.1.1.16.1.7, S:T22N, S:S31P, S:K182R, S:R190S, S:K444R, ORF9b:I5T, Senegal, from #2733
@@ -217,8 +219,8 @@ lineage_doh_variant_name <- active_lineages %>%
     #XFC Recombinant lineage of LP.8.1.1, LF.7, LP.8.1.1 (breakpoints: 8818-12891,22120-22892), from sars-cov-2-variants/lineage-proposals#2323
     grepl("^XFC", lineage_extracted) ~ "XFC",
     #XFG Recombinant lineage of LF.7, LP.8.1.2, LF.7 (breakpoints: 22894-22895, 23040-24818), from sars-cov-2-variants/lineage-proposals#2449
-    grepl("^XFG", lineage_extracted) ~ "XFG",
-####LF.7.9 is above in the  LF.7 group from JN.1.16.1 family due to tiering labeling.   
+    grepl("^XFG", lineage_extracted) | grepl("Alias of XFG", description) ~ "XFG", 	
+    ####LF.7.9 is above in the  LF.7 group from JN.1.16.1 family due to tiering labeling.   
     #LF.7.9 Alias of B.1.1.529.2.86.1.1.16.1.7.9, S:L441R, S:H445P, S:A475V, from sars-cov-2-variants/lineage-proposals#2473
     #grepl("^LF.7.9", lineage_extracted) | grepl("B\\.1\\.1\\.529\\.2\\.86\\.1\\.1\\.16\\.1\\.7\\.9", description) ~ "LF.7.9",
     #JN.1
@@ -227,11 +229,12 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("^BA.2.86", lineage_extracted) ~ "BA.2.86",
     
     #XDV Family
-    #XDV.1
-    grepl("^XDV.1", lineage_extracted) ~ "XDV.1",
     #NB.1.8.1 Alias of XDV.1.5.1.1.8.1, S:A435S, from sars-cov-2-variants/lineage-proposals#2431
     grepl("^NB.1.8.1", lineage_extracted) | grepl("XDV\\.1\\.5\\.1\\.1\\.8\\.1", description) ~ "NB.1.8.1",
-
+    #XDV.1
+    grepl("^XDV.1", lineage_extracted) | grepl("XDV\\.1\\.", description)~ "XDV.1",
+    
+    
     
     #BA.4 Family
     #BA.4.6 Alias of B.1.1.529.4.6
@@ -347,7 +350,7 @@ lineage_doh_variant_name <- active_lineages %>%
     grepl("^XBB.2.3", lineage_extracted) | grepl("XBB\\.2\\.3", description) ~ "XBB.2.3",
     
     #XBB Lineage
-    grepl("^XBB", lineage_extracted) ~ "XBB",
+    grepl("^XBB", lineage_extracted) | grepl("Alias of XBB", description) ~ "XBB",
     #XDP Lineage
     grepl("^XDP", lineage_extracted) | grepl("XDP\\.", lineage_extracted) ~ "XDP",
     
@@ -394,7 +397,6 @@ lineage_doh_variant_name <- active_lineages %>%
     TRUE ~ "Other") ) 
 
 ##### Part 2. 'who_name' variable code
-
 lineage_who_name <-lineage_doh_variant_name %>%
   mutate(who_name = case_when( 
     #Alpha
@@ -424,8 +426,6 @@ lineage_who_name <-lineage_doh_variant_name %>%
       grepl("^Alias of XBB", description) ~ "Omicron",
     #all non VOC/VBMs as NULL,
     TRUE ~ "N/A"))
-
-
 
 ##### Part 3. 'cdc_class' variable code
 
@@ -559,14 +559,18 @@ length(lineage_data_final)
 nrow(previous_lineage_data)
 nrow(lineage_data_final)
 
+# Find new variants in updated data
+#new_variants <- setdiff(lineage_data_final, previous_lineage_data)
+#print(new_variants)
+
+
 #new_lineage_data <-anti_join(previous_lineage_data, lineage_data_final)
 
 #list of ones not in previous list
-new_lineage_data <- lineage_data_final %>%
-  filter(!lineage_extracted %in% previous_lineage_data$lineage_extracted)
+#new_lineage_data <- lineage_data_final %>%
+#  filter(!lineage_extracted %in% previous_lineage_data$lineage_extracted)
 
-new_lineage_data
-
+#new_lineage_data
 
 ###########################
 # Part 3: write out as csv
@@ -603,12 +607,15 @@ ww_lineage_data <- subset(lineage_data_final, select = -hex_code )
 ## Regrouping variants sorted as "Other" in previous data to their parent lineage IF available
 ww_lineage_data_1 <- ww_lineage_data %>%
   mutate(wastewater_variant_name = case_when(
-    doh_variant_name == "XEC" ~ "XEC",
-    doh_variant_name == "XEC.4" ~ "XEC.4",
-    doh_variant_name == "XEQ" ~ "XEQ",
+    doh_variant_name == "XEC" | grepl("Alias of XEC", description) ~ "XEC",
+    doh_variant_name == "XEK" | grepl("Alias of XEK", description) ~ "XEK",
+    doh_variant_name == "XFC" | grepl("Alias of XFC", description) ~ "XFC",
+    doh_variant_name == "XEC.4"  ~ "XEC.4",
+    doh_variant_name == "XEQ" | grepl("Alias of XEQ", description) ~ "XEQ",
     doh_variant_name == "XDV.1" ~ "XDV.1",
-    doh_variant_name == "XDP" ~ "XDP",
+    doh_variant_name == "XDP" | grepl("Alias of XDP", description) ~ "XDP",
     doh_variant_name == "XBB" ~ "XBB",
+    doh_variant_name == "XFG" | grepl("Alias of XFG", description) ~ "XFG",
     grepl("^Recombinant", description) ~ "Recombinant",
     
     # GD.# variants- Alias' XBB.1.9.3.# --> lineage extracted is XBB.1.9.3 and assigned as XBB in doh_variant_name
@@ -709,3 +716,6 @@ write.csv(ww_lineage_data_final, file=file.path(wastewater_path,"Wastewater Surv
 
 ########################### 
 
+######## Compare WW to general variant list 
+
+#FIX <-left_join(ww_lineage_data_final, lineage_data_final)
