@@ -1677,7 +1677,7 @@ KS.1.1.2,"Alias of B.1.1.529.2.86.1.1.13.1.1.1.2, ORF1a:L2146F, C19716T",Active
 KS.1.1.3,"Alias of B.1.1.529.2.86.1.1.13.1.1.1.3, S:A575S, ORF1a:D1160Y, ORF1a:H1610Y, Russia, from sars-cov-2-variants/lineage-proposals#2326",Active
 KS.1.2,"Alias of B.1.1.529.2.86.1.1.13.1.1.2, S:T678I, Russia",Active
 KS.1.3,"Alias of B.1.1.529.2.86.1.1.13.1.1.3, S:V642A, Dominican Republic, from sars-cov-2-variants/lineage-proposals#1535",Active
-KS.1.4,"Alias of B.1.1.529.2.86.1.1.13.1.1.4, C22414T, S:R237K, from sars-cov-2-variants/lineage-proposals#1752",Active
+KS.1.4,"Alias of B.1.1.529.2.86.1.1.13.1.1.4, S:K478T (rev), S:R237K, C22414T, from sars-cov-2-variants/lineage-proposals#1752",Active
 KS.1.5,"Alias of B.1.1.529.2.86.1.1.13.1.1.5, N:T282I, C20148T, Russia",Active
 KS.2,"Alias of B.1.1.529.2.86.1.1.13.1.2, C18348T",Active
 JN.1.14,"Alias of B.1.1.529.2.86.1.1.14, S:R346S, after C26894T, C25680T, USA",Active
@@ -5236,6 +5236,7 @@ XFG.4.2,S:K1191R,Active
 XFG.5,"C10039T, on C20178T branch",Active
 XFG.5.1,ORF1a:T2093I,Active
 XFG.5.1.1,"S:A688V, ORF3a:I37T, England/Wales",Active
+XFG.5.1.2,S:V1228L,Active
 XFG.5.2,A9079G,Active
 XFG.5.2.1,S:S680F,Active
 XFG.5.2.2,T26972C,Active
