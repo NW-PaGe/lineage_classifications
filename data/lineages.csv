@@ -5071,6 +5071,7 @@ XEC.16,"S:T678I, from sars-cov-2-variants/lineage-proposals#2088",Active
 XEC.17,"S:T95I, on ORF1a:A599T branch, Israel, from #2879",Active
 XEC.18,"G28378T (ORF9b:R32L), from #2813",Active
 XEC.18.1,"S:S680Y, ORF1a:L1249F, from sars-cov-2-variants/lineage-proposals#2088",Active
+XEC.18.1.1,"S:K478E, S:V1264L, ORF1a:E1801D, ORF3a:Q38R, Malaysia/Thailand",Active
 XEC.18.2,"S:A435S, ORF7a:L96P",Active
 XEC.18.3,"S:S680A, from sars-cov-2-variants/lineage-proposals#2088",Active
 XEC.18.4,S:K679T,Active
@@ -5224,6 +5225,7 @@ QT.1,"Alias of XFG.3.4.2.1, C3817T",Active
 QT.1.1,"Alias of XFG.3.4.2.1.1, S:S680P, on ORF1b:T1637I branch",Active
 QT.1.2,"Alias of XFG.3.4.2.1.2, ORF1a:L1914I, ORf7a:T120I, on ORF1b:T1637I branch",Active
 QT.2,"Alias of XFG.3.4.2.2, S:K529R, N:E136D, ORF1a:Y1920H, Brazil",Active
+QT.3,"Alias of XFG.3.4.2.3, S:K679R",Active
 XFG.3.4.3,"T24289A, on T15762C branch",Active
 QS.1,"Alias of XFG.3.4.3.1, C8419T",Active
 QS.2,"Alias of XFG.3.4.3.2, S:K679R",Active
@@ -5249,6 +5251,7 @@ XFG.3.13,"S:G946R, ORF1a:L3339F, on A28877T, G28878C branch",Active
 XFG.3.14,"S:S704L, C6031T, on C10615T branch",Active
 XFG.3.15,"G28681A, on C10615T branch",Active
 XFG.3.16,"C3565T (rev), C25096T, on C10615T branch",Active
+XFG.3.16.1,S:W64L,Active
 XFG.3.17,"C10993T, C16260T",Active
 XFG.3.18,"C11866T, on C10615T branch",Active
 XFG.3.18.1,"S:A845S, Brazil",Active
@@ -5282,7 +5285,10 @@ XFG.6.2.1,S:D253G,Active
 XFG.6.3,T8359C,Active
 XFG.6.4,ORF1a:T2611I,Active
 XFG.6.5,C23758T,Active
+XFG.6.5.1,"S:S680Y, UK",Active
 XFG.6.6,"ORF1a:T1881I, ORF3a:L94F, ORF3a:A110V, ORF10:N22D",Active
+XFG.6.7,"ORF1b:A1291V, USA",Active
+XFG.6.8,"C583T, T6673C",Active
 XFG.7,"N:K65I, ORF9b:N62Y, on C20178T branch, from #3001",Active
 XFG.7.1,"ORF1a:K2029R, ORF1a:S3242G",Active
 XFG.7.1.1,"S:K150E, S:A688V",Active
