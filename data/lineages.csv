@@ -5288,7 +5288,7 @@ XFG.4.1,"ORF1b:S997L, India, from sars-cov-2-variants/lineage-proposals#2677",Ac
 XFG.4.1.1,S:S680Y,Active
 XFG.4.1.2,S:P1263L,Active
 XFG.4.1.3,C2509T,Active
-QY.1,"Alias of XFG.4.1.3.1, S:R638Q, ORF7a:L12H, India",Active
+QY.1,"Alias of XFG.4.1.3.1, S:R683Q, ORF7a:L12H, India",Active
 XFG.4.1.4,T25139C,Active
 XFG.4.1.5,"S:A67V, ORF10:A8V",Active
 XFG.4.2,"S:K1191R, ORF3a:del24-27, F28I",Active
@@ -5300,7 +5300,7 @@ XFG.5.1.1,"S:A688V, ORF3a:I37T, England/Wales",Active
 XFG.5.1.2,S:V1228L,Active
 XFG.5.1.3,"S:S680F, UK",Active
 XFG.5.1.4,C2485T,Active
-XFG.5.1.5,"S:L44I, C24034T",Active
+XFG.5.1.5,"S:L441I, C24034T",Active
 XFG.5.1.6,S:A688T,Active
 XFG.5.2,A9079G,Active
 XFG.5.2.1,S:S680F,Active
@@ -5364,7 +5364,7 @@ XFG.17,"A9970T, most with A28877T, G28878C",Active
 XFG.17.1,S:F59S,Active
 XFG.17.2,S:K679R,Active
 XFG.17.2.1,S:G219S,Active
-QQ.1,"Alias of XFG.17.2.1, S:Q677H, N:F307L",Active
+QQ.1,"Alias of XFG.17.2.1.1, S:Q677H, N:F307L",Active
 XFG.17.3,"S:L335F, Orf9b:A82V  ",Active
 XFG.17.4,"S:G219D, S:T345S",Active
 XFG.18,"S:L922F, C1960T",Active
