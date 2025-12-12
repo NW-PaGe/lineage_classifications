@@ -4947,6 +4947,8 @@ PQ.2.3,"Alias of XDV.1.5.1.1.8.1.2.3, S:Q677H, T20310C, from sars-cov-2-variants
 PQ.2.4,"Alias of XDV.1.5.1.1.8.1.2.4, T2680C, T17449C, from sars-cov-2-variants/lineage-proposals#2597",Active
 PQ.2.4.1,"Alias of XDV.1.5.1.1.8.1.2.4.1, S:D111N, ORF1b:T1034A",Active
 PQ.2.4.2,"Alias of XDV.1.5.1.1.8.1.2.4.2, S:I478T (rev)",Active
+PQ.2.4.3,"Alias of XDV.1.5.1.1.8.1.2.4.3, ORF1a:A2994V",Active
+PQ.2.4.4,"Alias of XDV.1.5.1.1.8.1.2.4.4, ORF1a:T3750I",Active
 PQ.2.5,"Alias of XDV.1.5.1.1.8.1.2.5, ORF3a:I20T",Active
 PQ.2.5.1,"Alias of XDV.1.5.1.1.8.1.2.5.1, S:N532S",Active
 PQ.2.5.2,"Alias of XDV.1.5.1.1.8.1.2.5.2, C1912T",Active
@@ -5405,6 +5407,7 @@ XFG.5.1.3,"S:S680F, UK, from sars-cov-2-variants/lineage-proposals#2838",Active
 XFG.5.1.4,C2485T,Active
 XFG.5.1.5,"S:L441I, C24034T, from sars-cov-2-variants/lineage-proposals#2861",Active
 XFG.5.1.6,S:A688T,Active
+XFG.5.1.7,"S:K679R, ORF8:D63G",Active
 XFG.5.2,A9079G,Active
 XFG.5.2.1,"S:S680F, from sars-cov-2-variants/lineage-proposals#2808",Active
 XFG.5.2.2,T26972C,Active
