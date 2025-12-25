@@ -23,6 +23,14 @@ pacman::p_load(odbc,
 ################################
 #   Import most recent lineage file created from DIQA
 ################################
+#Renv maintenance
+install.packages("renv")
+#renv::restore()
+renv::update()
+renv::install()
+
+readRenviron(".Renviron")
+
 
 # lower case lineages csv in the y drive and the public repo
 
@@ -328,6 +336,7 @@ lineage_doh_variant_name <- active_lineages %>%
     #HK.3 Alias of XBB.1.9.2.5.1.1.3  
     lineage_extracted == "HK.3" | grepl("XBB.1.9.2.5.1.1.3\\.", description) ~ "HK.3",
     
+    
     #JG.3 Alias of XBB.1.9.2.5.1.3.3     
     grepl("^JG.3", lineage_extracted) | grepl("XBB\\.1\\.9\\.2\\.5\\.1\\.3\\.3\\.", description) ~ "JG.3",
     #HV.1 Alias of XBB.1.9.2.5.1.6.1
@@ -575,7 +584,18 @@ nrow(lineage_data_final)
 ###########################
 # Part 3: write out as csv
 ###########################   
+#Output to MEP folder
+mol_epi_path <- Sys.getenv("mol_epi_path")
 
+if(Sys.getenv("mol_epi_path") != ""){
+  print("writing lineage_classifications.csv to mol epi path")
+  write_csv(lineage_data_final,
+            file = file.path(
+              mol_epi_path,
+              "GitHub R Code/lineage_classifications_project/lineage_classifications.csv"
+            )
+  )
+}
 
 # output to github repo
 write_csv(lineage_data_final,file="data/lineage_classifications.csv")
@@ -606,6 +626,18 @@ ww_lineage_data <- subset(lineage_data_final, select = -hex_code )
 ### Change doh_variant_name to wastewater_variant_name as well as reassign variants to include "Recombinant" and "Ancestral" as values within the column
 ## Regrouping variants sorted as "Other" in previous data to their parent lineage IF available
 ww_lineage_data_1 <- ww_lineage_data %>%
+  
+  #HK.26.1 FREJA ISSUE 
+  #HK.26.1(Formerly HK.3.11) Alias of XBB.1.9.2.5.1.1.26.1  
+  mutate(
+    lineage_extracted = gsub("HK\\.26\\.1", "HK.3.11", lineage_extracted),
+    description = gsub(
+      "Alias of XBB.1.9.2.5.1.1.26.1, S:A475V, Finland, formerly HK.3.11, from sars-cov-2-variants/lineage-proposals#763",
+      "Alias of XBB.1.9.2.5.1.1.26.1, S:A475V, Finland, is HK.26.1 now, from sars-cov-2-variants/lineage-proposals#763",
+      description
+    )
+  ) %>%
+  
   mutate(wastewater_variant_name = case_when(
     doh_variant_name == "XEC" | grepl("Alias of XEC", description) ~ "XEC",
     doh_variant_name == "XEK" | grepl("Alias of XEK", description) ~ "XEK",
@@ -719,3 +751,11 @@ write.csv(ww_lineage_data_final, file=file.path(wastewater_path,"Wastewater Surv
 ######## Compare WW to general variant list 
 
 #FIX <-left_join(ww_lineage_data_final, lineage_data_final)
+
+#####Save R script to separate locations
+# Path to the original script
+original_path <- "C:/Users/als6303/Projects/NW-PAGE/lineage_classifications/scripts/lineages_classification.R"
+# Path to the second location
+copy_path <- file.path(mol_epi_path,"GitHub R Code/lineage_classifications_project/lineages_classification.R")
+# Copy the file
+file.copy(original_path, copy_path, overwrite = TRUE)
