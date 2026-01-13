@@ -1350,6 +1350,7 @@ LP.8.1.8,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.8, N:A134V",Active
 PP.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.8.1, S:T22N, from sars-cov-2-variants/lineage-proposals#2199",Active
 PP.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.8.1.1, S:D80G, from sars-cov-2-variants/lineage-proposals#2199",Active
 PP.1.1.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.8.1.1.1, S:W64G, N:R204P, ORF1b:P2313S",Active
+PP.1.2,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.8.1.2, A9274G",Active
 PP.2,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.8.2, ORF1a:V2865I",Active
 PP.2.1,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.8.2.1, C29119T, C29675T",Active
 LP.8.1.9,"Alias of B.1.1.529.2.86.1.1.11.1.1.1.3.8.1.9, S:A475V, on LP.8.1 polytomy directly, #2853",Active
@@ -5045,6 +5046,7 @@ PQ.16,"Alias of XDV.1.5.1.1.8.1.16, C10156T",Active
 PQ.17,"Alias of XDV.1.5.1.1.8.1.17, S:I478T (rev) on polytomy, from sars-cov-2-variants/lineage-proposals#2594",Active
 PQ.17.1,"Alias of XDV.1.5.1.1.8.1.17.1, C7834T, C29708T",Active
 PQ.17.2,"Alias of XDV.1.5.1.1.8.1.17.2, ORF1a:A4257V",Active
+PQ.17.2.1,"Alias of XDV.1.5.1.1.8.1.17.2.1, C1102G",Active
 PQ.17.3,"Alias of XDV.1.5.1.1.8.1.17.3, S:S680F, from sars-cov-2-variants/lineage-proposals#2912",Active
 PQ.17.4,"Alias of XDV.1.5.1.1.8.1.17.4, S:R683Q, from sars-cov-2-variants/lineage-proposals#2953",Active
 PQ.17.5,"Alias of XDV.1.5.1.1.8.1.17.5, N:P279S",Active
@@ -5059,7 +5061,6 @@ PQ.17.10,"Alias of XDV.1.5.1.1.8.1.17.10, T4441C",Active
 PQ.17.10.1,"Alias of XDV.1.5.1.1.8.1.17.10.1, S:T572I",Active
 PQ.17.11,"Alias of XDV.1.5.1.1.8.1.17.11, S:T572I",Active
 PQ.17.11.1,"Alias of XDV.1.5.1.1.8.1.17.11.1, S:R346K, ORF3a:V112I, from #3163",Active
-PQ.17.12,"Alias of XDV.1.5.1.1.8.1.17.12, ORF1a:A4257V, C1102G",Active
 PQ.18,"Alias of XDV.1.5.1.1.8.1.18, S:S680F, from sars-cov-2-variants/lineage-proposals#2706",Active
 PQ.19,"Alias of XDV.1.5.1.1.8.1.19, S:T51A, S:R346K, from sars-cov-2-variants/lineage-proposals#2633",Active
 PQ.20,"Alias of XDV.1.5.1.1.8.1.20, S:G181A, from sars-cov-2-variants/lineage-proposals#2696",Active
@@ -5464,7 +5465,6 @@ XFG.3.30,"C10207T, on C10615T branch",Active
 XFG.3.30.1,S:G219D,Active
 XFG.3.30.2,"S:K679T, ORF1a:T1638N, ORF1a:L4126F",Active
 XFG.3.31,"S:K150E, ORF1a:K3351R, on A28877T, G28878C branch, from #3127",Active
-XFG.3.31.1,S:K554E,Active
 XFG.3.32,"S:L189F, C1150T, on C10615T branch, from #3126",Active
 XFG.4,"C683T, on C20178T branch",Active
 XFG.4.1,"ORF1b:S997L, India, from sars-cov-2-variants/lineage-proposals#2677",Active
@@ -5695,6 +5695,7 @@ XGL,"Recombinant lineage of XFG.3.1.12, XFG.17.2.1 (breakpoint 11173-13608), fro
 XGM,"Recombinant lineage of NY.3.3, LF.7.3, NY.3.3 (breakpoints 7114-7868, 21654-22119), from sars-cov-2-variants/lineage-proposals#2958",Active
 XGN,"Recombinant lineage of XFG.3.5.2, RG.3, XFG.3.5.2 (breakpoints 23277-23598, 27649-28032), from sars-cov-2-variants/lineage-proposals#3212",Active
 XGP,"Recombinant lineage of NY.3.3, XFG.26 (breakpoint 16601-17459), from sars-cov-2-variants/lineage-proposals#3196",Active
+XGQ,"Recombinant lineage of PP.1.2, XFG.26, PP.1.2 (breakpoints 21629-21649, 28675-29407), from sars-cov-2-variants/lineage-proposals#3191",Active
 A.2.1,Withdrawn: Lineage with sequences predominantly from Panama,Withdrawn
 A.8,Withdrawn: Indian lineage merged with A.9,Withdrawn
 A.10,Withdrawn: Spanish lineage reassigned to A.5,Withdrawn
@@ -5985,3 +5986,4 @@ KD.5,"Withdrawn: Alias of XBC.1.3.1.5, S:L244F, Australia, indel artefact caused
 KR.2,Redesignated as LT.1 (JN.1.1.3.1) due to lack of C9142T,Active
 MC.34,"Withdrawn: Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.34, A29716T (29716 in UTR masked by pangolin)",Withdrawn
 XFG.20,Withdrawn: C10615T (didn't realize it was a dropout branch of XFG.3 when designating),Withdrawn
+XFG.3.31.1,Withdrawn: only one sequence had S:K554E,Withdrawn
