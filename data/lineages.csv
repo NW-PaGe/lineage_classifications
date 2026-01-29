@@ -5111,6 +5111,9 @@ PQ.45,"Alias of XDV.1.5.1.1.8.1.45, C6031T",Active
 PQ.46,"Alias of XDV.1.5.1.1.8.1.46, C745T",Active
 PQ.46.1,"Alias of XDV.1.5.1.1.8.1.46.1, ORF1a:T770I, ORF3a:S171L",Active
 PQ.47,"Alias of XDV.1.5.1.1.8.1.47, S:S446N, ORF1a:M2254I",Active
+PQ.48,"Alias of XDV.1.5.1.1.8.1.48, ORF1a:T4175I",Active
+PQ.48.1,"Alias of XDV.1.5.1.1.8.1.48.1, S:Q677H",Active
+PQ.49,"Alias of XDV.1.5.1.1.8.1.49, C28657T",Active
 NB.1.9,"Alias of XDV.1.5.1.1.9, S:L176F, S:H445P, from sars-cov-2-variants/lineage-proposals#2460",Active
 NB.1.10,"Alias of XDV.1.5.1.1.10, S:S680F",Active
 NB.1.11,"Alias of XDV.1.5.1.1.11, S:A958S, N:A182S, ORF1a:R1163G, from sars-cov-2-variants/lineage-proposals#2321",Active
@@ -5409,6 +5412,8 @@ QF.2,"Alias of XFG.3.4.1.2, C27812T",Active
 QF.2.1,"Alias of XFG.3.4.1.2.1, S:N641K",Active
 QF.2.2,"Alias of XFG.3.4.1.2.2, G29044A",Active
 QF.2.2.1,"Alias of XFG.3.4.1.2.2, S:I326V, from #3140",Active
+QF.2.3,"Alias of XFG.3.4.1.2.3, C13247T",Active
+QF.2.4,"Alias of XFG.3.4.1.2.4, C21811T",Active
 QF.3,"Alias of XFG.3.4.1.3, ORF1a:P1921L",Active
 QF.4,"Alias of XFG.3.4.1.4, C15960A, C28651T",Active
 QF.5,"Alias of XFG.3.4.1.5, C5284T",Active
@@ -5521,6 +5526,7 @@ XFG.6,"S:L441I, on C20178T branch, from sars-cov-2-variants/lineage-proposals#26
 XFG.6.1,"S:T678I, from sars-cov-2-variants/lineage-proposals#2829",Active
 XFG.6.2,N:I379T (rev),Active
 XFG.6.2.1,"S:D253G, from sars-cov-2-variants/lineage-proposals#2962",Active
+XFG.6.2.2,A18585T,Active
 XFG.6.3,T8359C,Active
 XFG.6.3.1,C920T,Active
 XFG.6.3.2,S:K679R,Active
@@ -5715,6 +5721,7 @@ XGP,"Recombinant lineage of NY.3.3, XFG.26 (breakpoint 16601-17459), from sars-c
 XGQ,"Recombinant lineage of PP.1.2, XFG.26, PP.1.2 (breakpoints 21629-21649, 28675-29407), from sars-cov-2-variants/lineage-proposals#3191",Active
 XGR,"Recombinant lineage of NW.1.7.4, RN.1 (breakpoint 18298-18885), from sars-cov-2-variants/lineage-proposals#3067",Active
 XGS,"Recombinant lineage of XFG, PY.1, XFG (breakpoints 4587-8349, 10979-15659), from sars-cov-2-variants/lineage-proposals#3242",Active
+XGT,"Recombinant lineage of QF.2, PQ.17, QF.2 (breakpoints 6501-7113, 23277-23600), from sars-cov-2-variants/lineage-proposals#3179",Active
 A.2.1,Withdrawn: Lineage with sequences predominantly from Panama,Withdrawn
 A.8,Withdrawn: Indian lineage merged with A.9,Withdrawn
 A.10,Withdrawn: Spanish lineage reassigned to A.5,Withdrawn
