@@ -4987,12 +4987,12 @@ PQ.2.6,"Alias of XDV.1.5.1.1.8.1.2.6, S:S446T, N:A359S, ORF1a:A2850T, from sars-
 PQ.2.7,"Alias of XDV.1.5.1.1.8.1.2.7, C28603T",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
 PQ.2.7.1,"Alias of XDV.1.5.1.1.8.1.2.7.1, S:N148H, from sars-cov-2-variants/lineage-proposals#2825",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
 PQ.2.8,"Alias of XDV.1.5.1.1.8.1.2.8, C8344T",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
-PQ.2.8.1,"Alias of XDV.1.5.1.1.8.1.2.8.1, S:H445P, from sars-cov-2-variants/lineage-proposals#2803",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
-RC.1,"Alias of XDV.1.5.1.1.8.1.2.8.1.1, S:I478T (rev), from sars-cov-2-variants/lineage-proposals#3096",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
-RC.2,"Alias of XDV.1.5.1.1.8.1.2.8.1.2, ORF1a:K958R",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
-RC.2.1,"Alias of XDV.1.5.1.1.8.1.2.8.1.2.1, S:S680Y, from sars-cov-2-variants/lineage-proposals#3045",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
-RC.3,"Alias of XDV.1.5.1.1.8.1.2.8.1.3, C21952T",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
-RC.4,"Alias of XDV.1.5.1.1.8.1.2.8.1.4, T3802C",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
+PQ.2.8.1,"Alias of XDV.1.5.1.1.8.1.2.8.1, S:H445P, from sars-cov-2-variants/lineage-proposals#2803",Active,PQ.2.8.1,N/A,#B962D1,1,PQ.2.8.1
+RC.1,"Alias of XDV.1.5.1.1.8.1.2.8.1.1, S:I478T (rev), from sars-cov-2-variants/lineage-proposals#3096",Active,PQ.2.8.1,N/A,#B962D1,1,PQ.2.8.1
+RC.2,"Alias of XDV.1.5.1.1.8.1.2.8.1.2, ORF1a:K958R",Active,PQ.2.8.1,N/A,#B962D1,1,PQ.2.8.1
+RC.2.1,"Alias of XDV.1.5.1.1.8.1.2.8.1.2.1, S:S680Y, from sars-cov-2-variants/lineage-proposals#3045",Active,PQ.2.8.1,N/A,#B962D1,1,PQ.2.8.1
+RC.3,"Alias of XDV.1.5.1.1.8.1.2.8.1.3, C21952T",Active,PQ.2.8.1,N/A,#B962D1,1,PQ.2.8.1
+RC.4,"Alias of XDV.1.5.1.1.8.1.2.8.1.4, T3802C",Active,PQ.2.8.1,N/A,#B962D1,1,PQ.2.8.1
 PQ.2.8.2,"Alias of XDV.1.5.1.1.8.1.2.8.2, S:V289I",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
 PQ.2.9,"Alias of XDV.1.5.1.1.8.1.2.9, C18814T",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
 PQ.2.10,"Alias of XDV.1.5.1.1.8.1.2.10, ORF8:M1V, T13668C, from sars-cov-2-variants/lineage-proposals#2736",Active,NB.1.8.1,N/A,#8E1299,1,NB.1.8.1
@@ -5318,33 +5318,33 @@ XFB,"Recombinant lineage of MC.24, XDY.1.1, MC.24 (breakpoints: 19723-22110,2327
 XFB.1,ORF1a:E3906G,Active,Other,N/A,#FABFD2,1,Other
 XFB.2,"S:R765H, from sars-cov-2-variants/lineage-proposals#2550",Active,Other,N/A,#FABFD2,1,Other
 XFB.3,G29449T,Active,Other,N/A,#FABFD2,1,Other
-XFC,"Recombinant lineage of LP.8.1.1, LF.7, LP.8.1.1 (breakpoints: 8818-12891,22120-22892), from sars-cov-2-variants/lineage-proposals#2323",Active,XFC,N/A,#B66920,2,XFC
-XFC.1,ORF1a:S1515F,Active,XFC,N/A,#B66920,2,XFC
-XFC.1.1,ORF1a:T283A,Active,XFC,N/A,#B66920,2,XFC
-XFC.1.1.1,"S:K478E, from sars-cov-2-variants/lineage-proposals#2573",Active,XFC,N/A,#B66920,2,XFC
-XFC.1.2,"S:H207Y, from sars-cov-2-variants/lineage-proposals#2572",Active,XFC,N/A,#B66920,2,XFC
-XFC.1.2.1,"S:R445P, ORF1a:S1561A, ORF1a:T2280I",Active,XFC,N/A,#B66920,2,XFC
-XFC.1.3,ORF1a:A1473V,Active,XFC,N/A,#B66920,2,XFC
-XFC.1.3.1,"S:A435S, S:A475V, from sars-cov-2-variants/lineage-proposals#2722",Active,XFC,N/A,#B66920,2,XFC
-XFC.1.4,S:K478E,Active,XFC,N/A,#B66920,2,XFC
-XFC.1.5,C9541T,Active,XFC,N/A,#B66920,2,XFC
-XFC.1.6,ORF1b:D729E,Active,XFC,N/A,#B66920,2,XFC
-XFC.1.7,"C4084T, on C222T branch",Active,XFC,N/A,#B66920,2,XFC
-XFC.1.8,G13201T,Active,XFC,N/A,#B66920,2,XFC
-XFC.1.9,T26756A,Active,XFC,N/A,#B66920,2,XFC
-XFC.1.10,"ORF1a:Y947H, on C222T branch",Active,XFC,N/A,#B66920,2,XFC
-XFC.1.11,"ORF1b:Q1546H, ORF7a:I103V",Active,XFC,N/A,#B66920,2,XFC
-XFC.1.12,T1771A,Active,XFC,N/A,#B66920,2,XFC
-XFC.2,"S:A475V, from sars-cov-2-variants/lineage-proposals#2537",Active,XFC,N/A,#B66920,2,XFC
-XFC.3,"ORF1a:A2128T, most with ORF9b:T79I",Active,XFC,N/A,#B66920,2,XFC
-XFC.3.1,"S:K478E, C5020T, C21697T, T25072C, C28732T, Costa Rica",Active,XFC,N/A,#B66920,2,XFC
-XFC.3.2,"S:K478T (rev), ORF3a:R134C",Active,XFC,N/A,#B66920,2,XFC
-XFC.3.3,ORF1b:A2431V,Active,XFC,N/A,#B66920,2,XFC
-XFC.3.3.1,"S:G75V, from sars-cov-2-variants/lineage-proposals#2831",Active,XFC,N/A,#B66920,2,XFC
-XFC.3.3.2,S:A475V,Active,XFC,N/A,#B66920,2,XFC
-XFC.3.4,C17733T,Active,XFC,N/A,#B66920,2,XFC
-XFC.3.5,G17427A,Active,XFC,N/A,#B66920,2,XFC
-XFC.4,"A1393G, C15720T",Active,XFC,N/A,#B66920,2,XFC
+XFC,"Recombinant lineage of LP.8.1.1, LF.7, LP.8.1.1 (breakpoints: 8818-12891,22120-22892), from sars-cov-2-variants/lineage-proposals#2323",Active,XFC,N/A,#B66920,1,XFC
+XFC.1,ORF1a:S1515F,Active,XFC,N/A,#B66920,1,XFC
+XFC.1.1,ORF1a:T283A,Active,XFC,N/A,#B66920,1,XFC
+XFC.1.1.1,"S:K478E, from sars-cov-2-variants/lineage-proposals#2573",Active,XFC,N/A,#B66920,1,XFC
+XFC.1.2,"S:H207Y, from sars-cov-2-variants/lineage-proposals#2572",Active,XFC,N/A,#B66920,1,XFC
+XFC.1.2.1,"S:R445P, ORF1a:S1561A, ORF1a:T2280I",Active,XFC,N/A,#B66920,1,XFC
+XFC.1.3,ORF1a:A1473V,Active,XFC,N/A,#B66920,1,XFC
+XFC.1.3.1,"S:A435S, S:A475V, from sars-cov-2-variants/lineage-proposals#2722",Active,XFC,N/A,#B66920,1,XFC
+XFC.1.4,S:K478E,Active,XFC,N/A,#B66920,1,XFC
+XFC.1.5,C9541T,Active,XFC,N/A,#B66920,1,XFC
+XFC.1.6,ORF1b:D729E,Active,XFC,N/A,#B66920,1,XFC
+XFC.1.7,"C4084T, on C222T branch",Active,XFC,N/A,#B66920,1,XFC
+XFC.1.8,G13201T,Active,XFC,N/A,#B66920,1,XFC
+XFC.1.9,T26756A,Active,XFC,N/A,#B66920,1,XFC
+XFC.1.10,"ORF1a:Y947H, on C222T branch",Active,XFC,N/A,#B66920,1,XFC
+XFC.1.11,"ORF1b:Q1546H, ORF7a:I103V",Active,XFC,N/A,#B66920,1,XFC
+XFC.1.12,T1771A,Active,XFC,N/A,#B66920,1,XFC
+XFC.2,"S:A475V, from sars-cov-2-variants/lineage-proposals#2537",Active,XFC,N/A,#B66920,1,XFC
+XFC.3,"ORF1a:A2128T, most with ORF9b:T79I",Active,XFC,N/A,#B66920,1,XFC
+XFC.3.1,"S:K478E, C5020T, C21697T, T25072C, C28732T, Costa Rica",Active,XFC,N/A,#B66920,1,XFC
+XFC.3.2,"S:K478T (rev), ORF3a:R134C",Active,XFC,N/A,#B66920,1,XFC
+XFC.3.3,ORF1b:A2431V,Active,XFC,N/A,#B66920,1,XFC
+XFC.3.3.1,"S:G75V, from sars-cov-2-variants/lineage-proposals#2831",Active,XFC,N/A,#B66920,1,XFC
+XFC.3.3.2,S:A475V,Active,XFC,N/A,#B66920,1,XFC
+XFC.3.4,C17733T,Active,XFC,N/A,#B66920,1,XFC
+XFC.3.5,G17427A,Active,XFC,N/A,#B66920,1,XFC
+XFC.4,"A1393G, C15720T",Active,XFC,N/A,#B66920,1,XFC
 XFD,"Recombinant lineage of MC.36.1, XEC (breakpoint: 19723-21626)",Active,Other,N/A,#FABFD2,1,Other
 XFE,"Recombinant lineage of MC.37, XEC.19 (breakpoint: 19723-21626)",Active,Other,N/A,#FABFD2,1,Other
 XFF,"Recombinant lineage of LB.1.3, MZ.4.1 (breakpoint: 22599-22994), from sars-cov-2-variants/lineage-proposals#2373",Active,Other,N/A,#FABFD2,1,Other
@@ -5520,7 +5520,7 @@ XFG.5.4,T2698C,Active,XFG,N/A,#4E6EA1,1,XFG
 XFG.5.4.1,ORF3a:D155Y,Active,XFG,N/A,#4E6EA1,1,XFG
 QW.1,"Alias of XFG.5.4.1.1, S:Q677R, ORF1a:G400S, from sars-cov-2-variants/lineage-proposals#2896",Active,XFG,N/A,#4E6EA1,1,XFG
 QW.1.1,"Alias of XFG.5.4.1.1.1, S:L176F, C7834T, from sars-cov-2-variants/lineage-proposals#3018",Active,XFG,N/A,#4E6EA1,1,XFG
-QW.2,"Alias of XFG.5.4.1.2, C1420T, T16695C, G24199A, T27484C, A29617G",Active,XFG,N/A,#4E6EA1,1,XFG
+XFG.5.4.2,"C1420T, T16695C, G24199A, T27484C, A29617G",Active,XFG,N/A,#4E6EA1,1,XFG
 XFG.6,"S:L441I, on C20178T branch, from sars-cov-2-variants/lineage-proposals#2621",Active,XFG.6,N/A,#5555FF,1,XFG.6
 XFG.6.1,"S:T678I, from sars-cov-2-variants/lineage-proposals#2829",Active,XFG.6,N/A,#5555FF,1,XFG.6
 XFG.6.2,N:I379T (rev),Active,XFG.6,N/A,#5555FF,1,XFG.6
@@ -5618,7 +5618,7 @@ XFG.23.1.1,"N:P67H, N:P365L, on C29137T branch",Active,XFG,N/A,#4E6EA1,1,XFG
 RB.1,"Alias of XFG.23.1.1.1, S:I210S",Active,XFG,N/A,#4E6EA1,1,XFG
 RB.2,"Alias of XFG.23.1.1.2, S:S704L, from sars-cov-2-variants/lineage-proposals#2768",Active,XFG,N/A,#4E6EA1,1,XFG
 XFG.23.1.2,"C5944T, C18912T, C21676T, C29546T",Active,XFG,N/A,#4E6EA1,1,XFG
-XFG.23.1.3,"S:A1174V, on C29137T branch, from sars-cov-2-variants/lineage-proposals#3053",Active,XFG,N/A,#4E6EA1,1,XFG
+XFG.23.1.3,"S:A1174V, on C29137T branch, from sars-cov-2-variants/lineage-proposals#3053",Active,XFG.23.1.3,N/A,#0000FF,1,XFG.23.1.3
 RV.1,"Alias of XFG.23.1.3.1, S:S446N, from sars-cov-2-variants/lineage-proposals#3053",Active,XFG,N/A,#4E6EA1,1,XFG
 XFG.23.1.4,"S:W258R, ORF1a:A2855V, ORF3a:T89I, from sars-cov-2-variants/lineage-proposals#3039",Active,XFG,N/A,#4E6EA1,1,XFG
 XFG.23.1.5,"ORF1a:S944L, ORF3a:S74F, from sars-cov-2-variants/lineage-proposals#2968",Active,XFG,N/A,#4E6EA1,1,XFG
