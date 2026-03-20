@@ -2180,6 +2180,7 @@ RS.1.4,"Alias of B.1.1.529.3.2.2.1.1.1.1.4, C10252T",Active
 RS.2,"Alias of B.1.1.529.3.2.2.1.1.1.2, ORF1a:D2060N",Active
 RS.3,"Alias of B.1.1.529.3.2.2.1.1.1.3, S:A1078S",Active
 RS.4,"Alias of B.1.1.529.3.2.2.1.1.1.4, N:H241Y, New Zealand",Active
+RS.5,"Alias of B.1.1.529.3.2.2.1.1.1.5, S:L26F, ORF3a:S60C",Active
 RE.1.1.2,"Alias of B.1.1.529.3.2.2.1.1.2, S:H49Y, ORF1a:R1467K, Australia, from sars-cov-2-variants/lineage-proposals#3164",Active
 SJ.1,"Alias of B.1.1.529.3.2.2.1.1.2.1, S:V1228L, ORF1a:G133C, Europe",Active
 RE.1.1.3,"Alias of B.1.1.529.3.2.2.1.1.3, S:P1162L, Australia, from sars-cov-2-variants/lineage-proposals#3093",Active
@@ -5431,6 +5432,8 @@ XFG.1.1.2,S:A688V,Active
 XFG.1.1.3,S:E156D,Active
 XFG.1.1.4,ORF1b:A1643T,Active
 XFG.1.1.5,ORF1a:R542C,Active
+XFG.1.1.6,ORF8a:I39T,Active
+XFG.1.1.7,ORF1b:K2557R,Active
 XFG.1.2,C16111T,Active
 XFG.1.3,ORF7a:I10V,Active
 XFG.2,"N:V270L, ORF1b:K2557R, on C20178T branch, USA-NY, from sars-cov-2-variants/lineage-proposals#2553",Active
@@ -5527,6 +5530,11 @@ XFG.3.5.2,S:S680F,Active
 XFG.3.6,"ORF1a:L3086F, on C10615T branch",Active
 XFG.3.6.1,"S:A942S, ORF1a:T1638I, ORF1b:P1666S",Active
 XFG.3.6.2,"N:S197L, ORF1a:T1597I, ORF1b:N1790S",Active
+XFG.3.6.3,T16035C,Active
+SP.1,"Alias of XFG.3.6.3.1, C19983T",Active
+SP.2,"Alias of XFG.3.6.3.2, ORF1a:K634N, ORF1b:Q2335K",Active
+SP.2.1,"Alias of XFG.3.6.3.2.1, S:K679R",Active
+XFG.3.6.4,S:N641K,Active
 XFG.3.7,"ORF3a:L52F, on C10615T branch, from sars-cov-2-variants/lineage-proposals#2656",Active
 XFG.3.7.1,S:S680F,Active
 XFG.3.8,"ORF3a:E19G, on A28877T, G28878C branch, from sars-cov-2-variants/lineage-proposals#2784",Active
@@ -5583,6 +5591,8 @@ QY.2.2.1,"Alias of XFG.4.1.3.2.2.1, S:S680F, New Zealand/Australia",Active
 QY.3,"Alias of XFG.4.1.3.3, ORF1a:A690V",Active
 XFG.4.1.4,T25139C,Active
 XFG.4.1.5,"S:A67V, ORF10:A8V, from sars-cov-2-variants/lineage-proposals#2836",Active
+XFG.4.1.6,C26894T,Active
+XFG.4.1.7,ORF1a:T1638A,Active
 XFG.4.2,"S:K1191R, ORF3a:del24-27, F28I, on C16887T, C29762T branch, from sars-cov-2-variants/lineage-proposals#2734",Active
 XFG.4.3,"T28474A, on C16887T, C29762T branch",Active
 XFG.4.4,"G8017T, on C16887T, C29762T branch",Active
@@ -5604,6 +5614,7 @@ XFG.5.2.4,ORF1a:D2980G,Active
 XFG.5.2.5,"ORF1a:P2079S, N:T24I, ORF7a:A66V, ORF7b:Y10C, ORF10:I27M",Active
 RM.1,"Alias of XFG.5.2.5.1, S:I1172V, from sars-cov-2-variants/lineage-proposals#3162",Active
 RM.2,"Alias of XFG.5.2.5.2, S:A67V",Active
+RM.3,"Alias of XFG.5.2.5.3, S:H146Q, S:N148T, S:N641K",Active
 XFG.5.2.6,"S:S704L, C12295T, from sars-cov-2-variants/lineage-proposals#2768",Active
 XFG.5.2.7,"S:L335S, S:A376S, on ORF3a:L95F branch",Active
 XFG.5.3,"S:S254F, Canada",Active
