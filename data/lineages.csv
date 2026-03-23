@@ -2213,6 +2213,10 @@ RE.2.2.6,"Alias of B.1.1.529.3.2.2.2.2.6, ORF1a:Q998H",Active
 RE.2.2.7,"Alias of B.1.1.529.3.2.2.2.2.7, S:K300R, on ORF1a:G30D branch, after T1177C, from sars-cov-2-variants/lineage-proposals#3093",Active
 RE.2.2.8,"Alias of B.1.1.529.3.2.2.2.2.8, S:T827I, on C10726T branch, after T1177C, from sars-cov-2-variants/lineage-proposals#3093",Active
 RE.2.2.9,"Alias of B.1.1.529.3.2.2.2.2.9, T17007C",Active
+SQ.1,"Alias of B.1.1.529.3.2.2.2.2.9.1, Orf9b:R47P ",Active
+SQ.1.1,"Alias of B.1.1.529.3.2.2.2.2.9.1.1, S:K444N, S:D446N",Active
+SQ.2,"Alias of B.1.1.529.3.2.2.2.2.9.2, C25069T",Active
+SQ.3,"Alias of B.1.1.529.3.2.2.2.2.9.3, ORF3a:A72T",Active
 RE.2.3,"Alias of B.1.1.529.3.2.2.2.3, ORF1a:T2648N, ORF1a:T4065I, on A10864G branch, from sars-cov-2-variants/lineage-proposals#3093",Active
 RE.2.4,"Alias of B.1.1.529.3.2.2.2.4, N:N126K, from sars-cov-2-variants/lineage-proposals#3093",Active
 RE.2.5,"Alias of B.1.1.529.3.2.2.2.5, ORF1a:A2593V, ORF1a:A2785V, ORF1a:P3504L, USA",Active
@@ -5046,7 +5050,7 @@ PQ.2.12.1,"Alias of XDV.1.5.1.1.8.1.2.12.1, S:S446T",Active
 PQ.2.13,"Alias of XDV.1.5.1.1.8.1.2.13, C27513T",Active
 PQ.2.13.1,"Alias of XDV.1.5.1.1.8.1.2.13.1, S:S221L, S:S446T",Active
 PQ.2.14,"Alias of XDV.1.5.1.1.8.1.2.14, C16293T",Active
-PQ.2.14.1,"Alias of XDV.1.5.1.1.8.1.2.14.1, S:I478T (rev), S:K679R, ",Active
+PQ.2.14.1,"Alias of XDV.1.5.1.1.8.1.2.14.1, S:I478T (rev), S:K679R ",Active
 PQ.3,"Alias of XDV.1.5.1.1.8.1.3, N:H300Y, N:G321S, from sars-cov-2-variants/lineage-proposals#2578",Active
 PQ.4,"Alias of XDV.1.5.1.1.8.1.4, C2842T",Active
 PQ.4.1,"Alias of XDV.1.5.1.1.8.1.4.1, S:T572I, S:K679N, from sars-cov-2-variants/lineage-proposals#2773",Active
@@ -5061,10 +5065,10 @@ RJ.1,"Alias of XDV.1.5.1.1.8.1.4.6.2.1, S:K150N",Active
 PQ.4.7,"Alias of XDV.1.5.1.1.8.1.4.7, ORF1b:V165I, on C11833T branch",Active
 PQ.4.8,"Alias of XDV.1.5.1.1.8.1.4.8, A17409G, C26013T",Active
 PQ.4.9,"Alias of XDV.1.5.1.1.8.1.4.9, ORF1a:V757F, ORF1a:T1597I, on C11833T branch",Active
-PQ.4.10,"Alias of XDV.1.5.1.1.8.1.4.10, A5536G, C20235T, T21820C",Active
+PQ.4.10,"Alias of XDV.1.5.1.1.8.1.4.10, A5536G, C20235T, T21820C, ORF7b:del13-14 out of frame",Active
 PQ.4.10.1,"Alias of XDV.1.5.1.1.8.1.4.10.1, S:V1264L, from sars-cov-2-variants/lineage-proposals#3211",Active
 RY.1,"Alias of XDV.1.5.1.1.8.1.4.10.1.1, S:K478T (rev)",Active
-RY.1.1,"Alias of XDV.1.5.1.1.8.1.4.10.1.1.1, S:T547I, on G19326A (rev) branch",Active
+RY.1.1,"Alias of XDV.1.5.1.1.8.1.4.10.1.1.1, S:T547I, on G19326A (rev), ORF3a:ins103PP branch",Active
 PQ.5,"Alias of XDV.1.5.1.1.8.1.5, ORF3a:L94F, from sars-cov-2-variants/lineage-proposals#2577",Active
 PQ.5.1,"Alias of XDV.1.5.1.1.8.1.5.1, ORF3a:A99S, ORF8:T87I, after ORF3a:P42L, from sars-cov-2-variants/lineage-proposals#2577",Active
 PQ.5.1.1,"Alias of XDV.1.5.1.1.8.1.5.1.1, S:K150N",Active
@@ -5128,7 +5132,7 @@ PQ.17.11,"Alias of XDV.1.5.1.1.8.1.17.11, S:T572I, from sars-cov-2-variants/line
 PQ.17.11.1,"Alias of XDV.1.5.1.1.8.1.17.11.1, S:R346K, ORF3a:V112I, from #3163",Active
 PQ.17.11.2,"Alias of XDV.1.5.1.1.8.1.17.11.2, M:D190E",Active
 PQ.17.11.3,"Alias of XDV.1.5.1.1.8.1.17.11.3, S:F186L, ORF1a:E1217G, ORF1a:T2877I",Active
-PQ.17.12,"Alias of XDV.1.5.1.1.8.1.17.12, S:R346T, ORF7a:T28I",Active
+PQ.17.12,"Alias of XDV.1.5.1.1.8.1.17.12, S:R346T, ORF7a:T28I, ORF1a:del82-84,M85V",Active
 PQ.17.12.1,"Alias of XDV.1.5.1.1.8.1.17.12.1, S:E654K",Active
 PQ.18,"Alias of XDV.1.5.1.1.8.1.18, S:S680F, from sars-cov-2-variants/lineage-proposals#2706",Active
 PQ.19,"Alias of XDV.1.5.1.1.8.1.19, S:T51A, S:R346K, from sars-cov-2-variants/lineage-proposals#2633",Active
@@ -5627,10 +5631,10 @@ XFG.6,"S:L441I, on C20178T branch, from sars-cov-2-variants/lineage-proposals#26
 XFG.6.1,"S:T678I, from sars-cov-2-variants/lineage-proposals#2829",Active
 XFG.6.2,N:I379T (rev),Active
 XFG.6.2.1,"S:D253G, from sars-cov-2-variants/lineage-proposals#2962",Active
-SC.1,"Alias of XFG.6.2.1, C10228T",Active
+SC.1,"Alias of XFG.6.2.1.1, C10228T",Active
 XFG.6.2.2,A18585T,Active
 SB.1,"Alias of XFG.6.2.2.1, T21414C",Active
-SB.1.1,"Alias of XFG.6.2.2.1, S:A435S",Active
+SB.1.1,"Alias of XFG.6.2.2.1, S:A435S, S:ins16KPLF",Active
 XFG.6.2.3,C9226T,Active
 XFG.6.3,T8359C,Active
 XFG.6.3.1,C920T,Active
@@ -6135,3 +6139,4 @@ KR.2,Redesignated as LT.1 (JN.1.1.3.1) due to lack of C9142T,Active
 MC.34,"Withdrawn: Alias of B.1.1.529.2.86.1.1.11.1.3.1.1.34, A29716T (29716 in UTR masked by pangolin)",Withdrawn
 XFG.20,Withdrawn: C10615T (didn't realize it was a dropout branch of XFG.3 when designating),Withdrawn
 XFG.3.31.1,Withdrawn: only one sequence had S:K554E,Withdrawn
+QW.2,,Active
