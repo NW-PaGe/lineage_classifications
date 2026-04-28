@@ -2174,9 +2174,11 @@ RE.1.1,"Alias of B.1.1.529.3.2.2.1.1, ORF1a:R24H, ORF1a:A131V, ORF1a:K3353R, ORF
 RE.1.1.1,"Alias of B.1.1.529.3.2.2.1.1.1, ORF1b:H1897Y, on C18747T branch, Australia, from sars-cov-2-variants/lineage-proposals#3093",active,Omicron,BA.3,BA.3,#E26028
 RS.1,"Alias of B.1.1.529.3.2.2.1.1.1.1, C4012T, C13375T (rev), C14889T, Australia",active,Omicron,BA.3,BA.3,#E26028
 RS.1.1,"Alias of B.1.1.529.3.2.2.1.1.1.1.1, ORF1a:S2132R, Australia",active,Omicron,BA.3,BA.3,#E26028
+RS.1.1.1,"Alias of B.1.1.529.3.2.2.1.1.1.1.1.1, S:A123V",active,Omicron,BA.3,BA.3,#E26028
 RS.1.2,"Alias of B.1.1.529.3.2.2.1.1.1.1.2, C6190T, T12958C",active,Omicron,BA.3,BA.3,#E26028
 RS.1.3,"Alias of B.1.1.529.3.2.2.1.1.1.1.3, C4891T",active,Omicron,BA.3,BA.3,#E26028
 RS.1.4,"Alias of B.1.1.529.3.2.2.1.1.1.1.4, C10252T",active,Omicron,BA.3,BA.3,#E26028
+RS.1.5,"Alias of B.1.1.529.3.2.2.1.1.1.1.5, S:T19I",active,Omicron,BA.3,BA.3,#E26028
 RS.2,"Alias of B.1.1.529.3.2.2.1.1.1.2, ORF1a:D2060N",active,Omicron,BA.3,BA.3,#E26028
 RS.3,"Alias of B.1.1.529.3.2.2.1.1.1.3, S:A1078S",active,Omicron,BA.3,BA.3,#E26028
 RS.4,"Alias of B.1.1.529.3.2.2.1.1.1.4, N:H241Y, New Zealand",active,Omicron,BA.3,BA.3,#E26028
@@ -2185,6 +2187,7 @@ RE.1.1.2,"Alias of B.1.1.529.3.2.2.1.1.2, S:H49Y, ORF1a:R1467K, Australia, from 
 SJ.1,"Alias of B.1.1.529.3.2.2.1.1.2.1, S:V1228L, ORF1a:G133C, Europe",active,Omicron,BA.3,BA.3,#E26028
 RE.1.1.3,"Alias of B.1.1.529.3.2.2.1.1.3, S:P1162L, Australia, from sars-cov-2-variants/lineage-proposals#3093",active,Omicron,BA.3,BA.3,#E26028
 RE.1.1.4,"Alias of B.1.1.529.3.2.2.1.1.4, ORF1b:T253A",active,Omicron,BA.3,BA.3,#E26028
+SS.1,"Alias of B.1.1.529.3.2.2.1.1.4.1, S:G257V, ORF1b:I1488V",active,Omicron,BA.3,BA.3,#E26028
 RE.1.1.5,"Alias of B.1.1.529.3.2.2.1.1.5, ORF1a:A3143V",active,Omicron,BA.3,BA.3,#E26028
 RE.1.1.6,"Alias of B.1.1.529.3.2.2.1.1.6, ORF1a:S1857L, Australia",active,Omicron,BA.3,BA.3,#E26028
 RE.1.2,"Alias of B.1.1.529.3.2.2.1.2, C203T, C5654T, C9836T, C22594T, C28987T, South Africa, from sars-cov-2-variants/lineage-proposals#3093",active,Omicron,BA.3,BA.3,#E26028
@@ -5856,6 +5859,7 @@ XGT,"Recombinant lineage of QF.2, PQ.17, QF.2 (breakpoints 6501-7113, 23277-2360
 XGU,"Recombinant lineage of XFG.5.2, XFZ (breakpoint 20179-22791), from sars-cov-2-variants/lineage-proposals#3260",active,N/A,Other,Recombinant,#FF0000
 XGV,"Recombinant lineage of NW.1.2, XFG.3 (breakpoint 10615-11941), from sars-cov-2-variants/lineage-proposals#3346",active,N/A,Other,Recombinant,#FF0000
 XGW,"Recombinant lineage of NY.3.3, SC.1 (breakpoint 8818-10227), from sars-cov-2-variants/lineage-proposals#3312",active,N/A,Other,Recombinant,#FF0000
+XGY,"Recombinant lineage of XFG.3, PQ.17.7, XFG.3 (breakpoints 2096-3430, 23278-25616), from sars-cov-2-variants/lineage-proposals#3316",active,N/A,Other,Recombinant,#FF0000
 A.2.1,Withdrawn: Lineage with sequences predominantly from Panama,withdrawn,N/A,unreportable,unreportable,#EEEEEE
 A.8,Withdrawn: Indian lineage merged with A.9,withdrawn,N/A,Other,Ancestral,#333333
 A.10,Withdrawn: Spanish lineage reassigned to A.5,withdrawn,N/A,Other,Ancestral,#333333
