@@ -10,7 +10,7 @@ https://nw-page.github.io/lineage_classifications/
 In R:
 
 ```r
-lineage_classifications <- read.csv("https://raw.githubusercontent.com/NW-PaGe/lineage_classifications/refs/heads/main/data/lineage_classifications.csv")
+lineage_classifications <- read.csv("https://raw.githubusercontent.com/NW-PaGe/lineage_classifications/refs/heads/main/data/lineage_classifications.csv", na.strings="N/A")
 ```
 
 In Python:
