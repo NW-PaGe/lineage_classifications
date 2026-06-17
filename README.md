@@ -18,7 +18,7 @@ In Python:
 ```python
 import polars as pl
 
-lineage_classifications <- pl.read_csv("https://raw.githubusercontent.com/NW-PaGe/lineage_classifications/refs/heads/main/data/lineage_classifications.csv")
+lineage_classifications <- pl.read_csv("https://raw.githubusercontent.com/NW-PaGe/lineage_classifications/refs/heads/main/data/lineage_classifications.csv", null_values="N/A")
 ```
 
 
