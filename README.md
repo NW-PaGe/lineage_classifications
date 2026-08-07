@@ -1,3 +1,7 @@
+# Notice of Workflow Migration
+This repo will sunset on 9/15/2026. After this time, updated lineage classification files will not be provided here. Please begin using the lineage classification files in the new repository at https://github.com/NW-PaGe/lineage-classification-cdc.
+
+
 # Description
 This repo contains scripts that will pull SARS-COV-2 lineages of interest from CDC's repo, transform the data for Washington State DOH reporting purposes, and then output the resulting lineage classifications dataset. **The dataset will be produced biweekly and can be found in the data folder. See instructions below on how to pull the dataset in R or Python.**
 
