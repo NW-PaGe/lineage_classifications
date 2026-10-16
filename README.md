@@ -1,5 +1,5 @@
 # Notice of Workflow Migration
-This repo will sunset on 9/15/2026. After this time, updated lineage classification files will not be provided here. Please begin using the lineage classification files in the new repository at https://github.com/NW-PaGe/lineage-classification-cdc.
+This repo is now deprecated. Please visit https://github.com/NW-PaGe/lineage-classification-cdc to access the lineage classification files.
 
 
 # Description
